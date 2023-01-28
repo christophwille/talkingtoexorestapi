@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetMailBoxDemo", "GetMailBoxDemo\GetMailBoxDemo.csproj", "{60D2ECF0-2293-449D-9A02-BC54787096BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60D2ECF0-2293-449D-9A02-BC54787096BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60D2ECF0-2293-449D-9A02-BC54787096BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60D2ECF0-2293-449D-9A02-BC54787096BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60D2ECF0-2293-449D-9A02-BC54787096BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31047BFF-8636-4286-91B0-758FDF7FF408}
+	EndGlobalSection
+EndGlobal
