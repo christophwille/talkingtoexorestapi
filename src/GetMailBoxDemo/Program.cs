@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
+using Simple.OData.Client;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
@@ -25,10 +26,29 @@ var authResult = await cca.AcquireTokenForClient(scopes).WithForceRefresh(forceR
 var token = new JwtSecurityToken(authResult.AccessToken);
 string tenantId = token.Claims.First(c => c.Type == "tid").Value;
 
-using var client = new HttpClient();
-client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+//string mailboxesAsString = await TalkingHttp();
+//Console.WriteLine(mailboxesAsString);
 
-var result = await client.GetStringAsync($"https://outlook.office.com/adminApi/beta/{tenantId}/Mailbox");
+var mailboxesAsEnumberable = await TalkingOData();
+mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 
-Console.WriteLine(result);
 Console.ReadKey();
+
+async Task<string> TalkingHttp()
+{
+    using var client = new HttpClient();
+    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+
+    return await client.GetStringAsync($"https://outlook.office.com/adminApi/beta/{tenantId}/Mailbox");
+}
+
+async Task<IEnumerable<Mailbox>> TalkingOData()
+{
+    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
+    {
+        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
+        BeforeRequest = (message) => message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken)
+    });
+
+    return await client.For<Mailbox>().FindEntriesAsync();
+}
