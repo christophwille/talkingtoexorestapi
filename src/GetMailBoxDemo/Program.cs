@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
 using Simple.OData.Client;
+using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 
@@ -29,8 +31,13 @@ string tenantId = token.Claims.First(c => c.Type == "tid").Value;
 //string mailboxesAsString = await TalkingHttp();
 //Console.WriteLine(mailboxesAsString);
 
-var mailboxesAsEnumberable = await TalkingOData();
-mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
+//var mailboxesAsEnumberable = await TalkingOData();
+//var mailboxes = mailboxesAsEnumberable.ToList();
+//mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
+//Console.WriteLine(mailboxes.Count);
+
+var allMailboxes = await AdvancedOData(followNextPageLinks: false);
+Console.WriteLine(allMailboxes.Count);
 
 Console.ReadKey();
 
@@ -51,4 +58,32 @@ async Task<IEnumerable<Mailbox>> TalkingOData()
     });
 
     return await client.For<Mailbox>().FindEntriesAsync();
+}
+
+async Task<List<Mailbox>> AdvancedOData(bool followNextPageLinks)
+{
+    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
+    {
+        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
+        BeforeRequest = (message) => message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken)
+    });
+
+    var propertySets = string.Join(",", new[] { "Minimum", "AddressList" });
+
+    var annotations = new ODataFeedAnnotations();
+    var mailboxes = (await client
+        .For<Mailbox>()
+        .Select(m => new { m.UserPrincipalName, m.Alias })
+        .QueryOptions($"PropertySet={propertySets}") // does NOT work with Dictionary overload because enclosed in ''
+        // .Filter(m => m.UserPrincipalName.StartsWith("S"))
+        .FindEntriesAsync(annotations))
+        .ToList();
+
+    if (!followNextPageLinks) return mailboxes;
+
+    while (annotations.NextPageLink != null)
+    {
+        mailboxes.AddRange(await client.For<Mailbox>().FindEntriesAsync(annotations.NextPageLink, annotations));
+    }
+    return mailboxes;
 }
