@@ -36,7 +36,7 @@ string tenantId = token.Claims.First(c => c.Type == "tid").Value;
 //mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 //Console.WriteLine(mailboxes.Count);
 
-var allMailboxes = await AdvancedOData(followNextPageLinks: false);
+var allMailboxes = await AdvancedOData(followNextPageLinks: true);
 Console.WriteLine(allMailboxes.Count);
 
 Console.ReadKey();
@@ -75,7 +75,7 @@ async Task<List<Mailbox>> AdvancedOData(bool followNextPageLinks)
         .For<Mailbox>()
         .Select(m => new { m.UserPrincipalName, m.Alias })
         .QueryOptions($"PropertySet={propertySets}") // does NOT work with Dictionary overload because enclosed in ''
-        // .Filter(m => m.UserPrincipalName.StartsWith("S"))
+        .Filter(m => m.RecipientTypeDetails == "SharedMailbox")
         .FindEntriesAsync(annotations))
         .ToList();
 

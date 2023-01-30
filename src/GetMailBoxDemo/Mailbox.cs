@@ -2,6 +2,7 @@
 {
     public string UserPrincipalName { get; set; }
     public string RecipientType { get; set; }
+    public string RecipientTypeDetails { get; set; }
 
     // non-default response property
     public string Alias { get; set; }
