@@ -36,7 +36,7 @@ string tenantId = token.Claims.First(c => c.Type == "tid").Value;
 //mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 //Console.WriteLine(mailboxes.Count);
 
-var allMailboxes = await AdvancedOData(followNextPageLinks: true);
+var allMailboxes = await AdvancedOData(followNextPageLinks: false);
 Console.WriteLine(allMailboxes.Count);
 
 Console.ReadKey();
@@ -45,6 +45,9 @@ async Task<string> TalkingHttp()
 {
     using var client = new HttpClient();
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+
+    string metadataDoc = await client.GetStringAsync($"https://outlook.office.com/adminApi/beta/{tenantId}/$metadata");
+    await File.WriteAllTextAsync("metadata.xml", metadataDoc);
 
     return await client.GetStringAsync($"https://outlook.office.com/adminApi/beta/{tenantId}/Mailbox");
 }
