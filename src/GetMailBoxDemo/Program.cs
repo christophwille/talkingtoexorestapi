@@ -36,7 +36,7 @@ string tenantId = token.Claims.First(c => c.Type == "tid").Value;
 //mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 //Console.WriteLine(mailboxes.Count);
 
-var allMailboxes = await AdvancedOData(followNextPageLinks: true);
+var allMailboxes = await AdvancedOData(followNextPageLinks: false);
 Console.WriteLine(allMailboxes.Count);
 
 Console.ReadKey();
@@ -63,7 +63,7 @@ async Task<IEnumerable<Mailbox>> TalkingOData()
     return await client.For<Mailbox>().FindEntriesAsync();
 }
 
-async Task<List<Mailbox>> AdvancedOData(bool followNextPageLinks)
+async Task<List<Exchange.Mailbox>> AdvancedOData(bool followNextPageLinks)
 {
     var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
     {
@@ -79,7 +79,7 @@ async Task<List<Mailbox>> AdvancedOData(bool followNextPageLinks)
 
     var annotations = new ODataFeedAnnotations();
     var mailboxes = (await client
-        .For<Mailbox>()
+        .For<Exchange.Mailbox>()
         .Select(m => new { m.UserPrincipalName, m.Alias })
         .QueryOptions($"PropertySet={propertySets}") // does NOT work with Dictionary overload because enclosed in ''
         .Filter(m => m.RecipientTypeDetails == "SharedMailbox")
@@ -90,7 +90,7 @@ async Task<List<Mailbox>> AdvancedOData(bool followNextPageLinks)
 
     while (annotations.NextPageLink != null)
     {
-        mailboxes.AddRange(await client.For<Mailbox>().FindEntriesAsync(annotations.NextPageLink, annotations));
+        mailboxes.AddRange(await client.For<Exchange.Mailbox>().FindEntriesAsync(annotations.NextPageLink, annotations));
     }
     return mailboxes;
 }
