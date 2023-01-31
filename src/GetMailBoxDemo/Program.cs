@@ -1,12 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Identity.Client;
+﻿using AdminApiClient.For.ExchangeOnline;
+using Microsoft.Extensions.Configuration;
 using Microsoft.OData.Client;
 using Simple.OData.Client;
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Net.Http.Headers;
-using System.Security.Cryptography.X509Certificates;
+using ExO = AdminApiClient.For.ExchangeOnline.OData;
 
 var builder = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -14,39 +11,29 @@ var builder = new ConfigurationBuilder()
 
 IConfigurationRoot configuration = builder.Build();
 
-byte[] pfxBytes = File.ReadAllBytes(configuration["PfxPath"]);
-var certificate = new X509Certificate2(pfxBytes);
+// PICK either app or interactive authentication
+var authTokenService = ExOAppAuthorization.Create(configuration["AppId"], configuration["PfxPath"], configuration["Organization"]);
+// var authTokenService = ExOInteractiveAuthorization.Create();
+var (tenantId, authResult) = await authTokenService.AcquireFirstTokenParseTenantId();
 
-string[] scopes = new string[1] { "https://outlook.office365.com/.default" };
-
-var cca = ConfidentialClientApplicationBuilder.Create(configuration["AppId"])
-    .WithCertificate(certificate)
-    .WithTenantId(configuration["Organization"])
-    .Build();
-
-var authResult = await cca.AcquireTokenForClient(scopes).WithForceRefresh(forceRefresh: true).ExecuteAsync();
-
-var token = new JwtSecurityToken(authResult.AccessToken);
-string tenantId = token.Claims.First(c => c.Type == "tid").Value;
-
-//string mailboxesAsString = await TalkingHttp();
+//string mailboxesAsString = await Scenario_PlainHttpAndJson();
 //Console.WriteLine(mailboxesAsString);
 
-//var mailboxesAsEnumberable = await TalkingOData();
+//var mailboxesAsEnumberable = await Scenario_SimpleODataClient_CustomDto();
 //var mailboxes = mailboxesAsEnumberable.ToList();
 //mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 //Console.WriteLine(mailboxes.Count);
 
-// await MSODataClientSamples();
+//await Scenario_MsODataClientRaw();
 
-// var allMailboxes = await AdvancedOData(followNextPageLinks: false);
-// Console.WriteLine(allMailboxes.Count);
+//var allMailboxes = await Scenario_SimpleODataClient_GeneratedDto(followNextPageLinks: false);
+//Console.WriteLine(allMailboxes.Count);
 
-var firstHundred = await CustomObjectForCollectionOData();
+var firstHundred = await Scenario_SimpleODataClient_OptimizeWithCustomDto();
 
 Console.ReadKey();
 
-async Task<string> TalkingHttp()
+async Task<string> Scenario_PlainHttpAndJson()
 {
     using var client = new HttpClient();
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
@@ -57,7 +44,7 @@ async Task<string> TalkingHttp()
     return await client.GetStringAsync($"https://outlook.office.com/adminApi/beta/{tenantId}/Mailbox");
 }
 
-async Task<IEnumerable<Mailbox>> TalkingOData()
+async Task<IEnumerable<Mailbox>> Scenario_SimpleODataClient_CustomDto()
 {
     var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
     {
@@ -68,14 +55,14 @@ async Task<IEnumerable<Mailbox>> TalkingOData()
     return await client.For<Mailbox>().FindEntriesAsync();
 }
 
-async Task<List<Exchange.Mailbox>> AdvancedOData(bool followNextPageLinks)
+async Task<List<ExO.Mailbox>> Scenario_SimpleODataClient_GeneratedDto(bool followNextPageLinks)
 {
     var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
     {
         OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
         BeforeRequestAsync = async (message) =>
         {
-            var ar = await cca.AcquireTokenForClient(scopes).ExecuteAsync();
+            var ar = await authTokenService.AcquireToken();
             message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", ar.AccessToken);
         }
     });
@@ -84,7 +71,7 @@ async Task<List<Exchange.Mailbox>> AdvancedOData(bool followNextPageLinks)
 
     var annotations = new ODataFeedAnnotations();
     var mailboxes = (await client
-        .For<Exchange.Mailbox>()
+        .For<ExO.Mailbox>()
         .Select(m => new { m.UserPrincipalName, m.Alias })
         .QueryOptions($"PropertySet={propertySets}") // does NOT work with Dictionary overload because enclosed in ''
         .Filter(m => m.RecipientTypeDetails == "SharedMailbox")
@@ -95,13 +82,13 @@ async Task<List<Exchange.Mailbox>> AdvancedOData(bool followNextPageLinks)
 
     while (annotations.NextPageLink != null)
     {
-        mailboxes.AddRange(await client.For<Exchange.Mailbox>().FindEntriesAsync(annotations.NextPageLink, annotations));
+        mailboxes.AddRange(await client.For<ExO.Mailbox>().FindEntriesAsync(annotations.NextPageLink, annotations));
     }
     return mailboxes;
 }
 
 // Exchange.Mailbox is a huge object. Cut it down to a custom result object, need to specify collection name in For<>
-async Task<List<Mailbox>> CustomObjectForCollectionOData()
+async Task<List<Mailbox>> Scenario_SimpleODataClient_OptimizeWithCustomDto()
 {
     var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
     {
@@ -120,14 +107,13 @@ async Task<List<Mailbox>> CustomObjectForCollectionOData()
         .ToList();
 }
 
-// Uses (generated) MS OData Client
-async Task MSODataClientSamples()
+async Task Scenario_MsODataClientRaw()
 {
     // https://learn.microsoft.com/en-us/odata/client/query-options
-    var context = new Exchange.Container(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"));
+    var context = new ExO.Container(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"));
     context.BuildingRequest += (sender, eventArgs) => eventArgs.Headers.Add("Authorization", "Bearer " + authResult.AccessToken);
 
-    DataServiceQuery<Exchange.Mailbox> mailboxQuery = context.Mailbox;
+    DataServiceQuery<ExO.Mailbox> mailboxQuery = context.Mailbox;
     await AsyncGetEntitySet();
     // SyncGetMailboxes();
 
@@ -135,7 +121,7 @@ async Task MSODataClientSamples()
     async Task AsyncGetEntitySet()
     {
         var response = await mailboxQuery.ExecuteAsync();
-        foreach (var m in (response as QueryOperationResponse<Exchange.Mailbox>))
+        foreach (var m in (response as QueryOperationResponse<ExO.Mailbox>))
         {
             Console.WriteLine(m.UserPrincipalName);
         }

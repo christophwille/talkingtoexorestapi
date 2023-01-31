@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Connected Services\ExchangeOnlineAdminApi\ExchangeOnlineAdminApiCsdl.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Connected Services\ExchangeOnlineAdminApi\ExchangeOnlineAdminApiCsdl.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.OData.Client" Version="7.14.0" />
+		<PackageReference Include="Microsoft.OData.Core" Version="7.14.0" />
+		<PackageReference Include="Microsoft.OData.Edm" Version="7.14.0" />
+		<PackageReference Include="Microsoft.Spatial" Version="7.14.0" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+		<PackageReference Include="System.Text.Json" Version="7.0.1" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.49.1" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.26.0" />
+	</ItemGroup>
+
+</Project>

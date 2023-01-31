@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetMailBoxDemo", "GetMailBoxDemo\GetMailBoxDemo.csproj", "{60D2ECF0-2293-449D-9A02-BC54787096BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExO.AdminApi", "ExO.AdminApi\ExO.AdminApi.csproj", "{6CD80389-15FD-4BEC-B547-E5478084FE80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminApiClient.For.ExchangeOnline", "AdminApiClient.For.ExchangeOnline\AdminApiClient.For.ExchangeOnline.csproj", "{6CD80389-15FD-4BEC-B547-E5478084FE80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
