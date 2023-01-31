@@ -36,7 +36,7 @@ string tenantId = token.Claims.First(c => c.Type == "tid").Value;
 //mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 //Console.WriteLine(mailboxes.Count);
 
-var allMailboxes = await AdvancedOData(followNextPageLinks: false);
+var allMailboxes = await AdvancedOData(followNextPageLinks: true);
 Console.WriteLine(allMailboxes.Count);
 
 Console.ReadKey();
@@ -68,7 +68,11 @@ async Task<List<Mailbox>> AdvancedOData(bool followNextPageLinks)
     var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
     {
         OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
-        BeforeRequest = (message) => message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken)
+        BeforeRequestAsync = async (message) =>
+        {
+            var ar = await cca.AcquireTokenForClient(scopes).ExecuteAsync();
+            message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", ar.AccessToken);
+        }
     });
 
     var propertySets = string.Join(",", new[] { "Minimum", "AddressList" });
