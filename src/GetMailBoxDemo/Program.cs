@@ -36,8 +36,10 @@ string tenantId = token.Claims.First(c => c.Type == "tid").Value;
 //mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 //Console.WriteLine(mailboxes.Count);
 
-var allMailboxes = await AdvancedOData(followNextPageLinks: false);
-Console.WriteLine(allMailboxes.Count);
+// var allMailboxes = await AdvancedOData(followNextPageLinks: false);
+// Console.WriteLine(allMailboxes.Count);
+
+var firstHundred = await CustomObjectForCollectionOData();
 
 Console.ReadKey();
 
@@ -93,4 +95,24 @@ async Task<List<Exchange.Mailbox>> AdvancedOData(bool followNextPageLinks)
         mailboxes.AddRange(await client.For<Exchange.Mailbox>().FindEntriesAsync(annotations.NextPageLink, annotations));
     }
     return mailboxes;
+}
+
+// Exchange.Mailbox is a huge object. Cut it down to a custom result object, need to specify collection name in For<>
+async Task<List<Mailbox>> CustomObjectForCollectionOData()
+{
+    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
+    {
+        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
+        BeforeRequest = (message) => message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken)
+    });
+
+    var propertySets = string.Join(",", new[] { "Minimum", "AddressList" });
+
+    var annotations = new ODataFeedAnnotations();
+    return (await client
+        .For<Mailbox>("Mailbox")
+        .Select(m => new { m.UserPrincipalName, m.RecipientType, m.RecipientTypeDetails, m.Alias })
+        .QueryOptions($"PropertySet={propertySets}")
+        .FindEntriesAsync(annotations))
+        .ToList();
 }
