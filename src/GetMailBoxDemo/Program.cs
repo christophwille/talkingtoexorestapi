@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
+using Microsoft.OData.Client;
 using Simple.OData.Client;
 using System;
 using System.IdentityModel.Tokens.Jwt;
@@ -35,6 +36,8 @@ string tenantId = token.Claims.First(c => c.Type == "tid").Value;
 //var mailboxes = mailboxesAsEnumberable.ToList();
 //mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 //Console.WriteLine(mailboxes.Count);
+
+// await MSODataClientSamples();
 
 // var allMailboxes = await AdvancedOData(followNextPageLinks: false);
 // Console.WriteLine(allMailboxes.Count);
@@ -115,4 +118,34 @@ async Task<List<Mailbox>> CustomObjectForCollectionOData()
         .QueryOptions($"PropertySet={propertySets}")
         .FindEntriesAsync(annotations))
         .ToList();
+}
+
+// Uses (generated) MS OData Client
+async Task MSODataClientSamples()
+{
+    // https://learn.microsoft.com/en-us/odata/client/query-options
+    var context = new Exchange.Container(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"));
+    context.BuildingRequest += (sender, eventArgs) => eventArgs.Headers.Add("Authorization", "Bearer " + authResult.AccessToken);
+
+    DataServiceQuery<Exchange.Mailbox> mailboxQuery = context.Mailbox;
+    await AsyncGetEntitySet();
+    // SyncGetMailboxes();
+
+    // https://learn.microsoft.com/en-us/odata/client/async-operations
+    async Task AsyncGetEntitySet()
+    {
+        var response = await mailboxQuery.ExecuteAsync();
+        foreach (var m in (response as QueryOperationResponse<Exchange.Mailbox>))
+        {
+            Console.WriteLine(m.UserPrincipalName);
+        }
+    }
+
+    void SyncGetMailboxes()
+    {
+        foreach (var m in mailboxQuery)
+        {
+            Console.WriteLine(m.UserPrincipalName);
+        }
+    }
 }
