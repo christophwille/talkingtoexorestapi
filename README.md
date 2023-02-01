@@ -1,4 +1,6 @@
-# Exchange Online OData API Experiments
+ [![NuGet](https://img.shields.io/nuget/v/AdminApiClient.For.ExchangeOnline.svg)](https://www.nuget.org/packages/AdminApiClient.For.ExchangeOnline)
+
+# Exchange Online Admin API OData REST Client
 
 Talking directly to the Exchange Online PowerShell (OData) REST API
 
