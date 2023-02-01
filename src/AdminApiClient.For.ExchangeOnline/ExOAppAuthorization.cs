@@ -12,11 +12,16 @@ namespace AdminApiClient.For.ExchangeOnline
             _cca = cca;
         }
 
-        public static IExOAuthorization Create(string appId, string pathToPfx, string organization)
+        public static IExOAuthorization Create(string appId, string organization, string pathToPfx)
         {
             byte[] pfxBytes = File.ReadAllBytes(pathToPfx);
             var certificate = new X509Certificate2(pfxBytes);
 
+            return Create(appId, organization, certificate);
+        }
+
+        public static IExOAuthorization Create(string appId, string organization, X509Certificate2 certificate)
+        {
             var cca = ConfidentialClientApplicationBuilder.Create(appId)
                 .WithCertificate(certificate)
                 .WithTenantId(organization)

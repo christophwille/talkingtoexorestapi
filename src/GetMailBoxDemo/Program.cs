@@ -12,7 +12,7 @@ var builder = new ConfigurationBuilder()
 IConfigurationRoot configuration = builder.Build();
 
 // PICK either app or interactive authentication
-var authTokenService = ExOAppAuthorization.Create(configuration["AppId"], configuration["PfxPath"], configuration["Organization"]);
+var authTokenService = ExOAppAuthorization.Create(configuration["AppId"], configuration["Organization"], configuration["PfxPath"]);
 // var authTokenService = ExOInteractiveAuthorization.Create();
 var (tenantId, authResult) = await authTokenService.AcquireFirstTokenParseTenantId();
 

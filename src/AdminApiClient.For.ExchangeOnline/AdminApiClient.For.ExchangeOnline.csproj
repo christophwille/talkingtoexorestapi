@@ -4,6 +4,26 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<Version>3.1.0</Version>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/christophwille/talkingtoexorestapi</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/christophwille/talkingtoexorestapi.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<DebugType>embedded</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<Authors>Christoph Wille</Authors>
+		<Description>Client for Exchange Online OData REST API</Description>
+		<PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<None Include="docs\PackageReadme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,9 +40,16 @@
 		<PackageReference Include="Microsoft.OData.Edm" Version="7.14.0" />
 		<PackageReference Include="Microsoft.Spatial" Version="7.14.0" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-		<PackageReference Include="System.Text.Json" Version="7.0.1" />
+		<PackageReference Include="System.Text.Json" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.49.1" />
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.26.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	
 </Project>
