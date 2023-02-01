@@ -8,22 +8,22 @@
 
 	<ItemGroup>
 		<Reference Include="Microsoft.Exchange.Management.AdminApiProvider">
-			<HintPath>..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.Exchange.Management.AdminApiProvider.dll</HintPath>
+			<HintPath>..\..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.Exchange.Management.AdminApiProvider.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.OData.Client">
-			<HintPath>..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.OData.Client.dll</HintPath>
+			<HintPath>..\..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.OData.Client.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.OData.Core">
-			<HintPath>..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.OData.Core.dll</HintPath>
+			<HintPath>..\..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.OData.Core.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.OData.Edm">
-			<HintPath>..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.OData.Edm.dll</HintPath>
+			<HintPath>..\..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.OData.Edm.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Online.CSE.RestApiPowerShellModule.Instrumentation">
-			<HintPath>..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.Online.CSE.RestApiPowerShellModule.Instrumentation.dll</HintPath>
+			<HintPath>..\..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.Online.CSE.RestApiPowerShellModule.Instrumentation.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Spatial">
-			<HintPath>..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.Spatial.dll</HintPath>
+			<HintPath>..\..\..\..\_exo3module_unpacked\3.1.0\netCore\Microsoft.Spatial.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 
