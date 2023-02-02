@@ -29,7 +29,9 @@ var (tenantId, authResult) = await authTokenService.AcquireFirstTokenParseTenant
 //var allMailboxes = await Scenario_SimpleODataClient_GeneratedDto(followNextPageLinks: false);
 //Console.WriteLine(allMailboxes.Count);
 
-var firstHundred = await Scenario_SimpleODataClient_OptimizeWithCustomDto();
+// var firstHundred = await Scenario_SimpleODataClient_OptimizeWithCustomDto();
+
+await Scenario_SimpleODataClient_VariousQueries();
 
 Console.ReadKey();
 
@@ -133,5 +135,35 @@ async Task Scenario_MsODataClientRaw()
         {
             Console.WriteLine(m.UserPrincipalName);
         }
+    }
+}
+
+async Task Scenario_SimpleODataClient_VariousQueries()
+{
+    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
+    {
+        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
+        BeforeRequest = (message) => message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken)
+    });
+
+    var resultsDynDGroup = await GetCollection<ExO.DynamicDistributionGroup>();
+    var resultsDGroup = await GetCollection<ExO.EligibleDistributionGroup>();
+    var resultsUnifiedGroup = await GetCollection<ExO.UnifiedGroup>();
+
+    Console.WriteLine($"dyndg {resultsDynDGroup.Count} dg {resultsDGroup.Count} unifiedg {resultsUnifiedGroup.Count}");
+
+    async Task<List<T>> GetCollection<T>() where T : class
+    {
+        var annotations = new ODataFeedAnnotations();
+        var coll = (await client
+            .For<T>()
+            .FindEntriesAsync(annotations))
+            .ToList();
+
+        while (annotations.NextPageLink != null)
+        {
+            coll.AddRange(await client.For<T>().FindEntriesAsync(annotations.NextPageLink, annotations));
+        }
+        return coll;
     }
 }
