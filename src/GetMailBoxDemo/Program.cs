@@ -66,6 +66,7 @@ async Task<List<ExO.Mailbox>> Scenario_SimpleODataClient_GeneratedDto(bool follo
         {
             var ar = await authTokenService.AcquireToken();
             message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", ar.AccessToken);
+            message.Headers.Add("Prefer", $"odata.maxpagesize=1000;"); // Default page size without this is 100
         }
     });
 
