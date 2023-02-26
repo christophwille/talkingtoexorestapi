@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.OData.Client;
 using Simple.OData.Client;
+using System;
 using System.Net.Http.Headers;
+using System.Security.Principal;
 using ExO = AdminApiClient.For.ExchangeOnline.OData;
 
 var builder = new ConfigurationBuilder()
@@ -31,7 +33,8 @@ var (tenantId, authResult) = await authTokenService.AcquireFirstTokenParseTenant
 
 // var firstHundred = await Scenario_SimpleODataClient_OptimizeWithCustomDto();
 
-await Scenario_SimpleODataClient_VariousQueries();
+// await Scenario_SimpleODataClient_VariousQueries();
+await Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc();
 
 Console.ReadKey();
 
@@ -148,8 +151,13 @@ async Task Scenario_SimpleODataClient_VariousQueries()
     });
 
     var resultsDynDGroup = await GetCollection<ExO.DynamicDistributionGroup>();
+    foreach (var r in resultsDynDGroup) Console.WriteLine(r.Identity);
+
     var resultsDGroup = await GetCollection<ExO.EligibleDistributionGroup>();
+    foreach (var d in resultsDGroup) Console.WriteLine(d.Identity);
+
     var resultsUnifiedGroup = await GetCollection<ExO.UnifiedGroup>();
+    foreach (var d in resultsUnifiedGroup) Console.WriteLine(d.Identity);
 
     Console.WriteLine($"dyndg {resultsDynDGroup.Count} dg {resultsDGroup.Count} unifiedg {resultsUnifiedGroup.Count}");
 
@@ -167,4 +175,46 @@ async Task Scenario_SimpleODataClient_VariousQueries()
         }
         return coll;
     }
+}
+
+async Task Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc()
+{
+    string localMetadata = await File.ReadAllTextAsync("../../../../../docs/metadata-asof-20230131.xml");
+
+    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
+    {
+        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
+        BeforeRequest = (message) =>
+        {
+            message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+            message.Headers.Add("Prefer", $"odata.maxpagesize=1000;");
+        },
+        IgnoreResourceNotFoundException = true, // null instead of 404 on retrieval
+        MetadataDocument = localMetadata        // save one recurring roundtrip to the server for $metadata endpoint
+
+    });
+
+    // Set up scenario by picking out first mailbox (yes, potentially slow because of maxpagesize=1000)
+    var firstMailboxFound = (await client
+        .For<ExO.Mailbox>()
+        .FindEntriesAsync())
+        .FirstOrDefault();
+    string identity = firstMailboxFound.Identity;
+
+    // Find exactly one Mailbox by Key (repetitive, but shows simple top-level collection usage of Key)
+    var propertySets = string.Join(",", new[] { "Delivery" });
+    var theMailbox = await client
+        .For<ExO.Mailbox>()
+        .Key(identity)
+        .QueryOptions($"PropertySet={propertySets}")
+        .FindEntryAsync();
+
+    // Find permissions for Mailbox (drill into dependent collection)
+    var permissionsForMailbox = (await client
+        .For<ExO.Mailbox>()
+        .Key(identity)
+        .NavigateTo(x => x.MailboxPermission)
+        .As<ExO.MailboxPermission>()
+        .FindEntriesAsync())
+        .ToList();
 }
