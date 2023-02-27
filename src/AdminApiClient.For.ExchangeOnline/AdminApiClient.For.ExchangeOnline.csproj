@@ -17,7 +17,7 @@
 		<Description>Client for Exchange Online OData REST API</Description>
 		<PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<None Include="docs\PackageReadme.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
@@ -28,6 +28,10 @@
 
 	<ItemGroup>
 		<None Remove="Connected Services\ExchangeOnlineAdminApi\ExchangeOnlineAdminApiCsdl.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="..\..\docs\metadata-asof-20230131.xml" Link="Resource\metadata.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -51,5 +55,9 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
-	
+
+	<ItemGroup>
+		<Folder Include="Resource\" />
+	</ItemGroup>
+
 </Project>
