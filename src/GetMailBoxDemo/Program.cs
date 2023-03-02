@@ -1,4 +1,5 @@
 ﻿using AdminApiClient.For.ExchangeOnline;
+using AdminApiClient.For.ExchangeOnline.OData;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OData.Client;
 using Simple.OData.Client;
@@ -34,7 +35,8 @@ var (tenantId, authResult) = await authTokenService.AcquireFirstTokenParseTenant
 // var firstHundred = await Scenario_SimpleODataClient_OptimizeWithCustomDto();
 
 // await Scenario_SimpleODataClient_VariousQueries();
-await Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc();
+// await Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc();
+await Scenario_SimpleODataClient_MailboxStatistics();
 
 Console.ReadKey();
 
@@ -217,4 +219,37 @@ async Task Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc()
         .As<ExO.MailboxPermission>()
         .FindEntriesAsync())
         .ToList();
+}
+
+async Task Scenario_SimpleODataClient_MailboxStatistics()
+{
+    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
+    {
+        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
+        BeforeRequest = (message) =>
+        {
+            message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+        }
+    });
+
+    string identity = "SharedMBX8727602@lillich.onmicrosoft.com";
+    var propertySets = string.Join(",", new[] { "Quota", "StatisticsSeed", "Minimum" });
+
+    var result = (await client
+       .For<ExO.Mailbox>()
+       .Key(identity)
+       .QueryOptions($"PropertySet={propertySets}")
+       .FindEntryAsync());
+
+    string receiveQuota = result.ProhibitSendReceiveQuota;
+    string sendQuota = result.ProhibitSendQuota;
+    string warningQuota = result.IssueWarningQuota;
+
+    var stats = await client
+       .For<ExO.Mailbox>()
+       .Key(identity)
+       .Function<MailboxStatistics>("Exchange.GetMailboxStatistics")
+       .ExecuteAsSingleAsync();
+
+    var tis = stats.TotalItemSize;
 }
