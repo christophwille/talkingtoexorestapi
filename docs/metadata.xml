@@ -3813,7 +3813,6 @@
 				<Property Name="TestModeBccToRecipients" Type="Collection(Edm.String)" />
 				<Property Name="FalsePositiveAdditionalRecipients" Type="Collection(Edm.String)" />
 				<Property Name="QuarantineRetentionPeriod" Type="Edm.Int32" />
-				<Property Name="EndUserSpamNotificationFrequency" Type="Edm.Int32" />
 				<Property Name="TestModeAction" Type="Exchange.SpamFilteringTestModeAction" />
 				<Property Name="IncreaseScoreWithImageLinks" Type="Exchange.SpamFilteringOption" />
 				<Property Name="IncreaseScoreWithNumericIps" Type="Exchange.SpamFilteringOption" />
@@ -3836,15 +3835,9 @@
 				<Property Name="RegionBlockList" Type="Collection(Edm.String)" />
 				<Property Name="HighConfidenceSpamAction" Type="Exchange.SpamFilteringAction" />
 				<Property Name="SpamAction" Type="Exchange.SpamFilteringAction" />
-				<Property Name="EnableEndUserSpamNotifications" Type="Edm.Boolean" />
 				<Property Name="DownloadLink" Type="Edm.Boolean" />
 				<Property Name="EnableRegionBlockList" Type="Edm.Boolean" />
 				<Property Name="EnableLanguageBlockList" Type="Edm.Boolean" />
-				<Property Name="EndUserSpamNotificationCustomFromAddress" Type="Edm.String" />
-				<Property Name="EndUserSpamNotificationCustomFromName" Type="Edm.String" />
-				<Property Name="EndUserSpamNotificationCustomSubject" Type="Edm.String" />
-				<Property Name="EndUserSpamNotificationLanguage" Type="Exchange.EsnLanguage" />
-				<Property Name="EndUserSpamNotificationLimit" Type="Edm.Int32" />
 				<Property Name="BulkThreshold" Type="Edm.Int32" />
 				<Property Name="ZapEnabled" Type="Edm.Boolean" />
 				<Property Name="InlineSafetyTipsEnabled" Type="Edm.Boolean" />
@@ -3874,7 +3867,6 @@
 								<PropertyPath>TestModeBccToRecipients</PropertyPath>
 								<PropertyPath>FalsePositiveAdditionalRecipients</PropertyPath>
 								<PropertyPath>QuarantineRetentionPeriod</PropertyPath>
-								<PropertyPath>EndUserSpamNotificationFrequency</PropertyPath>
 								<PropertyPath>TestModeAction</PropertyPath>
 								<PropertyPath>IncreaseScoreWithImageLinks</PropertyPath>
 								<PropertyPath>IncreaseScoreWithNumericIps</PropertyPath>
@@ -3897,15 +3889,9 @@
 								<PropertyPath>RegionBlockList</PropertyPath>
 								<PropertyPath>HighConfidenceSpamAction</PropertyPath>
 								<PropertyPath>SpamAction</PropertyPath>
-								<PropertyPath>EnableEndUserSpamNotifications</PropertyPath>
 								<PropertyPath>DownloadLink</PropertyPath>
 								<PropertyPath>EnableRegionBlockList</PropertyPath>
 								<PropertyPath>EnableLanguageBlockList</PropertyPath>
-								<PropertyPath>EndUserSpamNotificationCustomFromAddress</PropertyPath>
-								<PropertyPath>EndUserSpamNotificationCustomFromName</PropertyPath>
-								<PropertyPath>EndUserSpamNotificationCustomSubject</PropertyPath>
-								<PropertyPath>EndUserSpamNotificationLanguage</PropertyPath>
-								<PropertyPath>EndUserSpamNotificationLimit</PropertyPath>
 								<PropertyPath>BulkThreshold</PropertyPath>
 								<PropertyPath>ZapEnabled</PropertyPath>
 								<PropertyPath>InlineSafetyTipsEnabled</PropertyPath>
@@ -3976,69 +3962,6 @@
 				<Member Name="Quarantine" Value="5" />
 				<Member Name="NoAction" Value="6" />
 				<Member Name="BccMessage" Value="7" />
-			</EnumType>
-			<EnumType Name="EsnLanguage" UnderlyingType="Edm.Int64">
-				<Member Name="Default" Value="0" />
-				<Member Name="English" Value="1" />
-				<Member Name="French" Value="2" />
-				<Member Name="German" Value="3" />
-				<Member Name="Italian" Value="4" />
-				<Member Name="Japanese" Value="5" />
-				<Member Name="Spanish" Value="6" />
-				<Member Name="Korean" Value="7" />
-				<Member Name="Portuguese" Value="8" />
-				<Member Name="Russian" Value="9" />
-				<Member Name="ChineseSimplified" Value="10" />
-				<Member Name="ChineseTraditional" Value="11" />
-				<Member Name="Amharic" Value="12" />
-				<Member Name="Arabic" Value="13" />
-				<Member Name="Bulgarian" Value="14" />
-				<Member Name="BengaliIndia" Value="15" />
-				<Member Name="Catalan" Value="16" />
-				<Member Name="Czech" Value="17" />
-				<Member Name="Cyrillic" Value="18" />
-				<Member Name="Danish" Value="19" />
-				<Member Name="Greek" Value="20" />
-				<Member Name="Estonian" Value="21" />
-				<Member Name="Basque" Value="22" />
-				<Member Name="Persian" Value="23" />
-				<Member Name="Finnish" Value="24" />
-				<Member Name="Filipino" Value="25" />
-				<Member Name="Galician" Value="26" />
-				<Member Name="Gujarati" Value="27" />
-				<Member Name="Hebrew" Value="28" />
-				<Member Name="Hindi" Value="29" />
-				<Member Name="Croatian" Value="30" />
-				<Member Name="Hungarian" Value="31" />
-				<Member Name="Indonesian" Value="32" />
-				<Member Name="Icelandic" Value="33" />
-				<Member Name="Kazakh" Value="34" />
-				<Member Name="Kannada" Value="35" />
-				<Member Name="Lithuanian" Value="36" />
-				<Member Name="Latvian" Value="37" />
-				<Member Name="Malayalam" Value="38" />
-				<Member Name="Marathi" Value="39" />
-				<Member Name="Malay" Value="40" />
-				<Member Name="Dutch" Value="41" />
-				<Member Name="NorwegianNynorsk" Value="42" />
-				<Member Name="Norwegian" Value="43" />
-				<Member Name="Odia" Value="44" />
-				<Member Name="Polish" Value="45" />
-				<Member Name="PortuguesePortugal" Value="46" />
-				<Member Name="Romanian" Value="47" />
-				<Member Name="Slovak" Value="48" />
-				<Member Name="Slovenian" Value="49" />
-				<Member Name="SerbianCyrillic" Value="50" />
-				<Member Name="Serbian" Value="51" />
-				<Member Name="Swedish" Value="52" />
-				<Member Name="Swahili" Value="53" />
-				<Member Name="Tamil" Value="54" />
-				<Member Name="Telugu" Value="55" />
-				<Member Name="Thai" Value="56" />
-				<Member Name="Turkish" Value="57" />
-				<Member Name="Ukrainian" Value="58" />
-				<Member Name="Urdu" Value="59" />
-				<Member Name="Vietnamese" Value="60" />
 			</EnumType>
 			<EnumType Name="PhishFilteringAction" UnderlyingType="Edm.Int64">
 				<Member Name="Quarantine" Value="0" />

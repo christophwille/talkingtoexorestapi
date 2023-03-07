@@ -19,6 +19,9 @@ var authTokenService = ExOAppAuthorization.Create(configuration["AppId"], config
 // var authTokenService = ExOInteractiveAuthorization.Create();
 var (tenantId, authResult) = await authTokenService.AcquireFirstTokenParseTenantId();
 
+// ALWAYS get the current metadata document
+await GetCurrentMetadata();
+
 //string mailboxesAsString = await Scenario_PlainHttpAndJson();
 //Console.WriteLine(mailboxesAsString);
 
@@ -40,13 +43,19 @@ await Scenario_SimpleODataClient_MailboxStatistics();
 
 Console.ReadKey();
 
-async Task<string> Scenario_PlainHttpAndJson()
+async Task GetCurrentMetadata()
 {
     using var client = new HttpClient();
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
 
     string metadataDoc = await client.GetStringAsync($"https://outlook.office.com/adminApi/beta/{tenantId}/$metadata");
     await File.WriteAllTextAsync("metadata.xml", metadataDoc);
+}
+
+async Task<string> Scenario_PlainHttpAndJson()
+{
+    using var client = new HttpClient();
+    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
 
     return await client.GetStringAsync($"https://outlook.office.com/adminApi/beta/{tenantId}/Mailbox");
 }
