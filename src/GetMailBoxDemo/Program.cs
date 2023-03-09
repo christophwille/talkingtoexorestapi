@@ -190,7 +190,7 @@ async Task Scenario_SimpleODataClient_VariousQueries()
 
 async Task Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc()
 {
-    string localMetadata = await ExOMetadata.LoadFromResourceAsync();
+    string localMetadata = ExOMetadata.LoadFromResourceCached();
 
     var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
     {
