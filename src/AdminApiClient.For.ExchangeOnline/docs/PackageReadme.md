@@ -39,7 +39,9 @@ async Task<List<ExO.Mailbox>> SelectFilterUsingPropertySets()
         {
             var ar = await authTokenService.AcquireToken();
             message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", ar.AccessToken);
-        }
+            message.Headers.Add("Prefer", $"odata.maxpagesize=1000;");
+        },
+        MetadataDocument = ExOMetadata.LoadFromResourceCached()
     });
 
     var propertySets = string.Join(",", new[] { "Minimum", "AddressList" });

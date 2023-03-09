@@ -20,6 +20,10 @@ namespace AdminApiClient.For.ExchangeOnline
 
 
         private static string? metadataDocument = null;
+        /// <summary>
+        /// This saves one (initial) roundtrip to the endpoint for fetching $metadata document
+        /// </summary>
+        /// <returns></returns>
         public static string LoadFromResourceCached()
         {
             if (null != metadataDocument) return metadataDocument;
