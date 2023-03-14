@@ -1,3 +1,5 @@
+## OData Metadata Document
+
 Metadata document downloaded via following code fragment in GetMailBoxDemo project:
 
 ``` csharp
@@ -6,3 +8,7 @@ Metadata document downloaded via following code fragment in GetMailBoxDemo proje
 ```
 
 Formatted using https://jsonformatter.org/xml-formatter for easier diffing
+
+## ExO PS Decompilation
+
+See `decompile.bat`. Run in `unpackedexomoduledirectory\netCore`, eg `3.2.0-preview1\netCore`
