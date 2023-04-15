@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="4.0"
 	xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
 	<edmx:DataServices>
@@ -2898,6 +2899,11 @@
 					</Record>
 				</Annotation>
 			</EntityType>
+			<ComplexType Name="RolePermission" BaseType="Exchange.ComplexEntry">
+				<Property Name="allowedResourceActions" Type="Collection(Edm.String)" />
+				<Property Name="excludedResourceActions" Type="Collection(Edm.String)" />
+				<Property Name="condition" Type="Edm.String" />
+			</ComplexType>
 			<EntityType Name="RoleDefinitions">
 				<Key>
 					<PropertyRef Name="id" />
@@ -2972,18 +2978,6 @@
 							<PropertyValue Property="DocumentationUrl" String="" />
 							<PropertyValue Property="Required" Bool="false" />
 						</Record>
-						<Record>
-							<PropertyValue Property="Name" String="Anr" />
-							<PropertyValue Property="Description" String="The Anr parameter specifies a string on which to perform an ambiguous name resolution (ANR) search. It must be atleast three character in length. You can specify a partial string and search for objects with an attribute that matches that string. The default attributes searched are: CommonName(CN), DisplayName, FirstName, LastName, Alias" />
-							<PropertyValue Property="DocumentationUrl" String="" />
-							<PropertyValue Property="Required" Bool="false" />
-						</Record>
-						<Record>
-							<PropertyValue Property="Name" String="OrganizationalUnit" />
-							<PropertyValue Property="Description" String="The OrganizationalUnit parameter filters the results based on the object&amp;apos;s location in Active Directory. Only objects that exist in the specified location are returned. Valid input for this parameter is an organizational unit (OU) or Org name or Org GUID or Org sistinguished name." />
-							<PropertyValue Property="DocumentationUrl" String="" />
-							<PropertyValue Property="Required" Bool="false" />
-						</Record>
 					</Collection>
 				</Annotation>
 				<Annotation Term="Org.OData.Capabilities.V1.UpdateRestrictions">
@@ -3011,7 +3005,6 @@
 								<PropertyPath>guid</PropertyPath>
 								<PropertyPath>identity</PropertyPath>
 								<PropertyPath>isBuiltIn</PropertyPath>
-								<PropertyPath>templateId</PropertyPath>
 								<PropertyPath>isServicePrincipalRole</PropertyPath>
 								<PropertyPath>allowedPrincipalTypes</PropertyPath>
 							</Collection>
@@ -3024,11 +3017,6 @@
 					</Record>
 				</Annotation>
 			</EntityType>
-			<ComplexType Name="RolePermission" BaseType="Exchange.ComplexEntry">
-				<Property Name="allowedResourceActions" Type="Collection(Edm.String)" />
-				<Property Name="excludedResourceActions" Type="Collection(Edm.String)" />
-				<Property Name="condition" Type="Edm.String" />
-			</ComplexType>
 			<EnumType Name="RolePrincipalTypes" UnderlyingType="Edm.Int64" IsFlags="true">
 				<Member Name="User" Value="1" />
 				<Member Name="ServicePrincipal" Value="2" />
@@ -3463,6 +3451,7 @@
 				<Property Name="recipientRestrictionFilter" Type="Edm.String" />
 				<Property Name="type" Type="Exchange.ScopeRestrictionType" />
 				<Property Name="displayName" Type="Edm.String" />
+				<Property Name="customAttributes" Type="Exchange.GenericHashTable" />
 				<Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
 					<Record>
 						<PropertyValue Property="Filterable" Bool="true" />
@@ -3486,6 +3475,7 @@
 								<PropertyPath>recipientRestrictionFilter</PropertyPath>
 								<PropertyPath>type</PropertyPath>
 								<PropertyPath>displayName</PropertyPath>
+								<PropertyPath>customAttributes</PropertyPath>
 							</Collection>
 						</PropertyValue>
 					</Record>
@@ -3525,7 +3515,6 @@
 								<PropertyPath>tenantOrganizationFilter</PropertyPath>
 								<PropertyPath>scopeRestrictionType</PropertyPath>
 								<PropertyPath>exclusive</PropertyPath>
-								<PropertyPath>name</PropertyPath>
 								<PropertyPath>adminDisplayName</PropertyPath>
 								<PropertyPath>version</PropertyPath>
 								<PropertyPath>distinguishedName</PropertyPath>
@@ -3533,6 +3522,7 @@
 								<PropertyPath>identity</PropertyPath>
 								<PropertyPath>type</PropertyPath>
 								<PropertyPath>displayName</PropertyPath>
+								<PropertyPath>customAttributes</PropertyPath>
 							</Collection>
 						</PropertyValue>
 						<PropertyValue Property="NonUpdatableNavigationProperties">
