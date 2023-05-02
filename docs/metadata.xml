@@ -4145,6 +4145,7 @@
 				<Property Name="Action" Type="Exchange.MalwareFilteringAction" />
 				<Property Name="FileTypeAction" Type="Exchange.FileTypeFilteringAction" />
 				<Property Name="IsDefault" Type="Edm.Boolean" />
+				<Property Name="IsPolicyOverrideApplied" Type="Edm.Boolean" />
 				<Property Name="CustomNotifications" Type="Edm.Boolean" />
 				<Property Name="EnableInternalSenderNotifications" Type="Edm.Boolean" />
 				<Property Name="EnableExternalSenderNotifications" Type="Edm.Boolean" />
@@ -4181,6 +4182,7 @@
 								<PropertyPath>Action</PropertyPath>
 								<PropertyPath>FileTypeAction</PropertyPath>
 								<PropertyPath>IsDefault</PropertyPath>
+								<PropertyPath>IsPolicyOverrideApplied</PropertyPath>
 								<PropertyPath>CustomNotifications</PropertyPath>
 								<PropertyPath>EnableInternalSenderNotifications</PropertyPath>
 								<PropertyPath>EnableExternalSenderNotifications</PropertyPath>
@@ -4217,6 +4219,7 @@
 							<Collection>
 								<PropertyPath>Identity</PropertyPath>
 								<PropertyPath>IsDefault</PropertyPath>
+								<PropertyPath>IsPolicyOverrideApplied</PropertyPath>
 								<PropertyPath>RecommendedPolicyType</PropertyPath>
 								<PropertyPath>WhenChanged</PropertyPath>
 								<PropertyPath>WhenCreated</PropertyPath>
@@ -5684,6 +5687,9 @@
 				<Property Name="Action" Type="Edm.String" />
 				<Property Name="MessageTraceId" Type="Edm.Guid" />
 			</ComplexType>
+			<ComplexType Name="RbacResults" BaseType="Exchange.ComplexEntry">
+				<Property Name="Results" Type="Collection(Edm.Boolean)" />
+			</ComplexType>
 			<ComplexType Name="CmdletInvokeInputType" BaseType="Exchange.ComplexEntry">
 				<Property Name="CmdletName" Type="Edm.String" Nullable="false" />
 				<Property Name="Parameters" Type="Exchange.GenericHashTable" />
@@ -5810,6 +5816,10 @@
 				<Parameter Name="QueryTable" Type="Exchange.GenericHashTable" />
 				<ReturnType Type="Collection(Exchange.MailDetailDlpPolicyReport)" />
 			</Action>
+			<Action Name="RbacQuery">
+				<Parameter Name="QueryTable" Type="Exchange.GenericHashTable" />
+				<ReturnType Type="Exchange.RbacResults" />
+			</Action>
 			<Action Name="Initialize">
 				<ReturnType Type="Edm.String" />
 			</Action>
@@ -5871,6 +5881,7 @@
 				<ActionImport Name="GetMailDetailTransportRuleReport" Action="Exchange.GetMailDetailTransportRuleReport" />
 				<ActionImport Name="GetMailTrafficPolicyReport" Action="Exchange.GetMailTrafficPolicyReport" />
 				<ActionImport Name="GetMailDetailDlpPolicyReport" Action="Exchange.GetMailDetailDlpPolicyReport" />
+				<ActionImport Name="RbacQuery" Action="Exchange.RbacQuery" />
 				<ActionImport Name="Initialize" Action="Exchange.Initialize" />
 				<ActionImport Name="InvokeCommand" Action="Exchange.InvokeCommand" />
 				<EntitySet Name="Divergence" EntityType="Exchange.Divergence" />
