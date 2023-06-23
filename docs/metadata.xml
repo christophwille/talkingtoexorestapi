@@ -1311,7 +1311,6 @@
 				<Property Name="SamAccountName" Type="Edm.String" />
 				<Property Name="SmtpClientAuthenticationDisabled" Type="Edm.Boolean" />
 				<Property Name="OneWinNativeOutlookEnabled" Type="Edm.Boolean" />
-				<Property Name="BulkMailEnabled" Type="Edm.Boolean" />
 				<Property Name="OWAEnabled" Type="Edm.Boolean" />
 				<Property Name="DistinguishedName" Type="Edm.String" />
 				<Property Name="ExchangeObjectId" Type="Edm.String" />
@@ -1380,7 +1379,6 @@
 								<PropertyPath>LinkedMasterAccount</PropertyPath>
 								<PropertyPath>SmtpClientAuthenticationDisabled</PropertyPath>
 								<PropertyPath>OneWinNativeOutlookEnabled</PropertyPath>
-								<PropertyPath>BulkMailEnabled</PropertyPath>
 								<PropertyPath>ExchangeObjectId</PropertyPath>
 								<PropertyPath>OrganizationId</PropertyPath>
 								<PropertyPath>PublicFolderClientAccess</PropertyPath>
@@ -3840,7 +3838,6 @@
 				<Property Name="PhishSpamAction" Type="Exchange.SpamFilteringAction" />
 				<Property Name="SpamZapEnabled" Type="Edm.Boolean" />
 				<Property Name="PhishZapEnabled" Type="Edm.Boolean" />
-				<Property Name="ApplyPhishActionToIntraOrg" Type="Edm.Boolean" />
 				<Property Name="IntraOrgFilterState" Type="Exchange.IntraOrgFilterState" />
 				<Property Name="HighConfidencePhishAction" Type="Exchange.PhishFilteringAction" />
 				<Property Name="RecommendedPolicyType" Type="Exchange.RecommendedPolicyType" />
@@ -3895,7 +3892,6 @@
 								<PropertyPath>PhishSpamAction</PropertyPath>
 								<PropertyPath>SpamZapEnabled</PropertyPath>
 								<PropertyPath>PhishZapEnabled</PropertyPath>
-								<PropertyPath>ApplyPhishActionToIntraOrg</PropertyPath>
 								<PropertyPath>IntraOrgFilterState</PropertyPath>
 								<PropertyPath>HighConfidencePhishAction</PropertyPath>
 								<PropertyPath>RecommendedPolicyType</PropertyPath>
@@ -4118,8 +4114,8 @@
 				<Member Name="Quarantine" Value="1" />
 			</EnumType>
 			<EnumType Name="SpoofDmarcRejectAction" UnderlyingType="Edm.Int64">
-				<Member Name="Quarantine" Value="0" />
-				<Member Name="Reject" Value="1" />
+				<Member Name="Reject" Value="0" />
+				<Member Name="Quarantine" Value="1" />
 			</EnumType>
 			<EnumType Name="SpoofDmarcQuarantineAction" UnderlyingType="Edm.Int64">
 				<Member Name="Quarantine" Value="0" />
