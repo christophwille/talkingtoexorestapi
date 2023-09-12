@@ -468,6 +468,9 @@
 				<Property Name="LitigationHoldDuration" Type="Edm.String" />
 				<Property Name="PitrEnabled" Type="Edm.Boolean" />
 				<Property Name="PitrCopyIntervalInSeconds" Type="Edm.Int16" />
+				<Property Name="PitrPaused" Type="Edm.Boolean" />
+				<Property Name="PitrPausedTimestamp" Type="Edm.String" />
+				<Property Name="PitrOffboardedTimestamp" Type="Edm.String" />
 				<Property Name="ManagedFolderMailboxPolicy" Type="Edm.String" />
 				<Property Name="RetentionPolicy" Type="Edm.String" />
 				<Property Name="AddressBookPolicy" Type="Edm.String" />
@@ -717,6 +720,9 @@
 								<PropertyPath>LitigationHoldDuration</PropertyPath>
 								<PropertyPath>PitrEnabled</PropertyPath>
 								<PropertyPath>PitrCopyIntervalInSeconds</PropertyPath>
+								<PropertyPath>PitrPaused</PropertyPath>
+								<PropertyPath>PitrPausedTimestamp</PropertyPath>
+								<PropertyPath>PitrOffboardedTimestamp</PropertyPath>
 								<PropertyPath>UnifiedMailbox</PropertyPath>
 								<PropertyPath>MailboxLocations</PropertyPath>
 								<PropertyPath>ExchangeSecurityDescriptor</PropertyPath>
