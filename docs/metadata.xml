@@ -471,6 +471,7 @@
 				<Property Name="PitrPaused" Type="Edm.Boolean" />
 				<Property Name="PitrPausedTimestamp" Type="Edm.String" />
 				<Property Name="PitrOffboardedTimestamp" Type="Edm.String" />
+				<Property Name="PitrState" Type="Edm.String" />
 				<Property Name="ManagedFolderMailboxPolicy" Type="Edm.String" />
 				<Property Name="RetentionPolicy" Type="Edm.String" />
 				<Property Name="AddressBookPolicy" Type="Edm.String" />
@@ -723,6 +724,7 @@
 								<PropertyPath>PitrPaused</PropertyPath>
 								<PropertyPath>PitrPausedTimestamp</PropertyPath>
 								<PropertyPath>PitrOffboardedTimestamp</PropertyPath>
+								<PropertyPath>PitrState</PropertyPath>
 								<PropertyPath>UnifiedMailbox</PropertyPath>
 								<PropertyPath>MailboxLocations</PropertyPath>
 								<PropertyPath>ExchangeSecurityDescriptor</PropertyPath>
@@ -2092,6 +2094,7 @@
 				<Property Name="LinkedMasterAccount" Type="Edm.String" />
 				<Property Name="ResetPasswordOnNextLogon" Type="Edm.Boolean" />
 				<Property Name="RemotePowerShellEnabled" Type="Edm.Boolean" />
+				<Property Name="EXOModuleEnabled" Type="Edm.Boolean" />
 				<Property Name="SamAccountName" Type="Edm.String" />
 				<Property Name="Office" Type="Edm.String" />
 				<Property Name="UserPrincipalName" Type="Edm.String" />
@@ -4883,6 +4886,7 @@
 				<Property Name="displayName" Type="Edm.String" />
 				<Property Name="externalDirectoryObjectId" Type="Edm.String" />
 				<Property Name="exchangeObjectId" Type="Edm.String" />
+				<Property Name="guid" Type="Edm.String" />
 				<Property Name="recipientType" Type="Edm.String" />
 				<Property Name="recipientTypeDetails" Type="Edm.String" />
 				<Property Name="customAttribute14" Type="Edm.String" />
@@ -4897,6 +4901,7 @@
 								<PropertyPath>displayName</PropertyPath>
 								<PropertyPath>externalDirectoryObjectId</PropertyPath>
 								<PropertyPath>exchangeObjectId</PropertyPath>
+								<PropertyPath>guid</PropertyPath>
 								<PropertyPath>recipientType</PropertyPath>
 								<PropertyPath>recipientTypeDetails</PropertyPath>
 								<PropertyPath>customAttribute14</PropertyPath>
@@ -4930,6 +4935,7 @@
 								<PropertyPath>displayName</PropertyPath>
 								<PropertyPath>externalDirectoryObjectId</PropertyPath>
 								<PropertyPath>exchangeObjectId</PropertyPath>
+								<PropertyPath>guid</PropertyPath>
 								<PropertyPath>recipientType</PropertyPath>
 								<PropertyPath>recipientTypeDetails</PropertyPath>
 								<PropertyPath>customAttribute14</PropertyPath>
@@ -4947,6 +4953,7 @@
 					<PropertyRef Name="exchangeObjectId" />
 				</Key>
 				<Property Name="exchangeObjectId" Type="Edm.String" />
+				<Property Name="guid" Type="Edm.String" />
 				<Property Name="id" Type="Edm.String" />
 				<Property Name="name" Type="Edm.String" />
 				<Property Name="displayName" Type="Edm.String" />
@@ -4967,6 +4974,7 @@
 						<PropertyValue Property="NonFilterableProperties">
 							<Collection>
 								<PropertyPath>exchangeObjectId</PropertyPath>
+								<PropertyPath>guid</PropertyPath>
 								<PropertyPath>id</PropertyPath>
 								<PropertyPath>name</PropertyPath>
 								<PropertyPath>displayName</PropertyPath>
@@ -5012,6 +5020,7 @@
 						<PropertyValue Property="NonUpdatableProperties">
 							<Collection>
 								<PropertyPath>exchangeObjectId</PropertyPath>
+								<PropertyPath>guid</PropertyPath>
 								<PropertyPath>id</PropertyPath>
 								<PropertyPath>distinguishedName</PropertyPath>
 								<PropertyPath>whenChanged</PropertyPath>
@@ -5692,6 +5701,291 @@
 			<ComplexType Name="RbacResults" BaseType="Exchange.ComplexEntry">
 				<Property Name="Results" Type="Collection(Edm.Boolean)" />
 			</ComplexType>
+			<EntityType Name="UnifiedRbacRoleDefinition">
+				<Key>
+					<PropertyRef Name="id" />
+				</Key>
+				<Property Name="id" Type="Edm.String" Nullable="false" />
+				<Property Name="description" Type="Edm.String" />
+				<Property Name="displayName" Type="Edm.String" />
+				<Property Name="rolePermissions" Type="Collection(Exchange.RolePermission)" />
+				<Property Name="isEnabled" Type="Edm.Boolean" />
+				<Property Name="version" Type="Edm.String" />
+				<Property Name="isBuiltIn" Type="Edm.Boolean" />
+				<Property Name="templateId" Type="Edm.String" />
+				<Property Name="allowedPrincipalTypes" Type="Exchange.RolePrincipalTypes" />
+				<Property Name="parent" Type="Edm.String" Nullable="false" />
+				<Property Name="roleEntries" Type="Collection(Edm.String)" />
+				<Property Name="isRootRole" Type="Edm.Boolean" />
+				<Property Name="isEndUserRole" Type="Edm.Boolean" />
+				<Property Name="isDeprecated" Type="Edm.Boolean" />
+				<Property Name="isValid" Type="Edm.Boolean" />
+				<Property Name="roleType" Type="Edm.String" />
+				<Property Name="enabledCmdlets" Type="Collection(Edm.String)" />
+				<Property Name="guid" Type="Edm.String" />
+				<Property Name="identity" Type="Edm.String" />
+				<Property Name="isServicePrincipalRole" Type="Edm.Boolean" />
+				<NavigationProperty Name="inheritsPermissionsFrom" Type="Exchange.UnifiedRbacRoleDefinition" Nullable="false" ContainsTarget="true" />
+				<Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="Filterable" Bool="true" />
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>id</PropertyPath>
+								<PropertyPath>rolePermissions</PropertyPath>
+								<PropertyPath>isEnabled</PropertyPath>
+								<PropertyPath>version</PropertyPath>
+								<PropertyPath>isBuiltIn</PropertyPath>
+								<PropertyPath>templateId</PropertyPath>
+								<PropertyPath>allowedPrincipalTypes</PropertyPath>
+								<PropertyPath>parent</PropertyPath>
+								<PropertyPath>roleEntries</PropertyPath>
+								<PropertyPath>isRootRole</PropertyPath>
+								<PropertyPath>isEndUserRole</PropertyPath>
+								<PropertyPath>isDeprecated</PropertyPath>
+								<PropertyPath>isValid</PropertyPath>
+								<PropertyPath>roleType</PropertyPath>
+								<PropertyPath>enabledCmdlets</PropertyPath>
+								<PropertyPath>guid</PropertyPath>
+								<PropertyPath>identity</PropertyPath>
+								<PropertyPath>isServicePrincipalRole</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Org.OData.Capabilities.V1.CustomQueryOptions">
+					<Collection>
+						<Record>
+							<PropertyValue Property="Name" String="PropertySet" />
+							<PropertyValue Property="Description" String="Represents what fields should be part of result object. E.g ?PropertySet=Minimum returns only min set, ?PropertySet=ActiveSync will return only Active sync related fields. This field is complementary to $select. E.g $select=Abc&amp;amp;PropertySet=ActiveSync service will return both Abc field and ActiveSync fields." />
+							<PropertyValue Property="DocumentationUrl" String="" />
+							<PropertyValue Property="Required" Bool="false" />
+						</Record>
+						<Record>
+							<PropertyValue Property="Name" String="isEncoded" />
+							<PropertyValue Property="Description" String="Represents whether the parameters are base64 encoded or not. Applicable for Identities of Entity types and for functions GetRecipientPermissionByFilters (only Identity and Trustee), BySMTPAddress of entity types Recipient and CasMailbox. For example, /Mailbox(Identity)?isEncoded=true, says that the Identity is base64 encoded.Similarly for /Recipient/Exchange.GetRecipientPermissionByFilters(identity=Identity,trustee=Trustee Type,accessRight=Access Right)?isEncoded=true, says Identity and Trustee are base64 encoded" />
+							<PropertyValue Property="DocumentationUrl" String="" />
+							<PropertyValue Property="Required" Bool="false" />
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="Org.OData.Capabilities.V1.UpdateRestrictions">
+					<Record>
+						<PropertyValue Property="Updatable" Bool="true" />
+						<PropertyValue Property="NonUpdatableProperties">
+							<Collection>
+								<PropertyPath>description</PropertyPath>
+								<PropertyPath>displayName</PropertyPath>
+								<PropertyPath>isEnabled</PropertyPath>
+								<PropertyPath>version</PropertyPath>
+								<PropertyPath>isBuiltIn</PropertyPath>
+								<PropertyPath>allowedPrincipalTypes</PropertyPath>
+								<PropertyPath>parent</PropertyPath>
+								<PropertyPath>roleEntries</PropertyPath>
+								<PropertyPath>isRootRole</PropertyPath>
+								<PropertyPath>isEndUserRole</PropertyPath>
+								<PropertyPath>isDeprecated</PropertyPath>
+								<PropertyPath>isValid</PropertyPath>
+								<PropertyPath>roleType</PropertyPath>
+								<PropertyPath>enabledCmdlets</PropertyPath>
+								<PropertyPath>guid</PropertyPath>
+								<PropertyPath>identity</PropertyPath>
+								<PropertyPath>isServicePrincipalRole</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="NonUpdatableNavigationProperties">
+							<Collection>
+								<PropertyPath>inheritsPermissionsFrom</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</EntityType>
+			<EntityType Name="UnifiedRbacManagementScope">
+				<Key>
+					<PropertyRef Name="id" />
+				</Key>
+				<Property Name="id" Type="Edm.String" />
+				<Property Name="type" Type="Exchange.ScopeRestrictionType" />
+				<Property Name="displayName" Type="Edm.String" />
+				<Property Name="customAttributes" Type="Exchange.GenericHashTable" />
+				<Property Name="recipientRoot" Type="Edm.String" />
+				<Property Name="filter" Type="Edm.String" />
+				<Property Name="recipientFilter" Type="Edm.String" />
+				<Property Name="exclusive" Type="Edm.Boolean" />
+				<Property Name="name" Type="Edm.String" />
+				<Property Name="distinguishedName" Type="Edm.String" />
+				<Property Name="guid" Type="Edm.String" />
+				<Property Name="identity" Type="Edm.String" />
+				<Property Name="recipientRestrictionFilter" Type="Edm.String" />
+				<Property Name="scopeRestrictionType" Type="Exchange.ScopeRestrictionType" />
+				<Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="Filterable" Bool="true" />
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>id</PropertyPath>
+								<PropertyPath>type</PropertyPath>
+								<PropertyPath>displayName</PropertyPath>
+								<PropertyPath>customAttributes</PropertyPath>
+								<PropertyPath>recipientRoot</PropertyPath>
+								<PropertyPath>filter</PropertyPath>
+								<PropertyPath>recipientFilter</PropertyPath>
+								<PropertyPath>exclusive</PropertyPath>
+								<PropertyPath>name</PropertyPath>
+								<PropertyPath>distinguishedName</PropertyPath>
+								<PropertyPath>guid</PropertyPath>
+								<PropertyPath>identity</PropertyPath>
+								<PropertyPath>recipientRestrictionFilter</PropertyPath>
+								<PropertyPath>scopeRestrictionType</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Org.OData.Capabilities.V1.CustomQueryOptions">
+					<Collection>
+						<Record>
+							<PropertyValue Property="Name" String="PropertySet" />
+							<PropertyValue Property="Description" String="Represents what fields should be part of result object. E.g ?PropertySet=Minimum returns only min set, ?PropertySet=ActiveSync will return only Active sync related fields. This field is complementary to $select. E.g $select=Abc&amp;amp;PropertySet=ActiveSync service will return both Abc field and ActiveSync fields." />
+							<PropertyValue Property="DocumentationUrl" String="" />
+							<PropertyValue Property="Required" Bool="false" />
+						</Record>
+						<Record>
+							<PropertyValue Property="Name" String="isEncoded" />
+							<PropertyValue Property="Description" String="Represents whether the parameters are base64 encoded or not. Applicable for Identities of Entity types and for functions GetRecipientPermissionByFilters (only Identity and Trustee), BySMTPAddress of entity types Recipient and CasMailbox. For example, /Mailbox(Identity)?isEncoded=true, says that the Identity is base64 encoded.Similarly for /Recipient/Exchange.GetRecipientPermissionByFilters(identity=Identity,trustee=Trustee Type,accessRight=Access Right)?isEncoded=true, says Identity and Trustee are base64 encoded" />
+							<PropertyValue Property="DocumentationUrl" String="" />
+							<PropertyValue Property="Required" Bool="false" />
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="Org.OData.Capabilities.V1.UpdateRestrictions">
+					<Record>
+						<PropertyValue Property="Updatable" Bool="true" />
+						<PropertyValue Property="NonUpdatableProperties">
+							<Collection>
+								<PropertyPath>type</PropertyPath>
+								<PropertyPath>customAttributes</PropertyPath>
+								<PropertyPath>filter</PropertyPath>
+								<PropertyPath>recipientFilter</PropertyPath>
+								<PropertyPath>exclusive</PropertyPath>
+								<PropertyPath>distinguishedName</PropertyPath>
+								<PropertyPath>guid</PropertyPath>
+								<PropertyPath>identity</PropertyPath>
+								<PropertyPath>scopeRestrictionType</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="NonUpdatableNavigationProperties">
+							<Collection />
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</EntityType>
+			<EntityType Name="UnifiedRbacRoleAssignment">
+				<Key>
+					<PropertyRef Name="id" />
+				</Key>
+				<Property Name="id" Type="Edm.String" Nullable="false" />
+				<Property Name="principalId" Type="Edm.String" />
+				<Property Name="roleDefinitionId" Type="Edm.String" />
+				<Property Name="directoryScopeId" Type="Edm.String" />
+				<Property Name="appScopeId" Type="Edm.String" />
+				<Property Name="identity" Type="Edm.String" />
+				<Property Name="user" Type="Edm.String" />
+				<Property Name="assignmentMethod" Type="Edm.String" />
+				<Property Name="roleAssigneeType" Type="Edm.String" />
+				<Property Name="roleAssignmentDelegationType" Type="Edm.String" />
+				<Property Name="customRecipientWriteScope" Type="Edm.String" />
+				<Property Name="customConfigWriteScope" Type="Edm.String" />
+				<Property Name="recipientReadScope" Type="Edm.String" />
+				<Property Name="configReadScope" Type="Edm.String" />
+				<Property Name="recipientWriteScope" Type="Edm.String" />
+				<Property Name="configWriteScope" Type="Edm.String" />
+				<Property Name="enabled" Type="Edm.Boolean" />
+				<Property Name="roleAssigneeName" Type="Edm.String" />
+				<Property Name="isValid" Type="Edm.Boolean" />
+				<Property Name="displayName" Type="Edm.String" />
+				<Property Name="distinguishedName" Type="Edm.String" />
+				<Property Name="guid" Type="Edm.String" />
+				<Property Name="recipientAdministrativeUnitScope" Type="Edm.String" />
+				<NavigationProperty Name="roleDefinition" Type="Exchange.UnifiedRbacRoleDefinition" Nullable="false" ContainsTarget="true" />
+				<NavigationProperty Name="appScope" Type="Exchange.UnifiedRbacManagementScope" Nullable="false" ContainsTarget="true" />
+				<Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="Filterable" Bool="true" />
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>id</PropertyPath>
+								<PropertyPath>directoryScopeId</PropertyPath>
+								<PropertyPath>appScopeId</PropertyPath>
+								<PropertyPath>identity</PropertyPath>
+								<PropertyPath>user</PropertyPath>
+								<PropertyPath>assignmentMethod</PropertyPath>
+								<PropertyPath>roleAssigneeType</PropertyPath>
+								<PropertyPath>roleAssignmentDelegationType</PropertyPath>
+								<PropertyPath>customRecipientWriteScope</PropertyPath>
+								<PropertyPath>customConfigWriteScope</PropertyPath>
+								<PropertyPath>recipientReadScope</PropertyPath>
+								<PropertyPath>configReadScope</PropertyPath>
+								<PropertyPath>recipientWriteScope</PropertyPath>
+								<PropertyPath>configWriteScope</PropertyPath>
+								<PropertyPath>enabled</PropertyPath>
+								<PropertyPath>roleAssigneeName</PropertyPath>
+								<PropertyPath>isValid</PropertyPath>
+								<PropertyPath>displayName</PropertyPath>
+								<PropertyPath>distinguishedName</PropertyPath>
+								<PropertyPath>guid</PropertyPath>
+								<PropertyPath>recipientAdministrativeUnitScope</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Org.OData.Capabilities.V1.CustomQueryOptions">
+					<Collection>
+						<Record>
+							<PropertyValue Property="Name" String="PropertySet" />
+							<PropertyValue Property="Description" String="Represents what fields should be part of result object. E.g ?PropertySet=Minimum returns only min set, ?PropertySet=ActiveSync will return only Active sync related fields. This field is complementary to $select. E.g $select=Abc&amp;amp;PropertySet=ActiveSync service will return both Abc field and ActiveSync fields." />
+							<PropertyValue Property="DocumentationUrl" String="" />
+							<PropertyValue Property="Required" Bool="false" />
+						</Record>
+						<Record>
+							<PropertyValue Property="Name" String="isEncoded" />
+							<PropertyValue Property="Description" String="Represents whether the parameters are base64 encoded or not. Applicable for Identities of Entity types and for functions GetRecipientPermissionByFilters (only Identity and Trustee), BySMTPAddress of entity types Recipient and CasMailbox. For example, /Mailbox(Identity)?isEncoded=true, says that the Identity is base64 encoded.Similarly for /Recipient/Exchange.GetRecipientPermissionByFilters(identity=Identity,trustee=Trustee Type,accessRight=Access Right)?isEncoded=true, says Identity and Trustee are base64 encoded" />
+							<PropertyValue Property="DocumentationUrl" String="" />
+							<PropertyValue Property="Required" Bool="false" />
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="Org.OData.Capabilities.V1.UpdateRestrictions">
+					<Record>
+						<PropertyValue Property="Updatable" Bool="true" />
+						<PropertyValue Property="NonUpdatableProperties">
+							<Collection>
+								<PropertyPath>roleDefinitionId</PropertyPath>
+								<PropertyPath>identity</PropertyPath>
+								<PropertyPath>assignmentMethod</PropertyPath>
+								<PropertyPath>roleAssigneeType</PropertyPath>
+								<PropertyPath>roleAssignmentDelegationType</PropertyPath>
+								<PropertyPath>customConfigWriteScope</PropertyPath>
+								<PropertyPath>recipientReadScope</PropertyPath>
+								<PropertyPath>configReadScope</PropertyPath>
+								<PropertyPath>recipientWriteScope</PropertyPath>
+								<PropertyPath>configWriteScope</PropertyPath>
+								<PropertyPath>roleAssigneeName</PropertyPath>
+								<PropertyPath>isValid</PropertyPath>
+								<PropertyPath>displayName</PropertyPath>
+								<PropertyPath>distinguishedName</PropertyPath>
+								<PropertyPath>guid</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="NonUpdatableNavigationProperties">
+							<Collection>
+								<PropertyPath>roleDefinition</PropertyPath>
+								<PropertyPath>appScope</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</EntityType>
 			<ComplexType Name="CmdletInvokeInputType" BaseType="Exchange.ComplexEntry">
 				<Property Name="CmdletName" Type="Edm.String" Nullable="false" />
 				<Property Name="Parameters" Type="Exchange.GenericHashTable" />
@@ -5825,6 +6119,9 @@
 			<Action Name="Initialize">
 				<ReturnType Type="Edm.String" />
 			</Action>
+			<Action Name="InitializeLiteFRC">
+				<ReturnType Type="Edm.String" />
+			</Action>
 			<Action Name="InvokeCommand">
 				<Parameter Name="CmdletInput" Type="Exchange.CmdletInvokeInputType" Nullable="false" />
 				<ReturnType Type="Collection(Exchange.GenericHashTable)" />
@@ -5884,7 +6181,11 @@
 				<ActionImport Name="GetMailTrafficPolicyReport" Action="Exchange.GetMailTrafficPolicyReport" />
 				<ActionImport Name="GetMailDetailDlpPolicyReport" Action="Exchange.GetMailDetailDlpPolicyReport" />
 				<ActionImport Name="RbacQuery" Action="Exchange.RbacQuery" />
+				<EntitySet Name="UnifiedRbacRoleDefinition" EntityType="Exchange.UnifiedRbacRoleDefinition" />
+				<EntitySet Name="UnifiedRbacManagementScope" EntityType="Exchange.UnifiedRbacManagementScope" />
+				<EntitySet Name="UnifiedRbacRoleAssignment" EntityType="Exchange.UnifiedRbacRoleAssignment" />
 				<ActionImport Name="Initialize" Action="Exchange.Initialize" />
+				<ActionImport Name="InitializeLiteFRC" Action="Exchange.InitializeLiteFRC" />
 				<ActionImport Name="InvokeCommand" Action="Exchange.InvokeCommand" />
 				<EntitySet Name="Divergence" EntityType="Exchange.Divergence" />
 			</EntityContainer>
