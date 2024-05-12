@@ -2935,11 +2935,6 @@
 				<Property Name="enabledCmdlets" Type="Collection(Edm.String)" />
 				<Property Name="guid" Type="Edm.String" />
 				<Property Name="identity" Type="Edm.String" />
-				<Property Name="isBuiltIn" Type="Edm.Boolean" />
-				<Property Name="templateId" Type="Edm.String" />
-				<Property Name="isServicePrincipalRole" Type="Edm.Boolean" />
-				<Property Name="allowedPrincipalTypes" Type="Exchange.RolePrincipalTypes" />
-				<NavigationProperty Name="inheritsPermissionsFrom" Type="Exchange.RoleDefinitions" Nullable="false" ContainsTarget="true" />
 				<Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
 					<Record>
 						<PropertyValue Property="Filterable" Bool="true" />
@@ -2963,10 +2958,6 @@
 								<PropertyPath>enabledCmdlets</PropertyPath>
 								<PropertyPath>guid</PropertyPath>
 								<PropertyPath>identity</PropertyPath>
-								<PropertyPath>isBuiltIn</PropertyPath>
-								<PropertyPath>templateId</PropertyPath>
-								<PropertyPath>isServicePrincipalRole</PropertyPath>
-								<PropertyPath>allowedPrincipalTypes</PropertyPath>
 							</Collection>
 						</PropertyValue>
 					</Record>
@@ -3011,24 +3002,14 @@
 								<PropertyPath>enabledCmdlets</PropertyPath>
 								<PropertyPath>guid</PropertyPath>
 								<PropertyPath>identity</PropertyPath>
-								<PropertyPath>isBuiltIn</PropertyPath>
-								<PropertyPath>isServicePrincipalRole</PropertyPath>
-								<PropertyPath>allowedPrincipalTypes</PropertyPath>
 							</Collection>
 						</PropertyValue>
 						<PropertyValue Property="NonUpdatableNavigationProperties">
-							<Collection>
-								<PropertyPath>inheritsPermissionsFrom</PropertyPath>
-							</Collection>
+							<Collection />
 						</PropertyValue>
 					</Record>
 				</Annotation>
 			</EntityType>
-			<EnumType Name="RolePrincipalTypes" UnderlyingType="Edm.Int64" IsFlags="true">
-				<Member Name="User" Value="1" />
-				<Member Name="ServicePrincipal" Value="2" />
-				<Member Name="Group" Value="4" />
-			</EnumType>
 			<EntityType Name="ExchangeRoleGroupMember">
 				<Key>
 					<PropertyRef Name="id" />
@@ -3456,9 +3437,6 @@
 				<Property Name="guid" Type="Edm.String" />
 				<Property Name="identity" Type="Edm.String" />
 				<Property Name="recipientRestrictionFilter" Type="Edm.String" />
-				<Property Name="type" Type="Exchange.ScopeRestrictionType" />
-				<Property Name="displayName" Type="Edm.String" />
-				<Property Name="customAttributes" Type="Exchange.GenericHashTable" />
 				<Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
 					<Record>
 						<PropertyValue Property="Filterable" Bool="true" />
@@ -3480,9 +3458,6 @@
 								<PropertyPath>guid</PropertyPath>
 								<PropertyPath>identity</PropertyPath>
 								<PropertyPath>recipientRestrictionFilter</PropertyPath>
-								<PropertyPath>type</PropertyPath>
-								<PropertyPath>displayName</PropertyPath>
-								<PropertyPath>customAttributes</PropertyPath>
 							</Collection>
 						</PropertyValue>
 					</Record>
@@ -3527,9 +3502,6 @@
 								<PropertyPath>distinguishedName</PropertyPath>
 								<PropertyPath>guid</PropertyPath>
 								<PropertyPath>identity</PropertyPath>
-								<PropertyPath>type</PropertyPath>
-								<PropertyPath>displayName</PropertyPath>
-								<PropertyPath>customAttributes</PropertyPath>
 							</Collection>
 						</PropertyValue>
 						<PropertyValue Property="NonUpdatableNavigationProperties">
@@ -5801,6 +5773,11 @@
 					</Record>
 				</Annotation>
 			</EntityType>
+			<EnumType Name="RolePrincipalTypes" UnderlyingType="Edm.Int64" IsFlags="true">
+				<Member Name="User" Value="1" />
+				<Member Name="ServicePrincipal" Value="2" />
+				<Member Name="Group" Value="4" />
+			</EnumType>
 			<EntityType Name="UnifiedRbacManagementScope">
 				<Key>
 					<PropertyRef Name="id" />
