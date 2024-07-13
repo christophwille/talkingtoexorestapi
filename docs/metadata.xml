@@ -594,7 +594,6 @@
 				<Property Name="StsRefreshTokensValidFrom" Type="Edm.String" />
 				<Property Name="NonCompliantDevices" Type="Collection(Edm.String)" />
 				<Property Name="DataEncryptionPolicy" Type="Edm.String" />
-				<Property Name="Extensions" Type="Collection(Edm.String)" />
 				<Property Name="HasPicture" Type="Edm.Boolean" />
 				<Property Name="HasSpokenName" Type="Edm.Boolean" />
 				<Property Name="IsDirSynced" Type="Edm.Boolean" />
@@ -765,7 +764,6 @@
 								<PropertyPath>AccountDisabled</PropertyPath>
 								<PropertyPath>NonCompliantDevices</PropertyPath>
 								<PropertyPath>DataEncryptionPolicy</PropertyPath>
-								<PropertyPath>Extensions</PropertyPath>
 								<PropertyPath>HasPicture</PropertyPath>
 								<PropertyPath>HasSpokenName</PropertyPath>
 								<PropertyPath>AcceptMessagesOnlyFromSendersOrMembers</PropertyPath>
@@ -968,7 +966,6 @@
 								<PropertyPath>InPlaceHolds</PropertyPath>
 								<PropertyPath>GeneratedOfflineAddressBooks</PropertyPath>
 								<PropertyPath>DataEncryptionPolicy</PropertyPath>
-								<PropertyPath>Extensions</PropertyPath>
 								<PropertyPath>HasPicture</PropertyPath>
 								<PropertyPath>HasSpokenName</PropertyPath>
 								<PropertyPath>IsDirSynced</PropertyPath>
