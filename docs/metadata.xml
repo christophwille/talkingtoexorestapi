@@ -482,6 +482,7 @@
 				<Property Name="MailboxLocations" Type="Collection(Edm.String)" />
 				<Property Name="AggregatedMailboxGuids" Type="Collection(Edm.Guid)" />
 				<Property Name="ExchangeSecurityDescriptor" Type="Edm.String" />
+				<Property Name="ExoExchangeSecurityDescriptor" Type="Exchange.ExoExchangeSecurityDescriptor" />
 				<Property Name="ExchangeUserAccountControl" Type="Edm.String" />
 				<Property Name="MessageTrackingReadStatusEnabled" Type="Edm.Boolean" />
 				<Property Name="ExternalOofOptions" Type="Edm.String" />
@@ -727,6 +728,7 @@
 								<PropertyPath>UnifiedMailbox</PropertyPath>
 								<PropertyPath>MailboxLocations</PropertyPath>
 								<PropertyPath>ExchangeSecurityDescriptor</PropertyPath>
+								<PropertyPath>ExoExchangeSecurityDescriptor</PropertyPath>
 								<PropertyPath>MessageTrackingReadStatusEnabled</PropertyPath>
 								<PropertyPath>Languages</PropertyPath>
 								<PropertyPath>DowngradeHighPriorityMessagesEnabled</PropertyPath>
@@ -893,6 +895,7 @@
 								<PropertyPath>MailboxLocations</PropertyPath>
 								<PropertyPath>AggregatedMailboxGuids</PropertyPath>
 								<PropertyPath>ExchangeSecurityDescriptor</PropertyPath>
+								<PropertyPath>ExoExchangeSecurityDescriptor</PropertyPath>
 								<PropertyPath>ExchangeUserAccountControl</PropertyPath>
 								<PropertyPath>IsMailboxEnabled</PropertyPath>
 								<PropertyPath>OfflineAddressBook</PropertyPath>
@@ -1006,6 +1009,14 @@
 					</Record>
 				</Annotation>
 			</EntityType>
+			<ComplexType Name="ExoExchangeSecurityDescriptor" BaseType="Exchange.ComplexEntry">
+				<Property Name="ControlFlags" Type="Edm.String" />
+				<Property Name="Owner" Type="Edm.String" />
+				<Property Name="Group" Type="Edm.String" />
+				<Property Name="SystemAcl" Type="Collection(Edm.String)" />
+				<Property Name="DiscretionaryAcl" Type="Collection(Edm.String)" />
+				<Property Name="BinaryLength" Type="Edm.Int32" />
+			</ComplexType>
 			<ComplexType Name="OpenComplexEntry" Abstract="true" OpenType="true" />
 			<ComplexType Name="GenericHashTable" BaseType="Exchange.OpenComplexEntry" OpenType="true" />
 			<ComplexType Name="MailboxStatistics" BaseType="Exchange.ComplexEntry">
