@@ -39,14 +39,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.OData.Client" Version="7.21.3" />
-		<PackageReference Include="Microsoft.OData.Core" Version="7.21.3" />
-		<PackageReference Include="Microsoft.OData.Edm" Version="7.21.3" />
-		<PackageReference Include="Microsoft.Spatial" Version="7.21.3" />
+		<PackageReference Include="Microsoft.OData.Client" Version="8.2.1" />
+		<PackageReference Include="Microsoft.OData.Core" Version="8.2.1" />
+		<PackageReference Include="Microsoft.OData.Edm" Version="8.2.1" />
+		<PackageReference Include="Microsoft.Spatial" Version="8.2.1" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-		<PackageReference Include="System.Text.Json" Version="8.0.4" />
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.61.3" />
-		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.4.0" />
+		<PackageReference Include="System.Text.Json" Version="8.0.5" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.66.2" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.2.1" />
 	</ItemGroup>
 
 	<ItemGroup>

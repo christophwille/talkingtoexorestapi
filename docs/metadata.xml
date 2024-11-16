@@ -5101,6 +5101,10 @@
 				<Property Name="ConditionalCompany" Type="Collection(Edm.String)" />
 				<Property Name="ConditionalDepartment" Type="Collection(Edm.String)" />
 				<Property Name="AcceptMessagesOnlyFromSendersOrMembers" Type="Collection(Edm.String)" />
+				<Property Name="BypassModerationFromSendersOrMembersWithDisplayNames" Type="Collection(Edm.String)" />
+				<Property Name="AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames" Type="Collection(Edm.String)" />
+				<Property Name="GrantSendOnBehalfToWithDisplayNames" Type="Collection(Edm.String)" />
+				<Property Name="ModeratedByWithDisplayNames" Type="Collection(Edm.String)" />
 				<Property Name="RequireSenderAuthenticationEnabled" Type="Edm.Boolean" />
 				<Property Name="ModerationEnabled" Type="Edm.Boolean" />
 				<Property Name="ModeratedBy" Type="Collection(Edm.String)" />
@@ -5150,6 +5154,10 @@
 								<PropertyPath>ConditionalCompany</PropertyPath>
 								<PropertyPath>ConditionalDepartment</PropertyPath>
 								<PropertyPath>AcceptMessagesOnlyFromSendersOrMembers</PropertyPath>
+								<PropertyPath>BypassModerationFromSendersOrMembersWithDisplayNames</PropertyPath>
+								<PropertyPath>AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames</PropertyPath>
+								<PropertyPath>GrantSendOnBehalfToWithDisplayNames</PropertyPath>
+								<PropertyPath>ModeratedByWithDisplayNames</PropertyPath>
 								<PropertyPath>RequireSenderAuthenticationEnabled</PropertyPath>
 								<PropertyPath>ModerationEnabled</PropertyPath>
 								<PropertyPath>ModeratedBy</PropertyPath>
@@ -5272,6 +5280,9 @@
 				<Property Name="MigrationToUnifiedGroupInProgress" Type="Edm.Boolean" />
 				<Property Name="RejectMessagesFromSendersOrMembers" Type="Collection(Edm.String)" />
 				<Property Name="AcceptMessagesOnlyFromSendersOrMembers" Type="Collection(Edm.String)" />
+				<Property Name="GrantSendOnBehalfToWithDisplayNames" Type="Collection(Edm.String)" />
+				<Property Name="AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames" Type="Collection(Edm.String)" />
+				<Property Name="RejectMessagesFromSendersOrMembersWithDisplayNames" Type="Collection(Edm.String)" />
 				<Property Name="SendAsPermissionList" Type="Collection(Edm.String)" />
 				<Property Name="ObjectId" Type="Edm.String" />
 				<Property Name="DistinguishedName" Type="Edm.String" />
@@ -5291,6 +5302,9 @@
 								<PropertyPath>Language</PropertyPath>
 								<PropertyPath>RejectMessagesFromSendersOrMembers</PropertyPath>
 								<PropertyPath>AcceptMessagesOnlyFromSendersOrMembers</PropertyPath>
+								<PropertyPath>GrantSendOnBehalfToWithDisplayNames</PropertyPath>
+								<PropertyPath>AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames</PropertyPath>
+								<PropertyPath>RejectMessagesFromSendersOrMembersWithDisplayNames</PropertyPath>
 								<PropertyPath>SendAsPermissionList</PropertyPath>
 								<PropertyPath>ObjectId</PropertyPath>
 								<PropertyPath>DistinguishedName</PropertyPath>

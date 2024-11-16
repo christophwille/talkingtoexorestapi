@@ -3,9 +3,7 @@ using AdminApiClient.For.ExchangeOnline.OData;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OData.Client;
 using Simple.OData.Client;
-using System;
 using System.Net.Http.Headers;
-using System.Security.Principal;
 using ExO = AdminApiClient.For.ExchangeOnline.OData;
 
 var builder = new ConfigurationBuilder()
@@ -22,7 +20,7 @@ var (tenantId, authResult) = await authTokenService.AcquireFirstTokenParseTenant
 // ALWAYS get the current metadata document
 await GetCurrentMetadata();
 
-//string mailboxesAsString = await Scenario_PlainHttpAndJson();
+string mailboxesAsString = await Scenario_PlainHttpAndJson();
 //Console.WriteLine(mailboxesAsString);
 
 //var mailboxesAsEnumberable = await Scenario_SimpleODataClient_CustomDto();
@@ -39,7 +37,7 @@ await GetCurrentMetadata();
 
 // await Scenario_SimpleODataClient_VariousQueries();
 // await Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc();
-await Scenario_SimpleODataClient_MailboxStatistics();
+// await Scenario_SimpleODataClient_MailboxStatistics();
 
 Console.ReadKey();
 
