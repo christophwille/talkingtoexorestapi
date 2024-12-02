@@ -21,7 +21,7 @@ var (tenantId, authResult) = await authTokenService.AcquireFirstTokenParseTenant
 await GetCurrentMetadata();
 
 string mailboxesAsString = await Scenario_PlainHttpAndJson();
-//Console.WriteLine(mailboxesAsString);
+Console.WriteLine(mailboxesAsString);
 
 //var mailboxesAsEnumberable = await Scenario_SimpleODataClient_CustomDto();
 //var mailboxes = mailboxesAsEnumberable.ToList();
