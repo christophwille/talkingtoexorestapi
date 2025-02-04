@@ -12,6 +12,8 @@ var builder = new ConfigurationBuilder()
 
 IConfigurationRoot configuration = builder.Build();
 
+var tenantIdViaOpenId = await ExOAuthorizationBase.GetTenantIdFromOpenIdConfiguration(configuration["Organization"]);
+
 // PICK either app or interactive authentication
 var authTokenService = ExOAppAuthorization.Create(configuration["AppId"], configuration["Organization"], configuration["PfxPath"]);
 // var authTokenService = ExOInteractiveAuthorization.Create();
