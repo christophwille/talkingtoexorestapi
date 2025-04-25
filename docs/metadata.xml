@@ -5105,6 +5105,7 @@
 				<Property Name="AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames" Type="Collection(Edm.String)" />
 				<Property Name="GrantSendOnBehalfToWithDisplayNames" Type="Collection(Edm.String)" />
 				<Property Name="ModeratedByWithDisplayNames" Type="Collection(Edm.String)" />
+				<Property Name="ManagedByWithDisplayName" Type="Collection(Edm.String)" />
 				<Property Name="RequireSenderAuthenticationEnabled" Type="Edm.Boolean" />
 				<Property Name="ModerationEnabled" Type="Edm.Boolean" />
 				<Property Name="ModeratedBy" Type="Collection(Edm.String)" />
@@ -5158,6 +5159,7 @@
 								<PropertyPath>AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames</PropertyPath>
 								<PropertyPath>GrantSendOnBehalfToWithDisplayNames</PropertyPath>
 								<PropertyPath>ModeratedByWithDisplayNames</PropertyPath>
+								<PropertyPath>ManagedByWithDisplayName</PropertyPath>
 								<PropertyPath>RequireSenderAuthenticationEnabled</PropertyPath>
 								<PropertyPath>ModerationEnabled</PropertyPath>
 								<PropertyPath>ModeratedBy</PropertyPath>
