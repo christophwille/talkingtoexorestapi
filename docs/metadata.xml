@@ -472,6 +472,7 @@
 				<Property Name="PitrPausedTimestamp" Type="Edm.String" />
 				<Property Name="PitrOffboardedTimestamp" Type="Edm.String" />
 				<Property Name="PitrState" Type="Edm.String" />
+				<Property Name="M365BackupState" Type="Edm.String" />
 				<Property Name="ManagedFolderMailboxPolicy" Type="Edm.String" />
 				<Property Name="RetentionPolicy" Type="Edm.String" />
 				<Property Name="AddressBookPolicy" Type="Edm.String" />
@@ -487,6 +488,7 @@
 				<Property Name="MessageTrackingReadStatusEnabled" Type="Edm.Boolean" />
 				<Property Name="ExternalOofOptions" Type="Edm.String" />
 				<Property Name="ForwardingAddress" Type="Edm.String" />
+				<Property Name="ForwardingAddressWithDisplayNames" Type="Collection(Edm.String)" />
 				<Property Name="ForwardingSmtpAddress" Type="Edm.String" />
 				<Property Name="RetainDeletedItemsFor" Type="Edm.String" />
 				<Property Name="IsMailboxEnabled" Type="Edm.Boolean" />
@@ -667,6 +669,7 @@
 				<Property Name="ExchangeObjectId" Type="Edm.String" />
 				<Property Name="OrganizationId" Type="Edm.String" />
 				<Property Name="Guid" Type="Edm.Guid" />
+				<Property Name="IsExchangeCloudManaged" Type="Edm.Boolean" />
 				<Property Name="ApplyMandatoryProperties" Type="Edm.Boolean" />
 				<Property Name="InactiveMailbox" Type="Edm.Boolean" />
 				<Property Name="PublicFolder" Type="Edm.Boolean" />
@@ -725,6 +728,7 @@
 								<PropertyPath>PitrPausedTimestamp</PropertyPath>
 								<PropertyPath>PitrOffboardedTimestamp</PropertyPath>
 								<PropertyPath>PitrState</PropertyPath>
+								<PropertyPath>M365BackupState</PropertyPath>
 								<PropertyPath>UnifiedMailbox</PropertyPath>
 								<PropertyPath>MailboxLocations</PropertyPath>
 								<PropertyPath>ExchangeSecurityDescriptor</PropertyPath>
@@ -778,6 +782,7 @@
 								<PropertyPath>Identity</PropertyPath>
 								<PropertyPath>ExchangeObjectId</PropertyPath>
 								<PropertyPath>OrganizationId</PropertyPath>
+								<PropertyPath>IsExchangeCloudManaged</PropertyPath>
 								<PropertyPath>ApplyMandatoryProperties</PropertyPath>
 								<PropertyPath>InactiveMailbox</PropertyPath>
 								<PropertyPath>PublicFolder</PropertyPath>
@@ -995,6 +1000,7 @@
 								<PropertyPath>ExchangeObjectId</PropertyPath>
 								<PropertyPath>OrganizationId</PropertyPath>
 								<PropertyPath>Guid</PropertyPath>
+								<PropertyPath>IsExchangeCloudManaged</PropertyPath>
 							</Collection>
 						</PropertyValue>
 						<PropertyValue Property="NonUpdatableNavigationProperties">
