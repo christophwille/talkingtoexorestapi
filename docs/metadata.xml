@@ -2176,7 +2176,9 @@
 				<Property Name="Notes" Type="Edm.String" />
 				<Property Name="Initials" Type="Edm.String" />
 				<Property Name="DirectReports" Type="Collection(Edm.String)" />
+				<Property Name="DirectReportsWithDisplayName" Type="Collection(Edm.String)" />
 				<Property Name="Manager" Type="Edm.String" />
+				<Property Name="ManagerWithDisplayName" Type="Collection(Edm.String)" />
 				<Property Name="VoiceMailSettings" Type="Collection(Edm.String)" />
 				<Property Name="PostOfficeBox" Type="Collection(Edm.String)" />
 				<Property Name="PreviousRecipientTypeDetails" Type="Edm.String" />
@@ -2348,6 +2350,7 @@
 								<PropertyPath>UserAccountControl</PropertyPath>
 								<PropertyPath>TelephoneAssistant</PropertyPath>
 								<PropertyPath>DirectReports</PropertyPath>
+								<PropertyPath>DirectReportsWithDisplayName</PropertyPath>
 								<PropertyPath>VoiceMailSettings</PropertyPath>
 								<PropertyPath>PreviousRecipientTypeDetails</PropertyPath>
 								<PropertyPath>Sid</PropertyPath>
