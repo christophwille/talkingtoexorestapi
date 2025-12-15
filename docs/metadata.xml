@@ -555,6 +555,7 @@
 				<Property Name="ArchiveStatus" Type="Edm.String" />
 				<Property Name="ArchiveState" Type="Edm.String" />
 				<Property Name="AutoExpandingArchiveEnabled" Type="Edm.Boolean" />
+				<Property Name="AutoArchivingEnabled" Type="Edm.Boolean" />
 				<Property Name="DisabledMailboxLocations" Type="Edm.Boolean" />
 				<Property Name="RemoteRecipientType" Type="Edm.String" />
 				<Property Name="DisabledArchiveDatabase" Type="Edm.String" />
@@ -756,6 +757,7 @@
 								<PropertyPath>EffectivePublicFolderMailbox</PropertyPath>
 								<PropertyPath>ArchiveDatabaseGuid</PropertyPath>
 								<PropertyPath>AutoExpandingArchiveEnabled</PropertyPath>
+								<PropertyPath>AutoArchivingEnabled</PropertyPath>
 								<PropertyPath>DisabledMailboxLocations</PropertyPath>
 								<PropertyPath>QueryBaseDNRestrictionEnabled</PropertyPath>
 								<PropertyPath>IsPersonToPersonTextMessagingEnabled</PropertyPath>
@@ -3832,6 +3834,7 @@
 				<Property Name="BulkThreshold" Type="Edm.Int32" />
 				<Property Name="ZapEnabled" Type="Edm.Boolean" />
 				<Property Name="InlineSafetyTipsEnabled" Type="Edm.Boolean" />
+				<Property Name="BulkMovesEnabled" Type="Exchange.BulkMovesEnabled" />
 				<Property Name="BulkSpamAction" Type="Exchange.SpamFilteringAction" />
 				<Property Name="PhishSpamAction" Type="Exchange.SpamFilteringAction" />
 				<Property Name="SpamZapEnabled" Type="Edm.Boolean" />
@@ -3886,6 +3889,7 @@
 								<PropertyPath>BulkThreshold</PropertyPath>
 								<PropertyPath>ZapEnabled</PropertyPath>
 								<PropertyPath>InlineSafetyTipsEnabled</PropertyPath>
+								<PropertyPath>BulkMovesEnabled</PropertyPath>
 								<PropertyPath>BulkSpamAction</PropertyPath>
 								<PropertyPath>PhishSpamAction</PropertyPath>
 								<PropertyPath>SpamZapEnabled</PropertyPath>
@@ -3953,6 +3957,11 @@
 				<Member Name="Quarantine" Value="5" />
 				<Member Name="NoAction" Value="6" />
 				<Member Name="BccMessage" Value="7" />
+			</EnumType>
+			<EnumType Name="BulkMovesEnabled" UnderlyingType="Edm.Int64">
+				<Member Name="NotSet" Value="0" />
+				<Member Name="On" Value="1" />
+				<Member Name="Off" Value="2" />
 			</EnumType>
 			<EnumType Name="IntraOrgFilterState" UnderlyingType="Edm.Int64">
 				<Member Name="Default" Value="0" />
@@ -4253,7 +4262,9 @@
 				<Property Name="RecommendedPolicyType" Type="Exchange.RecommendedPolicyType" />
 				<Property Name="IsDefault" Type="Edm.Boolean" />
 				<Property Name="AdminDisplayName" Type="Edm.String" />
+				<Property Name="EnableBlockingEncryptedAttachments" Type="Edm.Boolean" />
 				<Property Name="EnableOrganizationBranding" Type="Edm.Boolean" />
+				<Property Name="ExcludedTypesFromBlockingEncryptedAttachments" Type="Collection(Exchange.EncryptedFileTypes)" />
 				<Property Name="Name" Type="Edm.String" />
 				<Property Name="WhenChanged" Type="Edm.DateTimeOffset" />
 				<Property Name="WhenCreated" Type="Edm.DateTimeOffset" />
@@ -4277,7 +4288,9 @@
 								<PropertyPath>RecommendedPolicyType</PropertyPath>
 								<PropertyPath>IsDefault</PropertyPath>
 								<PropertyPath>AdminDisplayName</PropertyPath>
+								<PropertyPath>EnableBlockingEncryptedAttachments</PropertyPath>
 								<PropertyPath>EnableOrganizationBranding</PropertyPath>
+								<PropertyPath>ExcludedTypesFromBlockingEncryptedAttachments</PropertyPath>
 								<PropertyPath>Name</PropertyPath>
 								<PropertyPath>WhenChanged</PropertyPath>
 								<PropertyPath>WhenCreated</PropertyPath>
@@ -4328,6 +4341,12 @@
 			<EnumType Name="SafeAttachmentOperationMode" UnderlyingType="Edm.Int64">
 				<Member Name="Delay" Value="0" />
 				<Member Name="Deliver" Value="1" />
+			</EnumType>
+			<EnumType Name="EncryptedFileTypes" UnderlyingType="Edm.Int64">
+				<Member Name="Acrobat" Value="0" />
+				<Member Name="Archive" Value="1" />
+				<Member Name="Office" Value="2" />
+				<Member Name="Others" Value="3" />
 			</EnumType>
 			<EntityType Name="SafeLinksPolicyPresentation">
 				<Key>
