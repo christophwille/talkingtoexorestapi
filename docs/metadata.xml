@@ -530,7 +530,6 @@
 				<Property Name="RulesQuota" Type="Edm.String" />
 				<Property Name="Office" Type="Edm.String" />
 				<Property Name="UserPrincipalName" Type="Edm.String" />
-				<Property Name="UMEnabled" Type="Edm.Boolean" />
 				<Property Name="MaxSafeSenders" Type="Edm.Int32" />
 				<Property Name="MaxBlockedSenders" Type="Edm.Int32" />
 				<Property Name="NetID" Type="Edm.String" />
@@ -931,7 +930,6 @@
 								<PropertyPath>SCLJunkEnabled</PropertyPath>
 								<PropertyPath>ServerLegacyDN</PropertyPath>
 								<PropertyPath>UserPrincipalName</PropertyPath>
-								<PropertyPath>UMEnabled</PropertyPath>
 								<PropertyPath>MaxSafeSenders</PropertyPath>
 								<PropertyPath>MaxBlockedSenders</PropertyPath>
 								<PropertyPath>NetID</PropertyPath>
@@ -1644,7 +1642,6 @@
 				<Property Name="StateOrProvince" Type="Edm.String" />
 				<Property Name="StorageGroupName" Type="Edm.String" />
 				<Property Name="Title" Type="Edm.String" />
-				<Property Name="UMEnabled" Type="Edm.Boolean" />
 				<Property Name="UMMailboxPolicy" Type="Edm.String" />
 				<Property Name="UMRecipientDialPlanId" Type="Edm.String" />
 				<Property Name="WindowsLiveID" Type="Edm.String" />
@@ -1809,7 +1806,6 @@
 								<PropertyPath>StateOrProvince</PropertyPath>
 								<PropertyPath>StorageGroupName</PropertyPath>
 								<PropertyPath>Title</PropertyPath>
-								<PropertyPath>UMEnabled</PropertyPath>
 								<PropertyPath>UMMailboxPolicy</PropertyPath>
 								<PropertyPath>UMRecipientDialPlanId</PropertyPath>
 								<PropertyPath>WindowsLiveID</PropertyPath>
@@ -3098,7 +3094,6 @@
 				<Property Name="stateOrProvince" Type="Edm.String" />
 				<Property Name="storageGroupName" Type="Edm.String" />
 				<Property Name="title" Type="Edm.String" />
-				<Property Name="uMEnabled" Type="Edm.Boolean" />
 				<Property Name="uMMailboxPolicy" Type="Edm.String" />
 				<Property Name="uMRecipientDialPlanId" Type="Edm.String" />
 				<Property Name="windowsLiveID" Type="Edm.String" />
@@ -3250,7 +3245,6 @@
 								<PropertyPath>stateOrProvince</PropertyPath>
 								<PropertyPath>storageGroupName</PropertyPath>
 								<PropertyPath>title</PropertyPath>
-								<PropertyPath>uMEnabled</PropertyPath>
 								<PropertyPath>uMMailboxPolicy</PropertyPath>
 								<PropertyPath>uMRecipientDialPlanId</PropertyPath>
 								<PropertyPath>windowsLiveID</PropertyPath>
