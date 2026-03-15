@@ -25,10 +25,10 @@ await GetCurrentMetadata();
 string mailboxesAsString = await Scenario_PlainHttpAndJson();
 Console.WriteLine(mailboxesAsString);
 
-//var mailboxesAsEnumberable = await Scenario_SimpleODataClient_CustomDto();
-//var mailboxes = mailboxesAsEnumberable.ToList();
-//mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
-//Console.WriteLine(mailboxes.Count);
+var mailboxesAsEnumberable = await Scenario_SimpleODataClient_CustomDto();
+var mailboxes = mailboxesAsEnumberable.ToList();
+mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
+Console.WriteLine(mailboxes.Count);
 
 //await Scenario_MsODataClientRaw();
 

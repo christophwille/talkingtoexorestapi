@@ -31,7 +31,7 @@ namespace AdminApiClient.For.ExchangeOnline
             var assembly = typeof(ExOMetadata).GetTypeInfo().Assembly;
             var resourceStream = assembly.GetManifestResourceStream(ResourceName);
 
-            using (var reader = new StreamReader(resourceStream, Encoding.UTF8))
+            using (var reader = new StreamReader(resourceStream!, Encoding.UTF8))
             {
                 metadataDocument = reader.ReadToEnd();
             }

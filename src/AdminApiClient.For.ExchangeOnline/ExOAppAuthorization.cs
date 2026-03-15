@@ -15,7 +15,7 @@ namespace AdminApiClient.For.ExchangeOnline
         public static IExOAuthorization Create(string appId, string organization, string pathToPfx)
         {
             byte[] pfxBytes = File.ReadAllBytes(pathToPfx);
-            var certificate = new X509Certificate2(pfxBytes, "", X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.EphemeralKeySet);
+            var certificate = X509CertificateLoader.LoadPkcs12(pfxBytes, (string?)null, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.EphemeralKeySet);
             CertificateCleaner.RegisterForDisposalDuringFinalization(certificate);
 
             return Create(appId, organization, certificate);
