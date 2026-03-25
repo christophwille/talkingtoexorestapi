@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -51,7 +51,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Identity")]
         public virtual string Identity
         {
@@ -75,7 +74,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AutoDeclineFutureRequestsWhenOOF in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AutoDeclineFutureRequestsWhenOOF")]
         public virtual global::System.Nullable<bool> AutoDeclineFutureRequestsWhenOOF
         {
@@ -99,7 +97,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AutoReplyState in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AutoReplyState")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.OofState> AutoReplyState
         {
@@ -123,7 +120,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property CreateOOFEvent in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("CreateOOFEvent")]
         public virtual global::System.Nullable<bool> CreateOOFEvent
         {
@@ -147,7 +143,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeclineAllEventsForScheduledOOF in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeclineAllEventsForScheduledOOF")]
         public virtual global::System.Nullable<bool> DeclineAllEventsForScheduledOOF
         {
@@ -171,7 +166,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeclineEventsForScheduledOOF in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeclineEventsForScheduledOOF")]
         public virtual global::System.Nullable<bool> DeclineEventsForScheduledOOF
         {
@@ -195,7 +189,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property EventsToDeleteIDs in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("EventsToDeleteIDs")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> EventsToDeleteIDs
         {
@@ -219,7 +212,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property EndTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("EndTime")]
         public virtual global::System.Nullable<global::System.DateTimeOffset> EndTime
         {
@@ -243,7 +235,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ExternalAudience in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ExternalAudience")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.ExternalAudience> ExternalAudience
         {
@@ -267,7 +258,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ExternalMessage in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ExternalMessage")]
         public virtual string ExternalMessage
         {
@@ -291,7 +281,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property InternalMessage in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("InternalMessage")]
         public virtual string InternalMessage
         {
@@ -315,7 +304,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeclineMeetingMessage in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeclineMeetingMessage")]
         public virtual string DeclineMeetingMessage
         {
@@ -339,7 +327,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property OOFEventSubject in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("OOFEventSubject")]
         public virtual string OOFEventSubject
         {
@@ -363,7 +350,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Recipients in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Recipients")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> Recipients
         {
@@ -387,7 +373,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ReminderMinutesBeforeStart in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ReminderMinutesBeforeStart")]
         public virtual global::System.Nullable<int> ReminderMinutesBeforeStart
         {
@@ -411,7 +396,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ReminderMessage in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ReminderMessage")]
         public virtual string ReminderMessage
         {
@@ -435,7 +419,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property StartTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("StartTime")]
         public virtual global::System.Nullable<global::System.DateTimeOffset> StartTime
         {

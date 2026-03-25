@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -21,7 +21,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Name in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
         public virtual string Name
         {
@@ -45,7 +44,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property SearchFolder in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("SearchFolder")]
         public virtual global::System.Nullable<bool> SearchFolder
         {
@@ -69,7 +67,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property CreationTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("CreationTime")]
         public virtual string CreationTime
         {
@@ -93,7 +90,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LastModifiedTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LastModifiedTime")]
         public virtual string LastModifiedTime
         {
@@ -117,7 +113,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FolderPath in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FolderPath")]
         public virtual string FolderPath
         {
@@ -141,7 +136,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FolderId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FolderId")]
         public virtual string FolderId
         {
@@ -165,7 +159,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ContentFolder in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ContentFolder")]
         public virtual global::System.Nullable<bool> ContentFolder
         {
@@ -189,7 +182,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ContentMailboxGuid in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ContentMailboxGuid")]
         public virtual global::System.Nullable<global::System.Guid> ContentMailboxGuid
         {
@@ -213,7 +205,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Identity")]
         public virtual string Identity
         {
@@ -237,7 +228,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FolderType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FolderType")]
         public virtual string FolderType
         {
@@ -261,7 +251,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property RawContentMailboxGuid in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("RawContentMailboxGuid")]
         public virtual global::System.Nullable<global::System.Guid> RawContentMailboxGuid
         {
@@ -285,7 +274,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Movable in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Movable")]
         public virtual global::System.Nullable<bool> Movable
         {
@@ -309,7 +297,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property RecoverableItemsFolder in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("RecoverableItemsFolder")]
         public virtual global::System.Nullable<bool> RecoverableItemsFolder
         {
@@ -333,7 +320,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AssociatedIPMFolderPath in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AssociatedIPMFolderPath")]
         public virtual string AssociatedIPMFolderPath
         {
@@ -357,7 +343,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ContainerClass in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ContainerClass")]
         public virtual string ContainerClass
         {
@@ -381,7 +366,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Flags in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Flags")]
         public virtual string Flags
         {
@@ -405,7 +389,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TargetQuota in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TargetQuota")]
         public virtual string TargetQuota
         {
@@ -429,7 +412,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property StorageQuota in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("StorageQuota")]
         public virtual global::System.Nullable<long> StorageQuota
         {
@@ -453,7 +435,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property StorageWarningQuota in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("StorageWarningQuota")]
         public virtual global::System.Nullable<long> StorageWarningQuota
         {
@@ -477,7 +458,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property VisibleItemsInFolder in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("VisibleItemsInFolder")]
         public virtual global::System.Nullable<int> VisibleItemsInFolder
         {
@@ -501,7 +481,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property HiddenItemsInFolder in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("HiddenItemsInFolder")]
         public virtual global::System.Nullable<int> HiddenItemsInFolder
         {
@@ -525,7 +504,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ItemsInFolder in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ItemsInFolder")]
         public virtual global::System.Nullable<int> ItemsInFolder
         {
@@ -549,7 +527,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeletedItemsInFolder in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeletedItemsInFolder")]
         public virtual global::System.Nullable<int> DeletedItemsInFolder
         {
@@ -573,7 +550,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FolderSize in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FolderSize")]
         public virtual global::System.Nullable<long> FolderSize
         {
@@ -597,7 +573,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ItemsInFolderAndSubfolders in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ItemsInFolderAndSubfolders")]
         public virtual global::System.Nullable<int> ItemsInFolderAndSubfolders
         {
@@ -621,7 +596,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeletedItemsInFolderAndSubfolders in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeletedItemsInFolderAndSubfolders")]
         public virtual global::System.Nullable<int> DeletedItemsInFolderAndSubfolders
         {
@@ -645,7 +619,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FolderAndSubfolderSize in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FolderAndSubfolderSize")]
         public virtual global::System.Nullable<long> FolderAndSubfolderSize
         {
@@ -669,7 +642,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property CurrentSchemaVersion in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("CurrentSchemaVersion")]
         public virtual string CurrentSchemaVersion
         {
@@ -693,7 +665,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property OldestItemReceivedDate in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("OldestItemReceivedDate")]
         public virtual string OldestItemReceivedDate
         {
@@ -717,7 +688,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property NewestItemReceivedDate in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("NewestItemReceivedDate")]
         public virtual string NewestItemReceivedDate
         {
@@ -741,7 +711,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property OldestDeletedItemReceivedDate in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("OldestDeletedItemReceivedDate")]
         public virtual string OldestDeletedItemReceivedDate
         {
@@ -765,7 +734,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property NewestDeletedItemReceivedDate in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("NewestDeletedItemReceivedDate")]
         public virtual string NewestDeletedItemReceivedDate
         {
@@ -789,7 +757,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property OldestItemLastModifiedDate in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("OldestItemLastModifiedDate")]
         public virtual string OldestItemLastModifiedDate
         {
@@ -813,7 +780,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property NewestItemLastModifiedDate in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("NewestItemLastModifiedDate")]
         public virtual string NewestItemLastModifiedDate
         {
@@ -837,7 +803,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property OldestDeletedItemLastModifiedDate in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("OldestDeletedItemLastModifiedDate")]
         public virtual string OldestDeletedItemLastModifiedDate
         {
@@ -861,7 +826,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property NewestDeletedItemLastModifiedDate in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("NewestDeletedItemLastModifiedDate")]
         public virtual string NewestDeletedItemLastModifiedDate
         {
@@ -885,7 +849,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ManagedFolder in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ManagedFolder")]
         public virtual string ManagedFolder
         {
@@ -909,7 +872,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeletePolicy in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeletePolicy")]
         public virtual string DeletePolicy
         {
@@ -933,7 +895,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ArchivePolicy in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ArchivePolicy")]
         public virtual string ArchivePolicy
         {
@@ -957,7 +918,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TopSubject in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TopSubject")]
         public virtual string TopSubject
         {
@@ -981,7 +941,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TopSubjectSize in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TopSubjectSize")]
         public virtual global::System.Nullable<long> TopSubjectSize
         {
@@ -1005,7 +964,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TopSubjectCount in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TopSubjectCount")]
         public virtual global::System.Nullable<int> TopSubjectCount
         {
@@ -1029,7 +987,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TopSubjectClass in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TopSubjectClass")]
         public virtual string TopSubjectClass
         {
@@ -1053,7 +1010,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TopSubjectPath in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TopSubjectPath")]
         public virtual string TopSubjectPath
         {
@@ -1077,7 +1033,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TopSubjectReceivedTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TopSubjectReceivedTime")]
         public virtual string TopSubjectReceivedTime
         {
@@ -1101,7 +1056,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TopSubjectFrom in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TopSubjectFrom")]
         public virtual string TopSubjectFrom
         {
@@ -1125,7 +1079,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TopClientInfoForSubject in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TopClientInfoForSubject")]
         public virtual string TopClientInfoForSubject
         {
@@ -1149,7 +1102,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TopClientInfoCountForSubject in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TopClientInfoCountForSubject")]
         public virtual global::System.Nullable<int> TopClientInfoCountForSubject
         {
@@ -1173,7 +1125,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property SearchFolders in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("SearchFolders")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> SearchFolders
         {
@@ -1197,7 +1148,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AuditAuxMailboxGuid in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AuditAuxMailboxGuid")]
         public virtual string AuditAuxMailboxGuid
         {
@@ -1221,7 +1171,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AuditFolderStubSize in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AuditFolderStubSize")]
         public virtual string AuditFolderStubSize
         {
@@ -1245,7 +1194,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LastMovedTimeStamp in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LastMovedTimeStamp")]
         public virtual string LastMovedTimeStamp
         {
@@ -1269,7 +1217,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LowLatencyContainerId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LowLatencyContainerId")]
         public virtual global::System.Nullable<global::System.Guid> LowLatencyContainerId
         {
@@ -1293,7 +1240,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LowLatencyContainerFlags in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LowLatencyContainerFlags")]
         public virtual string LowLatencyContainerFlags
         {
@@ -1317,7 +1263,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LowLatencyContainerQuota in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LowLatencyContainerQuota")]
         public virtual global::System.Nullable<long> LowLatencyContainerQuota
         {
@@ -1341,7 +1286,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Diagnostics in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Diagnostics")]
         public virtual string Diagnostics
         {
@@ -1365,7 +1309,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DiagnosticInfo in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DiagnosticInfo")]
         public virtual string DiagnosticInfo
         {

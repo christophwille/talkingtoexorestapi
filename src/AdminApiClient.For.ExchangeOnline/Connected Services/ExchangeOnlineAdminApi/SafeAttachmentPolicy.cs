@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -51,7 +51,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Identity")]
         public virtual string Identity
         {
@@ -75,7 +74,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property RedirectAddress in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("RedirectAddress")]
         public virtual string RedirectAddress
         {
@@ -99,7 +97,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Redirect in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Redirect")]
         public virtual global::System.Nullable<bool> Redirect
         {
@@ -123,7 +120,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Action in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Action")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SafeAttachmentAction> Action
         {
@@ -147,7 +143,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ScanTimeout in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ScanTimeout")]
         public virtual global::System.Nullable<int> ScanTimeout
         {
@@ -171,7 +166,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ConfidenceLevelThreshold in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ConfidenceLevelThreshold")]
         public virtual global::System.Nullable<int> ConfidenceLevelThreshold
         {
@@ -195,7 +189,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property OperationMode in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("OperationMode")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SafeAttachmentOperationMode> OperationMode
         {
@@ -219,7 +212,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Enable in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Enable")]
         public virtual global::System.Nullable<bool> Enable
         {
@@ -243,7 +235,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ActionOnError in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ActionOnError")]
         public virtual global::System.Nullable<bool> ActionOnError
         {
@@ -267,7 +258,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property RecommendedPolicyType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("RecommendedPolicyType")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.RecommendedPolicyType> RecommendedPolicyType
         {
@@ -291,7 +281,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IsDefault in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IsDefault")]
         public virtual global::System.Nullable<bool> IsDefault
         {
@@ -315,7 +304,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AdminDisplayName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AdminDisplayName")]
         public virtual string AdminDisplayName
         {
@@ -336,10 +324,32 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnAdminDisplayNameChanging(string value);
         partial void OnAdminDisplayNameChanged();
         /// <summary>
+        /// There are no comments for Property EnableBlockingEncryptedAttachments in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("EnableBlockingEncryptedAttachments")]
+        public virtual global::System.Nullable<bool> EnableBlockingEncryptedAttachments
+        {
+            get
+            {
+                return this._EnableBlockingEncryptedAttachments;
+            }
+            set
+            {
+                this.OnEnableBlockingEncryptedAttachmentsChanging(value);
+                this._EnableBlockingEncryptedAttachments = value;
+                this.OnEnableBlockingEncryptedAttachmentsChanged();
+                this.OnPropertyChanged("EnableBlockingEncryptedAttachments");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Nullable<bool> _EnableBlockingEncryptedAttachments;
+        partial void OnEnableBlockingEncryptedAttachmentsChanging(global::System.Nullable<bool> value);
+        partial void OnEnableBlockingEncryptedAttachmentsChanged();
+        /// <summary>
         /// There are no comments for Property EnableOrganizationBranding in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("EnableOrganizationBranding")]
         public virtual global::System.Nullable<bool> EnableOrganizationBranding
         {
@@ -360,10 +370,32 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnEnableOrganizationBrandingChanging(global::System.Nullable<bool> value);
         partial void OnEnableOrganizationBrandingChanged();
         /// <summary>
+        /// There are no comments for Property ExcludedTypesFromBlockingEncryptedAttachments in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ExcludedTypesFromBlockingEncryptedAttachments")]
+        public virtual global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.EncryptedFileTypes> ExcludedTypesFromBlockingEncryptedAttachments
+        {
+            get
+            {
+                return this._ExcludedTypesFromBlockingEncryptedAttachments;
+            }
+            set
+            {
+                this.OnExcludedTypesFromBlockingEncryptedAttachmentsChanging(value);
+                this._ExcludedTypesFromBlockingEncryptedAttachments = value;
+                this.OnExcludedTypesFromBlockingEncryptedAttachmentsChanged();
+                this.OnPropertyChanged("ExcludedTypesFromBlockingEncryptedAttachments");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.EncryptedFileTypes> _ExcludedTypesFromBlockingEncryptedAttachments = new global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.EncryptedFileTypes>();
+        partial void OnExcludedTypesFromBlockingEncryptedAttachmentsChanging(global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.EncryptedFileTypes> value);
+        partial void OnExcludedTypesFromBlockingEncryptedAttachmentsChanged();
+        /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
         public virtual string Name
         {
@@ -387,7 +419,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property WhenChanged in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("WhenChanged")]
         public virtual global::System.Nullable<global::System.DateTimeOffset> WhenChanged
         {
@@ -411,7 +442,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property WhenCreated in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("WhenCreated")]
         public virtual global::System.Nullable<global::System.DateTimeOffset> WhenCreated
         {
@@ -435,7 +465,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ExchangeObjectId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ExchangeObjectId")]
         public virtual global::System.Nullable<global::System.Guid> ExchangeObjectId
         {
@@ -459,7 +488,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property OrganizationId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("OrganizationId")]
         public virtual string OrganizationId
         {
@@ -483,7 +511,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Guid in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Guid")]
         public virtual global::System.Nullable<global::System.Guid> Guid
         {

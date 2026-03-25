@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -925,6 +925,60 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         private global::Microsoft.OData.Client.DataServiceQuery<DirectMobileDevice> _DirectMobileDevice;
         /// <summary>
+        /// There are no comments for UnifiedRbacRoleDefinition in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UnifiedRbacRoleDefinition")]
+        public virtual global::Microsoft.OData.Client.DataServiceQuery<UnifiedRbacRoleDefinition> UnifiedRbacRoleDefinition
+        {
+            get
+            {
+                if ((this._UnifiedRbacRoleDefinition == null))
+                {
+                    this._UnifiedRbacRoleDefinition = base.CreateQuery<UnifiedRbacRoleDefinition>("UnifiedRbacRoleDefinition");
+                }
+                return this._UnifiedRbacRoleDefinition;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::Microsoft.OData.Client.DataServiceQuery<UnifiedRbacRoleDefinition> _UnifiedRbacRoleDefinition;
+        /// <summary>
+        /// There are no comments for UnifiedRbacManagementScope in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UnifiedRbacManagementScope")]
+        public virtual global::Microsoft.OData.Client.DataServiceQuery<UnifiedRbacManagementScope> UnifiedRbacManagementScope
+        {
+            get
+            {
+                if ((this._UnifiedRbacManagementScope == null))
+                {
+                    this._UnifiedRbacManagementScope = base.CreateQuery<UnifiedRbacManagementScope>("UnifiedRbacManagementScope");
+                }
+                return this._UnifiedRbacManagementScope;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::Microsoft.OData.Client.DataServiceQuery<UnifiedRbacManagementScope> _UnifiedRbacManagementScope;
+        /// <summary>
+        /// There are no comments for UnifiedRbacRoleAssignment in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UnifiedRbacRoleAssignment")]
+        public virtual global::Microsoft.OData.Client.DataServiceQuery<UnifiedRbacRoleAssignment> UnifiedRbacRoleAssignment
+        {
+            get
+            {
+                if ((this._UnifiedRbacRoleAssignment == null))
+                {
+                    this._UnifiedRbacRoleAssignment = base.CreateQuery<UnifiedRbacRoleAssignment>("UnifiedRbacRoleAssignment");
+                }
+                return this._UnifiedRbacRoleAssignment;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::Microsoft.OData.Client.DataServiceQuery<UnifiedRbacRoleAssignment> _UnifiedRbacRoleAssignment;
+        /// <summary>
         /// There are no comments for Divergence in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
@@ -1319,6 +1373,30 @@ namespace AdminApiClient.For.ExchangeOnline.OData
             base.AddObject("DirectMobileDevice", directMobileDevice);
         }
         /// <summary>
+        /// There are no comments for UnifiedRbacRoleDefinition in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        public virtual void AddToUnifiedRbacRoleDefinition(UnifiedRbacRoleDefinition unifiedRbacRoleDefinition)
+        {
+            base.AddObject("UnifiedRbacRoleDefinition", unifiedRbacRoleDefinition);
+        }
+        /// <summary>
+        /// There are no comments for UnifiedRbacManagementScope in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        public virtual void AddToUnifiedRbacManagementScope(UnifiedRbacManagementScope unifiedRbacManagementScope)
+        {
+            base.AddObject("UnifiedRbacManagementScope", unifiedRbacManagementScope);
+        }
+        /// <summary>
+        /// There are no comments for UnifiedRbacRoleAssignment in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        public virtual void AddToUnifiedRbacRoleAssignment(UnifiedRbacRoleAssignment unifiedRbacRoleAssignment)
+        {
+            base.AddObject("UnifiedRbacRoleAssignment", unifiedRbacRoleAssignment);
+        }
+        /// <summary>
         /// There are no comments for Divergence in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
@@ -1351,13 +1429,13 @@ namespace AdminApiClient.For.ExchangeOnline.OData
 
                     if (!global::Microsoft.OData.Edm.Csdl.CsdlReader.TryParse(reader, true, out edmModel, out errors))
                     {
-	                    global::System.Text.StringBuilder errorMessages = new global::System.Text.StringBuilder();
-	                    foreach (var error in errors)
-	                    {
-		                    errorMessages.Append(error.ErrorMessage);
-		                    errorMessages.Append("; ");
-	                    }
-	                    throw new global::System.InvalidOperationException(errorMessages.ToString());
+                        global::System.Text.StringBuilder errorMessages = new global::System.Text.StringBuilder();
+                        foreach (var error in errors)
+                        {
+                            errorMessages.Append(error.ErrorMessage);
+                            errorMessages.Append("; ");
+                        }
+                        throw new global::System.InvalidOperationException(errorMessages.ToString());
                     }
 
                     return edmModel;
@@ -1379,7 +1457,11 @@ namespace AdminApiClient.For.ExchangeOnline.OData
                 try
                 {
                     var assembly = global::System.Reflection.Assembly.GetExecutingAssembly();
-                    var resourcePath = global::System.Linq.Enumerable.Single(assembly.GetManifestResourceNames(), str => str.EndsWith(filePath));
+                    // If multiple resource names end with the file name, select the shortest one.
+                    var resourcePath = global::System.Linq.Enumerable.First(
+                        global::System.Linq.Enumerable.OrderBy(
+                            global::System.Linq.Enumerable.Where(assembly.GetManifestResourceNames(), name => name.EndsWith(filePath)),
+                            filteredName => filteredName.Length));
                     global::System.IO.Stream stream = assembly.GetManifestResourceStream(resourcePath);
                     return global::System.Xml.XmlReader.Create(new global::System.IO.StreamReader(stream));
                 }
@@ -1438,12 +1520,28 @@ namespace AdminApiClient.For.ExchangeOnline.OData
             return new global::Microsoft.OData.Client.DataServiceActionQuery<global::AdminApiClient.For.ExchangeOnline.OData.MailDetailDlpPolicyReport>(this, this.BaseUri.OriginalString.Trim('/') + "/GetMailDetailDlpPolicyReport", new global::Microsoft.OData.Client.BodyOperationParameter("QueryTable", QueryTable));
         }
         /// <summary>
+        /// There are no comments for RbacQuery in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("RbacQuery")]
+        public virtual global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::AdminApiClient.For.ExchangeOnline.OData.RbacResults> RbacQuery(global::AdminApiClient.For.ExchangeOnline.OData.GenericHashTable QueryTable)
+        {
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::AdminApiClient.For.ExchangeOnline.OData.RbacResults>(this, this.BaseUri.OriginalString.Trim('/') + "/RbacQuery", new global::Microsoft.OData.Client.BodyOperationParameter("QueryTable", QueryTable));
+        }
+        /// <summary>
         /// There are no comments for Initialize in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("Initialize")]
         public virtual global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> Initialize()
         {
             return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(this, this.BaseUri.OriginalString.Trim('/') + "/Initialize");
+        }
+        /// <summary>
+        /// There are no comments for InitializeLiteFRC in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("InitializeLiteFRC")]
+        public virtual global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> InitializeLiteFRC()
+        {
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(this, this.BaseUri.OriginalString.Trim('/') + "/InitializeLiteFRC");
         }
         /// <summary>
         /// There are no comments for InvokeCommand in the schema.

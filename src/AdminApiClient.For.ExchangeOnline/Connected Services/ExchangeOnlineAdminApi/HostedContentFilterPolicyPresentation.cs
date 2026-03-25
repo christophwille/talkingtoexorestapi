@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -51,7 +51,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Identity")]
         public virtual string Identity
         {
@@ -75,7 +74,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AdminDisplayName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AdminDisplayName")]
         public virtual string AdminDisplayName
         {
@@ -99,7 +97,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AddXHeaderValue in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AddXHeaderValue")]
         public virtual string AddXHeaderValue
         {
@@ -123,7 +120,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ModifySubjectValue in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ModifySubjectValue")]
         public virtual string ModifySubjectValue
         {
@@ -147,7 +143,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property RedirectToRecipients in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("RedirectToRecipients")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> RedirectToRecipients
         {
@@ -171,7 +166,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TestModeBccToRecipients in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TestModeBccToRecipients")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> TestModeBccToRecipients
         {
@@ -195,7 +189,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FalsePositiveAdditionalRecipients in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FalsePositiveAdditionalRecipients")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> FalsePositiveAdditionalRecipients
         {
@@ -219,7 +212,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property QuarantineRetentionPeriod in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("QuarantineRetentionPeriod")]
         public virtual global::System.Nullable<int> QuarantineRetentionPeriod
         {
@@ -240,34 +232,9 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnQuarantineRetentionPeriodChanging(global::System.Nullable<int> value);
         partial void OnQuarantineRetentionPeriodChanged();
         /// <summary>
-        /// There are no comments for Property EndUserSpamNotificationFrequency in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
-        [global::Microsoft.OData.Client.OriginalNameAttribute("EndUserSpamNotificationFrequency")]
-        public virtual global::System.Nullable<int> EndUserSpamNotificationFrequency
-        {
-            get
-            {
-                return this._EndUserSpamNotificationFrequency;
-            }
-            set
-            {
-                this.OnEndUserSpamNotificationFrequencyChanging(value);
-                this._EndUserSpamNotificationFrequency = value;
-                this.OnEndUserSpamNotificationFrequencyChanged();
-                this.OnPropertyChanged("EndUserSpamNotificationFrequency");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<int> _EndUserSpamNotificationFrequency;
-        partial void OnEndUserSpamNotificationFrequencyChanging(global::System.Nullable<int> value);
-        partial void OnEndUserSpamNotificationFrequencyChanged();
-        /// <summary>
         /// There are no comments for Property TestModeAction in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TestModeAction")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringTestModeAction> TestModeAction
         {
@@ -291,7 +258,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IncreaseScoreWithImageLinks in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IncreaseScoreWithImageLinks")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> IncreaseScoreWithImageLinks
         {
@@ -315,7 +281,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IncreaseScoreWithNumericIps in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IncreaseScoreWithNumericIps")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> IncreaseScoreWithNumericIps
         {
@@ -339,7 +304,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IncreaseScoreWithRedirectToOtherPort in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IncreaseScoreWithRedirectToOtherPort")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> IncreaseScoreWithRedirectToOtherPort
         {
@@ -363,7 +327,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IncreaseScoreWithBizOrInfoUrls in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IncreaseScoreWithBizOrInfoUrls")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> IncreaseScoreWithBizOrInfoUrls
         {
@@ -387,7 +350,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamEmptyMessages in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamEmptyMessages")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamEmptyMessages
         {
@@ -411,7 +373,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamJavaScriptInHtml in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamJavaScriptInHtml")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamJavaScriptInHtml
         {
@@ -435,7 +396,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamFramesInHtml in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamFramesInHtml")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamFramesInHtml
         {
@@ -459,7 +419,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamObjectTagsInHtml in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamObjectTagsInHtml")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamObjectTagsInHtml
         {
@@ -483,7 +442,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamEmbedTagsInHtml in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamEmbedTagsInHtml")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamEmbedTagsInHtml
         {
@@ -507,7 +465,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamFormTagsInHtml in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamFormTagsInHtml")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamFormTagsInHtml
         {
@@ -531,7 +488,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamWebBugsInHtml in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamWebBugsInHtml")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamWebBugsInHtml
         {
@@ -555,7 +511,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamSensitiveWordList in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamSensitiveWordList")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamSensitiveWordList
         {
@@ -579,7 +534,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamSpfRecordHardFail in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamSpfRecordHardFail")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamSpfRecordHardFail
         {
@@ -603,7 +557,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamFromAddressAuthFail in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamFromAddressAuthFail")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamFromAddressAuthFail
         {
@@ -627,7 +580,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamBulkMail in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamBulkMail")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamBulkMail
         {
@@ -651,7 +603,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MarkAsSpamNdrBackscatter in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MarkAsSpamNdrBackscatter")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringOption> MarkAsSpamNdrBackscatter
         {
@@ -675,7 +626,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IsDefault in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IsDefault")]
         public virtual global::System.Nullable<bool> IsDefault
         {
@@ -699,7 +649,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LanguageBlockList in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LanguageBlockList")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> LanguageBlockList
         {
@@ -723,7 +672,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property RegionBlockList in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("RegionBlockList")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> RegionBlockList
         {
@@ -747,7 +695,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property HighConfidenceSpamAction in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("HighConfidenceSpamAction")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringAction> HighConfidenceSpamAction
         {
@@ -771,7 +718,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property SpamAction in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("SpamAction")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringAction> SpamAction
         {
@@ -792,34 +738,9 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnSpamActionChanging(global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringAction> value);
         partial void OnSpamActionChanged();
         /// <summary>
-        /// There are no comments for Property EnableEndUserSpamNotifications in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
-        [global::Microsoft.OData.Client.OriginalNameAttribute("EnableEndUserSpamNotifications")]
-        public virtual global::System.Nullable<bool> EnableEndUserSpamNotifications
-        {
-            get
-            {
-                return this._EnableEndUserSpamNotifications;
-            }
-            set
-            {
-                this.OnEnableEndUserSpamNotificationsChanging(value);
-                this._EnableEndUserSpamNotifications = value;
-                this.OnEnableEndUserSpamNotificationsChanged();
-                this.OnPropertyChanged("EnableEndUserSpamNotifications");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<bool> _EnableEndUserSpamNotifications;
-        partial void OnEnableEndUserSpamNotificationsChanging(global::System.Nullable<bool> value);
-        partial void OnEnableEndUserSpamNotificationsChanged();
-        /// <summary>
         /// There are no comments for Property DownloadLink in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DownloadLink")]
         public virtual global::System.Nullable<bool> DownloadLink
         {
@@ -843,7 +764,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property EnableRegionBlockList in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("EnableRegionBlockList")]
         public virtual global::System.Nullable<bool> EnableRegionBlockList
         {
@@ -867,7 +787,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property EnableLanguageBlockList in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("EnableLanguageBlockList")]
         public virtual global::System.Nullable<bool> EnableLanguageBlockList
         {
@@ -888,130 +807,9 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnEnableLanguageBlockListChanging(global::System.Nullable<bool> value);
         partial void OnEnableLanguageBlockListChanged();
         /// <summary>
-        /// There are no comments for Property EndUserSpamNotificationCustomFromAddress in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
-        [global::Microsoft.OData.Client.OriginalNameAttribute("EndUserSpamNotificationCustomFromAddress")]
-        public virtual string EndUserSpamNotificationCustomFromAddress
-        {
-            get
-            {
-                return this._EndUserSpamNotificationCustomFromAddress;
-            }
-            set
-            {
-                this.OnEndUserSpamNotificationCustomFromAddressChanging(value);
-                this._EndUserSpamNotificationCustomFromAddress = value;
-                this.OnEndUserSpamNotificationCustomFromAddressChanged();
-                this.OnPropertyChanged("EndUserSpamNotificationCustomFromAddress");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _EndUserSpamNotificationCustomFromAddress;
-        partial void OnEndUserSpamNotificationCustomFromAddressChanging(string value);
-        partial void OnEndUserSpamNotificationCustomFromAddressChanged();
-        /// <summary>
-        /// There are no comments for Property EndUserSpamNotificationCustomFromName in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
-        [global::Microsoft.OData.Client.OriginalNameAttribute("EndUserSpamNotificationCustomFromName")]
-        public virtual string EndUserSpamNotificationCustomFromName
-        {
-            get
-            {
-                return this._EndUserSpamNotificationCustomFromName;
-            }
-            set
-            {
-                this.OnEndUserSpamNotificationCustomFromNameChanging(value);
-                this._EndUserSpamNotificationCustomFromName = value;
-                this.OnEndUserSpamNotificationCustomFromNameChanged();
-                this.OnPropertyChanged("EndUserSpamNotificationCustomFromName");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _EndUserSpamNotificationCustomFromName;
-        partial void OnEndUserSpamNotificationCustomFromNameChanging(string value);
-        partial void OnEndUserSpamNotificationCustomFromNameChanged();
-        /// <summary>
-        /// There are no comments for Property EndUserSpamNotificationCustomSubject in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
-        [global::Microsoft.OData.Client.OriginalNameAttribute("EndUserSpamNotificationCustomSubject")]
-        public virtual string EndUserSpamNotificationCustomSubject
-        {
-            get
-            {
-                return this._EndUserSpamNotificationCustomSubject;
-            }
-            set
-            {
-                this.OnEndUserSpamNotificationCustomSubjectChanging(value);
-                this._EndUserSpamNotificationCustomSubject = value;
-                this.OnEndUserSpamNotificationCustomSubjectChanged();
-                this.OnPropertyChanged("EndUserSpamNotificationCustomSubject");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _EndUserSpamNotificationCustomSubject;
-        partial void OnEndUserSpamNotificationCustomSubjectChanging(string value);
-        partial void OnEndUserSpamNotificationCustomSubjectChanged();
-        /// <summary>
-        /// There are no comments for Property EndUserSpamNotificationLanguage in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
-        [global::Microsoft.OData.Client.OriginalNameAttribute("EndUserSpamNotificationLanguage")]
-        public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.EsnLanguage> EndUserSpamNotificationLanguage
-        {
-            get
-            {
-                return this._EndUserSpamNotificationLanguage;
-            }
-            set
-            {
-                this.OnEndUserSpamNotificationLanguageChanging(value);
-                this._EndUserSpamNotificationLanguage = value;
-                this.OnEndUserSpamNotificationLanguageChanged();
-                this.OnPropertyChanged("EndUserSpamNotificationLanguage");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.EsnLanguage> _EndUserSpamNotificationLanguage;
-        partial void OnEndUserSpamNotificationLanguageChanging(global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.EsnLanguage> value);
-        partial void OnEndUserSpamNotificationLanguageChanged();
-        /// <summary>
-        /// There are no comments for Property EndUserSpamNotificationLimit in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
-        [global::Microsoft.OData.Client.OriginalNameAttribute("EndUserSpamNotificationLimit")]
-        public virtual global::System.Nullable<int> EndUserSpamNotificationLimit
-        {
-            get
-            {
-                return this._EndUserSpamNotificationLimit;
-            }
-            set
-            {
-                this.OnEndUserSpamNotificationLimitChanging(value);
-                this._EndUserSpamNotificationLimit = value;
-                this.OnEndUserSpamNotificationLimitChanged();
-                this.OnPropertyChanged("EndUserSpamNotificationLimit");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<int> _EndUserSpamNotificationLimit;
-        partial void OnEndUserSpamNotificationLimitChanging(global::System.Nullable<int> value);
-        partial void OnEndUserSpamNotificationLimitChanged();
-        /// <summary>
         /// There are no comments for Property BulkThreshold in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("BulkThreshold")]
         public virtual global::System.Nullable<int> BulkThreshold
         {
@@ -1035,7 +833,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ZapEnabled in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ZapEnabled")]
         public virtual global::System.Nullable<bool> ZapEnabled
         {
@@ -1059,7 +856,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property InlineSafetyTipsEnabled in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("InlineSafetyTipsEnabled")]
         public virtual global::System.Nullable<bool> InlineSafetyTipsEnabled
         {
@@ -1080,10 +876,32 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnInlineSafetyTipsEnabledChanging(global::System.Nullable<bool> value);
         partial void OnInlineSafetyTipsEnabledChanged();
         /// <summary>
+        /// There are no comments for Property BulkMovesEnabled in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("BulkMovesEnabled")]
+        public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.BulkMovesEnabled> BulkMovesEnabled
+        {
+            get
+            {
+                return this._BulkMovesEnabled;
+            }
+            set
+            {
+                this.OnBulkMovesEnabledChanging(value);
+                this._BulkMovesEnabled = value;
+                this.OnBulkMovesEnabledChanged();
+                this.OnPropertyChanged("BulkMovesEnabled");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.BulkMovesEnabled> _BulkMovesEnabled;
+        partial void OnBulkMovesEnabledChanging(global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.BulkMovesEnabled> value);
+        partial void OnBulkMovesEnabledChanged();
+        /// <summary>
         /// There are no comments for Property BulkSpamAction in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("BulkSpamAction")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringAction> BulkSpamAction
         {
@@ -1107,7 +925,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property PhishSpamAction in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("PhishSpamAction")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.SpamFilteringAction> PhishSpamAction
         {
@@ -1131,7 +948,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property SpamZapEnabled in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("SpamZapEnabled")]
         public virtual global::System.Nullable<bool> SpamZapEnabled
         {
@@ -1155,7 +971,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property PhishZapEnabled in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("PhishZapEnabled")]
         public virtual global::System.Nullable<bool> PhishZapEnabled
         {
@@ -1176,34 +991,32 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnPhishZapEnabledChanging(global::System.Nullable<bool> value);
         partial void OnPhishZapEnabledChanged();
         /// <summary>
-        /// There are no comments for Property ApplyPhishActionToIntraOrg in the schema.
+        /// There are no comments for Property IntraOrgFilterState in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ApplyPhishActionToIntraOrg")]
-        public virtual global::System.Nullable<bool> ApplyPhishActionToIntraOrg
+        [global::Microsoft.OData.Client.OriginalNameAttribute("IntraOrgFilterState")]
+        public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.IntraOrgFilterState> IntraOrgFilterState
         {
             get
             {
-                return this._ApplyPhishActionToIntraOrg;
+                return this._IntraOrgFilterState;
             }
             set
             {
-                this.OnApplyPhishActionToIntraOrgChanging(value);
-                this._ApplyPhishActionToIntraOrg = value;
-                this.OnApplyPhishActionToIntraOrgChanged();
-                this.OnPropertyChanged("ApplyPhishActionToIntraOrg");
+                this.OnIntraOrgFilterStateChanging(value);
+                this._IntraOrgFilterState = value;
+                this.OnIntraOrgFilterStateChanged();
+                this.OnPropertyChanged("IntraOrgFilterState");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<bool> _ApplyPhishActionToIntraOrg;
-        partial void OnApplyPhishActionToIntraOrgChanging(global::System.Nullable<bool> value);
-        partial void OnApplyPhishActionToIntraOrgChanged();
+        private global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.IntraOrgFilterState> _IntraOrgFilterState;
+        partial void OnIntraOrgFilterStateChanging(global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.IntraOrgFilterState> value);
+        partial void OnIntraOrgFilterStateChanged();
         /// <summary>
         /// There are no comments for Property HighConfidencePhishAction in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("HighConfidencePhishAction")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.PhishFilteringAction> HighConfidencePhishAction
         {
@@ -1227,7 +1040,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property RecommendedPolicyType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("RecommendedPolicyType")]
         public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.RecommendedPolicyType> RecommendedPolicyType
         {
@@ -1251,7 +1063,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Name in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
         public virtual string Name
         {
@@ -1275,7 +1086,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property WhenChanged in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("WhenChanged")]
         public virtual global::System.Nullable<global::System.DateTimeOffset> WhenChanged
         {
@@ -1299,7 +1109,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property WhenCreated in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("WhenCreated")]
         public virtual global::System.Nullable<global::System.DateTimeOffset> WhenCreated
         {
@@ -1323,7 +1132,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ExchangeObjectId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ExchangeObjectId")]
         public virtual global::System.Nullable<global::System.Guid> ExchangeObjectId
         {
@@ -1347,7 +1155,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property OrganizationId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("OrganizationId")]
         public virtual string OrganizationId
         {
@@ -1371,7 +1178,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Guid in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Guid")]
         public virtual global::System.Nullable<global::System.Guid> Guid
         {

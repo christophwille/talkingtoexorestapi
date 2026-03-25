@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -50,7 +50,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Identity")]
         public virtual string Identity
         {
@@ -74,7 +73,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DateFormat in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DateFormat")]
         public virtual string DateFormat
         {
@@ -98,7 +96,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Language in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Language")]
         public virtual string Language
         {
@@ -122,7 +119,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TimeFormat in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TimeFormat")]
         public virtual string TimeFormat
         {
@@ -146,7 +142,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property TimeZone in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("TimeZone")]
         public virtual string TimeZone
         {

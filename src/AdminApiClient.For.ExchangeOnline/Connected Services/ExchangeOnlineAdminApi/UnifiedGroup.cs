@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -51,7 +51,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Guid in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Guid")]
         public virtual string Guid
         {
@@ -75,7 +74,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Identity")]
         public virtual string Identity
         {
@@ -99,7 +97,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property GrantSendOnBehalfTo in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("GrantSendOnBehalfTo")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> GrantSendOnBehalfTo
         {
@@ -123,7 +120,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Language in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Language")]
         public virtual string Language
         {
@@ -147,7 +143,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MigrationToUnifiedGroupInProgress in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MigrationToUnifiedGroupInProgress")]
         public virtual global::System.Nullable<bool> MigrationToUnifiedGroupInProgress
         {
@@ -171,7 +166,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property RejectMessagesFromSendersOrMembers in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("RejectMessagesFromSendersOrMembers")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> RejectMessagesFromSendersOrMembers
         {
@@ -195,7 +189,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AcceptMessagesOnlyFromSendersOrMembers in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AcceptMessagesOnlyFromSendersOrMembers")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> AcceptMessagesOnlyFromSendersOrMembers
         {
@@ -216,10 +209,78 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnAcceptMessagesOnlyFromSendersOrMembersChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
         partial void OnAcceptMessagesOnlyFromSendersOrMembersChanged();
         /// <summary>
+        /// There are no comments for Property GrantSendOnBehalfToWithDisplayNames in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GrantSendOnBehalfToWithDisplayNames")]
+        public virtual global::System.Collections.ObjectModel.ObservableCollection<string> GrantSendOnBehalfToWithDisplayNames
+        {
+            get
+            {
+                return this._GrantSendOnBehalfToWithDisplayNames;
+            }
+            set
+            {
+                this.OnGrantSendOnBehalfToWithDisplayNamesChanging(value);
+                this._GrantSendOnBehalfToWithDisplayNames = value;
+                this.OnGrantSendOnBehalfToWithDisplayNamesChanged();
+                this.OnPropertyChanged("GrantSendOnBehalfToWithDisplayNames");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Collections.ObjectModel.ObservableCollection<string> _GrantSendOnBehalfToWithDisplayNames = new global::System.Collections.ObjectModel.ObservableCollection<string>();
+        partial void OnGrantSendOnBehalfToWithDisplayNamesChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
+        partial void OnGrantSendOnBehalfToWithDisplayNamesChanged();
+        /// <summary>
+        /// There are no comments for Property AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames")]
+        public virtual global::System.Collections.ObjectModel.ObservableCollection<string> AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames
+        {
+            get
+            {
+                return this._AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames;
+            }
+            set
+            {
+                this.OnAcceptMessagesOnlyFromSendersOrMembersWithDisplayNamesChanging(value);
+                this._AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames = value;
+                this.OnAcceptMessagesOnlyFromSendersOrMembersWithDisplayNamesChanged();
+                this.OnPropertyChanged("AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Collections.ObjectModel.ObservableCollection<string> _AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames = new global::System.Collections.ObjectModel.ObservableCollection<string>();
+        partial void OnAcceptMessagesOnlyFromSendersOrMembersWithDisplayNamesChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
+        partial void OnAcceptMessagesOnlyFromSendersOrMembersWithDisplayNamesChanged();
+        /// <summary>
+        /// There are no comments for Property RejectMessagesFromSendersOrMembersWithDisplayNames in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("RejectMessagesFromSendersOrMembersWithDisplayNames")]
+        public virtual global::System.Collections.ObjectModel.ObservableCollection<string> RejectMessagesFromSendersOrMembersWithDisplayNames
+        {
+            get
+            {
+                return this._RejectMessagesFromSendersOrMembersWithDisplayNames;
+            }
+            set
+            {
+                this.OnRejectMessagesFromSendersOrMembersWithDisplayNamesChanging(value);
+                this._RejectMessagesFromSendersOrMembersWithDisplayNames = value;
+                this.OnRejectMessagesFromSendersOrMembersWithDisplayNamesChanged();
+                this.OnPropertyChanged("RejectMessagesFromSendersOrMembersWithDisplayNames");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Collections.ObjectModel.ObservableCollection<string> _RejectMessagesFromSendersOrMembersWithDisplayNames = new global::System.Collections.ObjectModel.ObservableCollection<string>();
+        partial void OnRejectMessagesFromSendersOrMembersWithDisplayNamesChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
+        partial void OnRejectMessagesFromSendersOrMembersWithDisplayNamesChanged();
+        /// <summary>
         /// There are no comments for Property SendAsPermissionList in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("SendAsPermissionList")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> SendAsPermissionList
         {
@@ -243,7 +304,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ObjectId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ObjectId")]
         public virtual string ObjectId
         {
@@ -267,7 +327,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DistinguishedName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DistinguishedName")]
         public virtual string DistinguishedName
         {
@@ -291,7 +350,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property WindowsLiveID in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("WindowsLiveID")]
         public virtual string WindowsLiveID
         {
@@ -315,7 +373,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property RecipientType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("RecipientType")]
         public virtual string RecipientType
         {
@@ -339,7 +396,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property RecipientTypeDetails in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("RecipientTypeDetails")]
         public virtual string RecipientTypeDetails
         {
@@ -363,7 +419,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IsValid in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IsValid")]
         public virtual global::System.Nullable<bool> IsValid
         {
@@ -387,7 +442,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property WhenCreatedUTC in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("WhenCreatedUTC")]
         public virtual global::System.Nullable<global::System.DateTimeOffset> WhenCreatedUTC
         {

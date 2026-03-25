@@ -12,53 +12,81 @@
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
-    /// There are no comments for RoleDefinitionsSingle in the schema.
+    /// There are no comments for UnifiedRbacRoleDefinitionSingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("RoleDefinitionsSingle")]
-    public partial class RoleDefinitionsSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<RoleDefinitions>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("UnifiedRbacRoleDefinitionSingle")]
+    public partial class UnifiedRbacRoleDefinitionSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<UnifiedRbacRoleDefinition>
     {
         /// <summary>
-        /// Initialize a new RoleDefinitionsSingle object.
+        /// Initialize a new UnifiedRbacRoleDefinitionSingle object.
         /// </summary>
-        public RoleDefinitionsSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+        public UnifiedRbacRoleDefinitionSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
             : base(context, path) {}
 
         /// <summary>
-        /// Initialize a new RoleDefinitionsSingle object.
+        /// Initialize a new UnifiedRbacRoleDefinitionSingle object.
         /// </summary>
-        public RoleDefinitionsSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+        public UnifiedRbacRoleDefinitionSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
             : base(context, path, isComposable) {}
 
         /// <summary>
-        /// Initialize a new RoleDefinitionsSingle object.
+        /// Initialize a new UnifiedRbacRoleDefinitionSingle object.
         /// </summary>
-        public RoleDefinitionsSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<RoleDefinitions> query)
+        public UnifiedRbacRoleDefinitionSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<UnifiedRbacRoleDefinition> query)
             : base(query) {}
 
+        /// <summary>
+        /// There are no comments for InheritsPermissionsFrom in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("inheritsPermissionsFrom")]
+        public virtual global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle InheritsPermissionsFrom
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._InheritsPermissionsFrom == null))
+                {
+                    this._InheritsPermissionsFrom = new global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle(this.Context, GetPath("inheritsPermissionsFrom"));
+                }
+                return this._InheritsPermissionsFrom;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle _InheritsPermissionsFrom;
     }
     /// <summary>
-    /// There are no comments for RoleDefinitions in the schema.
+    /// There are no comments for UnifiedRbacRoleDefinition in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("id")]
-    [global::Microsoft.OData.Client.EntitySet("RoleDefinitions")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("RoleDefinitions")]
-    public partial class RoleDefinitions : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.EntitySet("UnifiedRbacRoleDefinition")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("UnifiedRbacRoleDefinition")]
+    public partial class UnifiedRbacRoleDefinition : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a new RoleDefinitions object.
+        /// Create a new UnifiedRbacRoleDefinition object.
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="parent">Initial value of Parent.</param>
+        /// <param name="inheritsPermissionsFrom">Initial value of InheritsPermissionsFrom.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        public static RoleDefinitions CreateRoleDefinitions(string ID, string parent)
+        public static UnifiedRbacRoleDefinition CreateUnifiedRbacRoleDefinition(string ID, string parent, global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition inheritsPermissionsFrom)
         {
-            RoleDefinitions roleDefinitions = new RoleDefinitions();
-            roleDefinitions.Id = ID;
-            roleDefinitions.Parent = parent;
-            return roleDefinitions;
+            UnifiedRbacRoleDefinition unifiedRbacRoleDefinition = new UnifiedRbacRoleDefinition();
+            unifiedRbacRoleDefinition.Id = ID;
+            unifiedRbacRoleDefinition.Parent = parent;
+            if ((inheritsPermissionsFrom == null))
+            {
+                throw new global::System.ArgumentNullException("inheritsPermissionsFrom");
+            }
+            unifiedRbacRoleDefinition.InheritsPermissionsFrom = inheritsPermissionsFrom;
+            return unifiedRbacRoleDefinition;
         }
         /// <summary>
         /// There are no comments for Property Id in the schema.
@@ -131,6 +159,144 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnDisplayNameChanging(string value);
         partial void OnDisplayNameChanged();
         /// <summary>
+        /// There are no comments for Property RolePermissions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("rolePermissions")]
+        public virtual global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.RolePermission> RolePermissions
+        {
+            get
+            {
+                return this._RolePermissions;
+            }
+            set
+            {
+                this.OnRolePermissionsChanging(value);
+                this._RolePermissions = value;
+                this.OnRolePermissionsChanged();
+                this.OnPropertyChanged("rolePermissions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.RolePermission> _RolePermissions = new global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.RolePermission>();
+        partial void OnRolePermissionsChanging(global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.RolePermission> value);
+        partial void OnRolePermissionsChanged();
+        /// <summary>
+        /// There are no comments for Property IsEnabled in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("isEnabled")]
+        public virtual global::System.Nullable<bool> IsEnabled
+        {
+            get
+            {
+                return this._IsEnabled;
+            }
+            set
+            {
+                this.OnIsEnabledChanging(value);
+                this._IsEnabled = value;
+                this.OnIsEnabledChanged();
+                this.OnPropertyChanged("isEnabled");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Nullable<bool> _IsEnabled;
+        partial void OnIsEnabledChanging(global::System.Nullable<bool> value);
+        partial void OnIsEnabledChanged();
+        /// <summary>
+        /// There are no comments for Property Version in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("version")]
+        public virtual string Version
+        {
+            get
+            {
+                return this._Version;
+            }
+            set
+            {
+                this.OnVersionChanging(value);
+                this._Version = value;
+                this.OnVersionChanged();
+                this.OnPropertyChanged("version");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private string _Version;
+        partial void OnVersionChanging(string value);
+        partial void OnVersionChanged();
+        /// <summary>
+        /// There are no comments for Property IsBuiltIn in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("isBuiltIn")]
+        public virtual global::System.Nullable<bool> IsBuiltIn
+        {
+            get
+            {
+                return this._IsBuiltIn;
+            }
+            set
+            {
+                this.OnIsBuiltInChanging(value);
+                this._IsBuiltIn = value;
+                this.OnIsBuiltInChanged();
+                this.OnPropertyChanged("isBuiltIn");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Nullable<bool> _IsBuiltIn;
+        partial void OnIsBuiltInChanging(global::System.Nullable<bool> value);
+        partial void OnIsBuiltInChanged();
+        /// <summary>
+        /// There are no comments for Property TemplateId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("templateId")]
+        public virtual string TemplateId
+        {
+            get
+            {
+                return this._TemplateId;
+            }
+            set
+            {
+                this.OnTemplateIdChanging(value);
+                this._TemplateId = value;
+                this.OnTemplateIdChanged();
+                this.OnPropertyChanged("templateId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private string _TemplateId;
+        partial void OnTemplateIdChanging(string value);
+        partial void OnTemplateIdChanged();
+        /// <summary>
+        /// There are no comments for Property AllowedPrincipalTypes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("allowedPrincipalTypes")]
+        public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.RolePrincipalTypes> AllowedPrincipalTypes
+        {
+            get
+            {
+                return this._AllowedPrincipalTypes;
+            }
+            set
+            {
+                this.OnAllowedPrincipalTypesChanging(value);
+                this._AllowedPrincipalTypes = value;
+                this.OnAllowedPrincipalTypesChanged();
+                this.OnPropertyChanged("allowedPrincipalTypes");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.RolePrincipalTypes> _AllowedPrincipalTypes;
+        partial void OnAllowedPrincipalTypesChanging(global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.RolePrincipalTypes> value);
+        partial void OnAllowedPrincipalTypesChanged();
+        /// <summary>
         /// There are no comments for Property Parent in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
@@ -178,121 +344,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnRoleEntriesChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
         partial void OnRoleEntriesChanged();
         /// <summary>
-        /// There are no comments for Property RolePermissions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("rolePermissions")]
-        public virtual global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.RolePermission> RolePermissions
-        {
-            get
-            {
-                return this._RolePermissions;
-            }
-            set
-            {
-                this.OnRolePermissionsChanging(value);
-                this._RolePermissions = value;
-                this.OnRolePermissionsChanged();
-                this.OnPropertyChanged("rolePermissions");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.RolePermission> _RolePermissions = new global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.RolePermission>();
-        partial void OnRolePermissionsChanging(global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.RolePermission> value);
-        partial void OnRolePermissionsChanged();
-        /// <summary>
-        /// There are no comments for Property ImplicitRecipientReadScope in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("implicitRecipientReadScope")]
-        public virtual string ImplicitRecipientReadScope
-        {
-            get
-            {
-                return this._ImplicitRecipientReadScope;
-            }
-            set
-            {
-                this.OnImplicitRecipientReadScopeChanging(value);
-                this._ImplicitRecipientReadScope = value;
-                this.OnImplicitRecipientReadScopeChanged();
-                this.OnPropertyChanged("implicitRecipientReadScope");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _ImplicitRecipientReadScope;
-        partial void OnImplicitRecipientReadScopeChanging(string value);
-        partial void OnImplicitRecipientReadScopeChanged();
-        /// <summary>
-        /// There are no comments for Property ImplicitRecipientWriteScope in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("implicitRecipientWriteScope")]
-        public virtual string ImplicitRecipientWriteScope
-        {
-            get
-            {
-                return this._ImplicitRecipientWriteScope;
-            }
-            set
-            {
-                this.OnImplicitRecipientWriteScopeChanging(value);
-                this._ImplicitRecipientWriteScope = value;
-                this.OnImplicitRecipientWriteScopeChanged();
-                this.OnPropertyChanged("implicitRecipientWriteScope");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _ImplicitRecipientWriteScope;
-        partial void OnImplicitRecipientWriteScopeChanging(string value);
-        partial void OnImplicitRecipientWriteScopeChanged();
-        /// <summary>
-        /// There are no comments for Property ImplicitConfigReadScope in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("implicitConfigReadScope")]
-        public virtual string ImplicitConfigReadScope
-        {
-            get
-            {
-                return this._ImplicitConfigReadScope;
-            }
-            set
-            {
-                this.OnImplicitConfigReadScopeChanging(value);
-                this._ImplicitConfigReadScope = value;
-                this.OnImplicitConfigReadScopeChanged();
-                this.OnPropertyChanged("implicitConfigReadScope");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _ImplicitConfigReadScope;
-        partial void OnImplicitConfigReadScopeChanging(string value);
-        partial void OnImplicitConfigReadScopeChanged();
-        /// <summary>
-        /// There are no comments for Property ImplicitConfigWriteScope in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("implicitConfigWriteScope")]
-        public virtual string ImplicitConfigWriteScope
-        {
-            get
-            {
-                return this._ImplicitConfigWriteScope;
-            }
-            set
-            {
-                this.OnImplicitConfigWriteScopeChanging(value);
-                this._ImplicitConfigWriteScope = value;
-                this.OnImplicitConfigWriteScopeChanged();
-                this.OnPropertyChanged("implicitConfigWriteScope");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _ImplicitConfigWriteScope;
-        partial void OnImplicitConfigWriteScopeChanging(string value);
-        partial void OnImplicitConfigWriteScopeChanged();
-        /// <summary>
         /// There are no comments for Property IsRootRole in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
@@ -339,29 +390,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnIsEndUserRoleChanging(global::System.Nullable<bool> value);
         partial void OnIsEndUserRoleChanged();
         /// <summary>
-        /// There are no comments for Property IsEnabled in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("isEnabled")]
-        public virtual global::System.Nullable<bool> IsEnabled
-        {
-            get
-            {
-                return this._IsEnabled;
-            }
-            set
-            {
-                this.OnIsEnabledChanging(value);
-                this._IsEnabled = value;
-                this.OnIsEnabledChanged();
-                this.OnPropertyChanged("isEnabled");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<bool> _IsEnabled;
-        partial void OnIsEnabledChanging(global::System.Nullable<bool> value);
-        partial void OnIsEnabledChanged();
-        /// <summary>
         /// There are no comments for Property IsDeprecated in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
@@ -407,29 +435,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         private global::System.Nullable<bool> _IsValid;
         partial void OnIsValidChanging(global::System.Nullable<bool> value);
         partial void OnIsValidChanged();
-        /// <summary>
-        /// There are no comments for Property Version in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("version")]
-        public virtual string Version
-        {
-            get
-            {
-                return this._Version;
-            }
-            set
-            {
-                this.OnVersionChanging(value);
-                this._Version = value;
-                this.OnVersionChanged();
-                this.OnPropertyChanged("version");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _Version;
-        partial void OnVersionChanging(string value);
-        partial void OnVersionChanged();
         /// <summary>
         /// There are no comments for Property RoleType in the schema.
         /// </summary>
@@ -522,6 +527,53 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         private string _Identity;
         partial void OnIdentityChanging(string value);
         partial void OnIdentityChanged();
+        /// <summary>
+        /// There are no comments for Property IsServicePrincipalRole in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("isServicePrincipalRole")]
+        public virtual global::System.Nullable<bool> IsServicePrincipalRole
+        {
+            get
+            {
+                return this._IsServicePrincipalRole;
+            }
+            set
+            {
+                this.OnIsServicePrincipalRoleChanging(value);
+                this._IsServicePrincipalRole = value;
+                this.OnIsServicePrincipalRoleChanged();
+                this.OnPropertyChanged("isServicePrincipalRole");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Nullable<bool> _IsServicePrincipalRole;
+        partial void OnIsServicePrincipalRoleChanging(global::System.Nullable<bool> value);
+        partial void OnIsServicePrincipalRoleChanged();
+        /// <summary>
+        /// There are no comments for Property InheritsPermissionsFrom in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("inheritsPermissionsFrom")]
+        [global::System.ComponentModel.DataAnnotations.RequiredAttribute(ErrorMessage = "InheritsPermissionsFrom is required.")]
+        public virtual global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition InheritsPermissionsFrom
+        {
+            get
+            {
+                return this._InheritsPermissionsFrom;
+            }
+            set
+            {
+                this.OnInheritsPermissionsFromChanging(value);
+                this._InheritsPermissionsFrom = value;
+                this.OnInheritsPermissionsFromChanged();
+                this.OnPropertyChanged("inheritsPermissionsFrom");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition _InheritsPermissionsFrom;
+        partial void OnInheritsPermissionsFromChanging(global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition value);
+        partial void OnInheritsPermissionsFromChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>

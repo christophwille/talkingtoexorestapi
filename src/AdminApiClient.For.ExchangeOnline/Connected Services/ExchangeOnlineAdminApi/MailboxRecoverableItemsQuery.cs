@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -21,7 +21,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Identity")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> Identity
         {
@@ -45,7 +44,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property SubjectContains in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("SubjectContains")]
         public virtual string SubjectContains
         {
@@ -69,7 +67,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FilterItemType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FilterItemType")]
         public virtual string FilterItemType
         {
@@ -93,7 +90,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FilterStartTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FilterStartTime")]
         public virtual global::System.Nullable<global::System.DateTimeOffset> FilterStartTime
         {
@@ -117,7 +113,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FilterEndTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FilterEndTime")]
         public virtual global::System.Nullable<global::System.DateTimeOffset> FilterEndTime
         {
@@ -141,7 +136,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property EntryID in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("EntryID")]
         public virtual string EntryID
         {
@@ -165,7 +159,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property SourceFolder in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("SourceFolder")]
         public virtual string SourceFolder
         {
@@ -189,7 +182,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LastParentFolderID in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LastParentFolderID")]
         public virtual string LastParentFolderID
         {
@@ -213,7 +205,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ResultSize in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ResultSize")]
         public virtual global::System.Nullable<int> ResultSize
         {

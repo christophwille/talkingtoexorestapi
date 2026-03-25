@@ -465,6 +465,11 @@
         <Property Name="LitigationHoldDuration" Type="Edm.String" />
         <Property Name="PitrEnabled" Type="Edm.Boolean" />
         <Property Name="PitrCopyIntervalInSeconds" Type="Edm.Int16" />
+        <Property Name="PitrPaused" Type="Edm.Boolean" />
+        <Property Name="PitrPausedTimestamp" Type="Edm.String" />
+        <Property Name="PitrOffboardedTimestamp" Type="Edm.String" />
+        <Property Name="PitrState" Type="Edm.String" />
+        <Property Name="M365BackupState" Type="Edm.String" />
         <Property Name="ManagedFolderMailboxPolicy" Type="Edm.String" />
         <Property Name="RetentionPolicy" Type="Edm.String" />
         <Property Name="AddressBookPolicy" Type="Edm.String" />
@@ -475,10 +480,12 @@
         <Property Name="MailboxLocations" Type="Collection(Edm.String)" />
         <Property Name="AggregatedMailboxGuids" Type="Collection(Edm.Guid)" />
         <Property Name="ExchangeSecurityDescriptor" Type="Edm.String" />
+        <Property Name="ExoExchangeSecurityDescriptor" Type="Exchange.ExoExchangeSecurityDescriptor" />
         <Property Name="ExchangeUserAccountControl" Type="Edm.String" />
         <Property Name="MessageTrackingReadStatusEnabled" Type="Edm.Boolean" />
         <Property Name="ExternalOofOptions" Type="Edm.String" />
         <Property Name="ForwardingAddress" Type="Edm.String" />
+        <Property Name="ForwardingAddressWithDisplayNames" Type="Collection(Edm.String)" />
         <Property Name="ForwardingSmtpAddress" Type="Edm.String" />
         <Property Name="RetainDeletedItemsFor" Type="Edm.String" />
         <Property Name="IsMailboxEnabled" Type="Edm.Boolean" />
@@ -520,7 +527,6 @@
         <Property Name="RulesQuota" Type="Edm.String" />
         <Property Name="Office" Type="Edm.String" />
         <Property Name="UserPrincipalName" Type="Edm.String" />
-        <Property Name="UMEnabled" Type="Edm.Boolean" />
         <Property Name="MaxSafeSenders" Type="Edm.Int32" />
         <Property Name="MaxBlockedSenders" Type="Edm.Int32" />
         <Property Name="NetID" Type="Edm.String" />
@@ -545,6 +551,7 @@
         <Property Name="ArchiveStatus" Type="Edm.String" />
         <Property Name="ArchiveState" Type="Edm.String" />
         <Property Name="AutoExpandingArchiveEnabled" Type="Edm.Boolean" />
+        <Property Name="AutoArchivingEnabled" Type="Edm.Boolean" />
         <Property Name="DisabledMailboxLocations" Type="Edm.Boolean" />
         <Property Name="RemoteRecipientType" Type="Edm.String" />
         <Property Name="DisabledArchiveDatabase" Type="Edm.String" />
@@ -587,7 +594,6 @@
         <Property Name="StsRefreshTokensValidFrom" Type="Edm.String" />
         <Property Name="NonCompliantDevices" Type="Collection(Edm.String)" />
         <Property Name="DataEncryptionPolicy" Type="Edm.String" />
-        <Property Name="Extensions" Type="Collection(Edm.String)" />
         <Property Name="HasPicture" Type="Edm.Boolean" />
         <Property Name="HasSpokenName" Type="Edm.Boolean" />
         <Property Name="IsDirSynced" Type="Edm.Boolean" />
@@ -660,6 +666,7 @@
         <Property Name="ExchangeObjectId" Type="Edm.String" />
         <Property Name="OrganizationId" Type="Edm.String" />
         <Property Name="Guid" Type="Edm.Guid" />
+        <Property Name="IsExchangeCloudManaged" Type="Edm.Boolean" />
         <Property Name="ApplyMandatoryProperties" Type="Edm.Boolean" />
         <Property Name="InactiveMailbox" Type="Edm.Boolean" />
         <Property Name="PublicFolder" Type="Edm.Boolean" />
@@ -714,9 +721,15 @@
                 <PropertyPath>LitigationHoldDuration</PropertyPath>
                 <PropertyPath>PitrEnabled</PropertyPath>
                 <PropertyPath>PitrCopyIntervalInSeconds</PropertyPath>
+                <PropertyPath>PitrPaused</PropertyPath>
+                <PropertyPath>PitrPausedTimestamp</PropertyPath>
+                <PropertyPath>PitrOffboardedTimestamp</PropertyPath>
+                <PropertyPath>PitrState</PropertyPath>
+                <PropertyPath>M365BackupState</PropertyPath>
                 <PropertyPath>UnifiedMailbox</PropertyPath>
                 <PropertyPath>MailboxLocations</PropertyPath>
                 <PropertyPath>ExchangeSecurityDescriptor</PropertyPath>
+                <PropertyPath>ExoExchangeSecurityDescriptor</PropertyPath>
                 <PropertyPath>MessageTrackingReadStatusEnabled</PropertyPath>
                 <PropertyPath>Languages</PropertyPath>
                 <PropertyPath>DowngradeHighPriorityMessagesEnabled</PropertyPath>
@@ -740,6 +753,7 @@
                 <PropertyPath>EffectivePublicFolderMailbox</PropertyPath>
                 <PropertyPath>ArchiveDatabaseGuid</PropertyPath>
                 <PropertyPath>AutoExpandingArchiveEnabled</PropertyPath>
+                <PropertyPath>AutoArchivingEnabled</PropertyPath>
                 <PropertyPath>DisabledMailboxLocations</PropertyPath>
                 <PropertyPath>QueryBaseDNRestrictionEnabled</PropertyPath>
                 <PropertyPath>IsPersonToPersonTextMessagingEnabled</PropertyPath>
@@ -754,7 +768,6 @@
                 <PropertyPath>AccountDisabled</PropertyPath>
                 <PropertyPath>NonCompliantDevices</PropertyPath>
                 <PropertyPath>DataEncryptionPolicy</PropertyPath>
-                <PropertyPath>Extensions</PropertyPath>
                 <PropertyPath>HasPicture</PropertyPath>
                 <PropertyPath>HasSpokenName</PropertyPath>
                 <PropertyPath>AcceptMessagesOnlyFromSendersOrMembers</PropertyPath>
@@ -767,6 +780,7 @@
                 <PropertyPath>Identity</PropertyPath>
                 <PropertyPath>ExchangeObjectId</PropertyPath>
                 <PropertyPath>OrganizationId</PropertyPath>
+                <PropertyPath>IsExchangeCloudManaged</PropertyPath>
                 <PropertyPath>ApplyMandatoryProperties</PropertyPath>
                 <PropertyPath>InactiveMailbox</PropertyPath>
                 <PropertyPath>PublicFolder</PropertyPath>
@@ -884,6 +898,7 @@
                 <PropertyPath>MailboxLocations</PropertyPath>
                 <PropertyPath>AggregatedMailboxGuids</PropertyPath>
                 <PropertyPath>ExchangeSecurityDescriptor</PropertyPath>
+                <PropertyPath>ExoExchangeSecurityDescriptor</PropertyPath>
                 <PropertyPath>ExchangeUserAccountControl</PropertyPath>
                 <PropertyPath>IsMailboxEnabled</PropertyPath>
                 <PropertyPath>OfflineAddressBook</PropertyPath>
@@ -912,7 +927,6 @@
                 <PropertyPath>SCLJunkEnabled</PropertyPath>
                 <PropertyPath>ServerLegacyDN</PropertyPath>
                 <PropertyPath>UserPrincipalName</PropertyPath>
-                <PropertyPath>UMEnabled</PropertyPath>
                 <PropertyPath>MaxSafeSenders</PropertyPath>
                 <PropertyPath>MaxBlockedSenders</PropertyPath>
                 <PropertyPath>NetID</PropertyPath>
@@ -957,7 +971,6 @@
                 <PropertyPath>InPlaceHolds</PropertyPath>
                 <PropertyPath>GeneratedOfflineAddressBooks</PropertyPath>
                 <PropertyPath>DataEncryptionPolicy</PropertyPath>
-                <PropertyPath>Extensions</PropertyPath>
                 <PropertyPath>HasPicture</PropertyPath>
                 <PropertyPath>HasSpokenName</PropertyPath>
                 <PropertyPath>IsDirSynced</PropertyPath>
@@ -984,6 +997,7 @@
                 <PropertyPath>ExchangeObjectId</PropertyPath>
                 <PropertyPath>OrganizationId</PropertyPath>
                 <PropertyPath>Guid</PropertyPath>
+                <PropertyPath>IsExchangeCloudManaged</PropertyPath>
               </Collection>
             </PropertyValue>
             <PropertyValue Property="NonUpdatableNavigationProperties">
@@ -998,6 +1012,14 @@
           </Record>
         </Annotation>
       </EntityType>
+      <ComplexType Name="ExoExchangeSecurityDescriptor" BaseType="Exchange.ComplexEntry">
+        <Property Name="ControlFlags" Type="Edm.String" />
+        <Property Name="Owner" Type="Edm.String" />
+        <Property Name="Group" Type="Edm.String" />
+        <Property Name="SystemAcl" Type="Collection(Edm.String)" />
+        <Property Name="DiscretionaryAcl" Type="Collection(Edm.String)" />
+        <Property Name="BinaryLength" Type="Edm.Int32" />
+      </ComplexType>
       <ComplexType Name="OpenComplexEntry" Abstract="true" OpenType="true" />
       <ComplexType Name="GenericHashTable" BaseType="Exchange.OpenComplexEntry" OpenType="true" />
       <ComplexType Name="MailboxStatistics" BaseType="Exchange.ComplexEntry">
@@ -1308,7 +1330,6 @@
         <Property Name="SamAccountName" Type="Edm.String" />
         <Property Name="SmtpClientAuthenticationDisabled" Type="Edm.Boolean" />
         <Property Name="OneWinNativeOutlookEnabled" Type="Edm.Boolean" />
-        <Property Name="BulkMailEnabled" Type="Edm.Boolean" />
         <Property Name="OWAEnabled" Type="Edm.Boolean" />
         <Property Name="DistinguishedName" Type="Edm.String" />
         <Property Name="ExchangeObjectId" Type="Edm.String" />
@@ -1377,7 +1398,6 @@
                 <PropertyPath>LinkedMasterAccount</PropertyPath>
                 <PropertyPath>SmtpClientAuthenticationDisabled</PropertyPath>
                 <PropertyPath>OneWinNativeOutlookEnabled</PropertyPath>
-                <PropertyPath>BulkMailEnabled</PropertyPath>
                 <PropertyPath>ExchangeObjectId</PropertyPath>
                 <PropertyPath>OrganizationId</PropertyPath>
                 <PropertyPath>PublicFolderClientAccess</PropertyPath>
@@ -1619,7 +1639,6 @@
         <Property Name="StateOrProvince" Type="Edm.String" />
         <Property Name="StorageGroupName" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
-        <Property Name="UMEnabled" Type="Edm.Boolean" />
         <Property Name="UMMailboxPolicy" Type="Edm.String" />
         <Property Name="UMRecipientDialPlanId" Type="Edm.String" />
         <Property Name="WindowsLiveID" Type="Edm.String" />
@@ -1784,7 +1803,6 @@
                 <PropertyPath>StateOrProvince</PropertyPath>
                 <PropertyPath>StorageGroupName</PropertyPath>
                 <PropertyPath>Title</PropertyPath>
-                <PropertyPath>UMEnabled</PropertyPath>
                 <PropertyPath>UMMailboxPolicy</PropertyPath>
                 <PropertyPath>UMRecipientDialPlanId</PropertyPath>
                 <PropertyPath>WindowsLiveID</PropertyPath>
@@ -2085,6 +2103,7 @@
         <Property Name="LinkedMasterAccount" Type="Edm.String" />
         <Property Name="ResetPasswordOnNextLogon" Type="Edm.Boolean" />
         <Property Name="RemotePowerShellEnabled" Type="Edm.Boolean" />
+        <Property Name="EXOModuleEnabled" Type="Edm.Boolean" />
         <Property Name="SamAccountName" Type="Edm.String" />
         <Property Name="Office" Type="Edm.String" />
         <Property Name="UserPrincipalName" Type="Edm.String" />
@@ -2152,7 +2171,9 @@
         <Property Name="Notes" Type="Edm.String" />
         <Property Name="Initials" Type="Edm.String" />
         <Property Name="DirectReports" Type="Collection(Edm.String)" />
+        <Property Name="DirectReportsWithDisplayName" Type="Collection(Edm.String)" />
         <Property Name="Manager" Type="Edm.String" />
+        <Property Name="ManagerWithDisplayName" Type="Collection(Edm.String)" />
         <Property Name="VoiceMailSettings" Type="Collection(Edm.String)" />
         <Property Name="PostOfficeBox" Type="Collection(Edm.String)" />
         <Property Name="PreviousRecipientTypeDetails" Type="Edm.String" />
@@ -2324,6 +2345,7 @@
                 <PropertyPath>UserAccountControl</PropertyPath>
                 <PropertyPath>TelephoneAssistant</PropertyPath>
                 <PropertyPath>DirectReports</PropertyPath>
+                <PropertyPath>DirectReportsWithDisplayName</PropertyPath>
                 <PropertyPath>VoiceMailSettings</PropertyPath>
                 <PropertyPath>PreviousRecipientTypeDetails</PropertyPath>
                 <PropertyPath>Sid</PropertyPath>
@@ -2564,6 +2586,8 @@
         <Property Name="Status" Type="Edm.String" />
         <Property Name="BlockStatus" Type="Edm.String" />
         <Property Name="SmtpSecurityError" Type="Edm.String" />
+        <Property Name="TLSUsed" Type="Edm.String" />
+        <Property Name="ConnectorType" Type="Edm.String" />
         <Property Name="ReportTitle" Type="Edm.String" />
         <Property Name="SubmitDate" Type="Edm.DateTimeOffset" />
         <Property Name="Identity" Type="Edm.String" />
@@ -2602,6 +2626,8 @@
                 <PropertyPath>Status</PropertyPath>
                 <PropertyPath>BlockStatus</PropertyPath>
                 <PropertyPath>SmtpSecurityError</PropertyPath>
+                <PropertyPath>TLSUsed</PropertyPath>
+                <PropertyPath>ConnectorType</PropertyPath>
                 <PropertyPath>ReportTitle</PropertyPath>
                 <PropertyPath>SubmitDate</PropertyPath>
                 <PropertyPath>Identity</PropertyPath>
@@ -2654,6 +2680,8 @@
                 <PropertyPath>Status</PropertyPath>
                 <PropertyPath>BlockStatus</PropertyPath>
                 <PropertyPath>SmtpSecurityError</PropertyPath>
+                <PropertyPath>TLSUsed</PropertyPath>
+                <PropertyPath>ConnectorType</PropertyPath>
                 <PropertyPath>ReportTitle</PropertyPath>
                 <PropertyPath>SubmitDate</PropertyPath>
                 <PropertyPath>Identity</PropertyPath>
@@ -2890,6 +2918,11 @@
           </Record>
         </Annotation>
       </EntityType>
+      <ComplexType Name="RolePermission" BaseType="Exchange.ComplexEntry">
+        <Property Name="allowedResourceActions" Type="Collection(Edm.String)" />
+        <Property Name="excludedResourceActions" Type="Collection(Edm.String)" />
+        <Property Name="condition" Type="Edm.String" />
+      </ComplexType>
       <EntityType Name="RoleDefinitions">
         <Key>
           <PropertyRef Name="id" />
@@ -2914,11 +2947,6 @@
         <Property Name="enabledCmdlets" Type="Collection(Edm.String)" />
         <Property Name="guid" Type="Edm.String" />
         <Property Name="identity" Type="Edm.String" />
-        <Property Name="isBuiltIn" Type="Edm.Boolean" />
-        <Property Name="templateId" Type="Edm.String" />
-        <Property Name="isServicePrincipalRole" Type="Edm.Boolean" />
-        <Property Name="allowedPrincipalTypes" Type="Exchange.RolePrincipalTypes" />
-        <NavigationProperty Name="inheritsPermissionsFrom" Type="Exchange.RoleDefinitions" Nullable="false" ContainsTarget="true" />
         <Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
           <Record>
             <PropertyValue Property="Filterable" Bool="true" />
@@ -2942,10 +2970,6 @@
                 <PropertyPath>enabledCmdlets</PropertyPath>
                 <PropertyPath>guid</PropertyPath>
                 <PropertyPath>identity</PropertyPath>
-                <PropertyPath>isBuiltIn</PropertyPath>
-                <PropertyPath>templateId</PropertyPath>
-                <PropertyPath>isServicePrincipalRole</PropertyPath>
-                <PropertyPath>allowedPrincipalTypes</PropertyPath>
               </Collection>
             </PropertyValue>
           </Record>
@@ -2961,18 +2985,6 @@
             <Record>
               <PropertyValue Property="Name" String="isEncoded" />
               <PropertyValue Property="Description" String="Represents whether the parameters are base64 encoded or not. Applicable for Identities of Entity types and for functions GetRecipientPermissionByFilters (only Identity and Trustee), BySMTPAddress of entity types Recipient and CasMailbox. For example, /Mailbox(Identity)?isEncoded=true, says that the Identity is base64 encoded.Similarly for /Recipient/Exchange.GetRecipientPermissionByFilters(identity=Identity,trustee=Trustee Type,accessRight=Access Right)?isEncoded=true, says Identity and Trustee are base64 encoded" />
-              <PropertyValue Property="DocumentationUrl" String="" />
-              <PropertyValue Property="Required" Bool="false" />
-            </Record>
-            <Record>
-              <PropertyValue Property="Name" String="Anr" />
-              <PropertyValue Property="Description" String="The Anr parameter specifies a string on which to perform an ambiguous name resolution (ANR) search. It must be atleast three character in length. You can specify a partial string and search for objects with an attribute that matches that string. The default attributes searched are: CommonName(CN), DisplayName, FirstName, LastName, Alias" />
-              <PropertyValue Property="DocumentationUrl" String="" />
-              <PropertyValue Property="Required" Bool="false" />
-            </Record>
-            <Record>
-              <PropertyValue Property="Name" String="OrganizationalUnit" />
-              <PropertyValue Property="Description" String="The OrganizationalUnit parameter filters the results based on the object&amp;apos;s location in Active Directory. Only objects that exist in the specified location are returned. Valid input for this parameter is an organizational unit (OU) or Org name or Org GUID or Org sistinguished name." />
               <PropertyValue Property="DocumentationUrl" String="" />
               <PropertyValue Property="Required" Bool="false" />
             </Record>
@@ -3002,30 +3014,14 @@
                 <PropertyPath>enabledCmdlets</PropertyPath>
                 <PropertyPath>guid</PropertyPath>
                 <PropertyPath>identity</PropertyPath>
-                <PropertyPath>isBuiltIn</PropertyPath>
-                <PropertyPath>templateId</PropertyPath>
-                <PropertyPath>isServicePrincipalRole</PropertyPath>
-                <PropertyPath>allowedPrincipalTypes</PropertyPath>
               </Collection>
             </PropertyValue>
             <PropertyValue Property="NonUpdatableNavigationProperties">
-              <Collection>
-                <PropertyPath>inheritsPermissionsFrom</PropertyPath>
-              </Collection>
+              <Collection />
             </PropertyValue>
           </Record>
         </Annotation>
       </EntityType>
-      <ComplexType Name="RolePermission" BaseType="Exchange.ComplexEntry">
-        <Property Name="allowedResourceActions" Type="Collection(Edm.String)" />
-        <Property Name="excludedResourceActions" Type="Collection(Edm.String)" />
-        <Property Name="condition" Type="Edm.String" />
-      </ComplexType>
-      <EnumType Name="RolePrincipalTypes" UnderlyingType="Edm.Int64" IsFlags="true">
-        <Member Name="User" Value="1" />
-        <Member Name="ServicePrincipal" Value="2" />
-        <Member Name="Group" Value="4" />
-      </EnumType>
       <EntityType Name="ExchangeRoleGroupMember">
         <Key>
           <PropertyRef Name="id" />
@@ -3095,7 +3091,6 @@
         <Property Name="stateOrProvince" Type="Edm.String" />
         <Property Name="storageGroupName" Type="Edm.String" />
         <Property Name="title" Type="Edm.String" />
-        <Property Name="uMEnabled" Type="Edm.Boolean" />
         <Property Name="uMMailboxPolicy" Type="Edm.String" />
         <Property Name="uMRecipientDialPlanId" Type="Edm.String" />
         <Property Name="windowsLiveID" Type="Edm.String" />
@@ -3247,7 +3242,6 @@
                 <PropertyPath>stateOrProvince</PropertyPath>
                 <PropertyPath>storageGroupName</PropertyPath>
                 <PropertyPath>title</PropertyPath>
-                <PropertyPath>uMEnabled</PropertyPath>
                 <PropertyPath>uMMailboxPolicy</PropertyPath>
                 <PropertyPath>uMRecipientDialPlanId</PropertyPath>
                 <PropertyPath>windowsLiveID</PropertyPath>
@@ -3453,8 +3447,6 @@
         <Property Name="guid" Type="Edm.String" />
         <Property Name="identity" Type="Edm.String" />
         <Property Name="recipientRestrictionFilter" Type="Edm.String" />
-        <Property Name="type" Type="Exchange.ScopeRestrictionType" />
-        <Property Name="displayName" Type="Edm.String" />
         <Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
           <Record>
             <PropertyValue Property="Filterable" Bool="true" />
@@ -3476,8 +3468,6 @@
                 <PropertyPath>guid</PropertyPath>
                 <PropertyPath>identity</PropertyPath>
                 <PropertyPath>recipientRestrictionFilter</PropertyPath>
-                <PropertyPath>type</PropertyPath>
-                <PropertyPath>displayName</PropertyPath>
               </Collection>
             </PropertyValue>
           </Record>
@@ -3517,14 +3507,11 @@
                 <PropertyPath>tenantOrganizationFilter</PropertyPath>
                 <PropertyPath>scopeRestrictionType</PropertyPath>
                 <PropertyPath>exclusive</PropertyPath>
-                <PropertyPath>name</PropertyPath>
                 <PropertyPath>adminDisplayName</PropertyPath>
                 <PropertyPath>version</PropertyPath>
                 <PropertyPath>distinguishedName</PropertyPath>
                 <PropertyPath>guid</PropertyPath>
                 <PropertyPath>identity</PropertyPath>
-                <PropertyPath>type</PropertyPath>
-                <PropertyPath>displayName</PropertyPath>
               </Collection>
             </PropertyValue>
             <PropertyValue Property="NonUpdatableNavigationProperties">
@@ -3810,7 +3797,6 @@
         <Property Name="TestModeBccToRecipients" Type="Collection(Edm.String)" />
         <Property Name="FalsePositiveAdditionalRecipients" Type="Collection(Edm.String)" />
         <Property Name="QuarantineRetentionPeriod" Type="Edm.Int32" />
-        <Property Name="EndUserSpamNotificationFrequency" Type="Edm.Int32" />
         <Property Name="TestModeAction" Type="Exchange.SpamFilteringTestModeAction" />
         <Property Name="IncreaseScoreWithImageLinks" Type="Exchange.SpamFilteringOption" />
         <Property Name="IncreaseScoreWithNumericIps" Type="Exchange.SpamFilteringOption" />
@@ -3833,23 +3819,18 @@
         <Property Name="RegionBlockList" Type="Collection(Edm.String)" />
         <Property Name="HighConfidenceSpamAction" Type="Exchange.SpamFilteringAction" />
         <Property Name="SpamAction" Type="Exchange.SpamFilteringAction" />
-        <Property Name="EnableEndUserSpamNotifications" Type="Edm.Boolean" />
         <Property Name="DownloadLink" Type="Edm.Boolean" />
         <Property Name="EnableRegionBlockList" Type="Edm.Boolean" />
         <Property Name="EnableLanguageBlockList" Type="Edm.Boolean" />
-        <Property Name="EndUserSpamNotificationCustomFromAddress" Type="Edm.String" />
-        <Property Name="EndUserSpamNotificationCustomFromName" Type="Edm.String" />
-        <Property Name="EndUserSpamNotificationCustomSubject" Type="Edm.String" />
-        <Property Name="EndUserSpamNotificationLanguage" Type="Exchange.EsnLanguage" />
-        <Property Name="EndUserSpamNotificationLimit" Type="Edm.Int32" />
         <Property Name="BulkThreshold" Type="Edm.Int32" />
         <Property Name="ZapEnabled" Type="Edm.Boolean" />
         <Property Name="InlineSafetyTipsEnabled" Type="Edm.Boolean" />
+        <Property Name="BulkMovesEnabled" Type="Exchange.BulkMovesEnabled" />
         <Property Name="BulkSpamAction" Type="Exchange.SpamFilteringAction" />
         <Property Name="PhishSpamAction" Type="Exchange.SpamFilteringAction" />
         <Property Name="SpamZapEnabled" Type="Edm.Boolean" />
         <Property Name="PhishZapEnabled" Type="Edm.Boolean" />
-        <Property Name="ApplyPhishActionToIntraOrg" Type="Edm.Boolean" />
+        <Property Name="IntraOrgFilterState" Type="Exchange.IntraOrgFilterState" />
         <Property Name="HighConfidencePhishAction" Type="Exchange.PhishFilteringAction" />
         <Property Name="RecommendedPolicyType" Type="Exchange.RecommendedPolicyType" />
         <Property Name="Name" Type="Edm.String" />
@@ -3871,7 +3852,6 @@
                 <PropertyPath>TestModeBccToRecipients</PropertyPath>
                 <PropertyPath>FalsePositiveAdditionalRecipients</PropertyPath>
                 <PropertyPath>QuarantineRetentionPeriod</PropertyPath>
-                <PropertyPath>EndUserSpamNotificationFrequency</PropertyPath>
                 <PropertyPath>TestModeAction</PropertyPath>
                 <PropertyPath>IncreaseScoreWithImageLinks</PropertyPath>
                 <PropertyPath>IncreaseScoreWithNumericIps</PropertyPath>
@@ -3894,23 +3874,18 @@
                 <PropertyPath>RegionBlockList</PropertyPath>
                 <PropertyPath>HighConfidenceSpamAction</PropertyPath>
                 <PropertyPath>SpamAction</PropertyPath>
-                <PropertyPath>EnableEndUserSpamNotifications</PropertyPath>
                 <PropertyPath>DownloadLink</PropertyPath>
                 <PropertyPath>EnableRegionBlockList</PropertyPath>
                 <PropertyPath>EnableLanguageBlockList</PropertyPath>
-                <PropertyPath>EndUserSpamNotificationCustomFromAddress</PropertyPath>
-                <PropertyPath>EndUserSpamNotificationCustomFromName</PropertyPath>
-                <PropertyPath>EndUserSpamNotificationCustomSubject</PropertyPath>
-                <PropertyPath>EndUserSpamNotificationLanguage</PropertyPath>
-                <PropertyPath>EndUserSpamNotificationLimit</PropertyPath>
                 <PropertyPath>BulkThreshold</PropertyPath>
                 <PropertyPath>ZapEnabled</PropertyPath>
                 <PropertyPath>InlineSafetyTipsEnabled</PropertyPath>
+                <PropertyPath>BulkMovesEnabled</PropertyPath>
                 <PropertyPath>BulkSpamAction</PropertyPath>
                 <PropertyPath>PhishSpamAction</PropertyPath>
                 <PropertyPath>SpamZapEnabled</PropertyPath>
                 <PropertyPath>PhishZapEnabled</PropertyPath>
-                <PropertyPath>ApplyPhishActionToIntraOrg</PropertyPath>
+                <PropertyPath>IntraOrgFilterState</PropertyPath>
                 <PropertyPath>HighConfidencePhishAction</PropertyPath>
                 <PropertyPath>RecommendedPolicyType</PropertyPath>
                 <PropertyPath>Name</PropertyPath>
@@ -3974,68 +3949,18 @@
         <Member Name="NoAction" Value="6" />
         <Member Name="BccMessage" Value="7" />
       </EnumType>
-      <EnumType Name="EsnLanguage" UnderlyingType="Edm.Int64">
+      <EnumType Name="BulkMovesEnabled" UnderlyingType="Edm.Int64">
+        <Member Name="NotSet" Value="0" />
+        <Member Name="On" Value="1" />
+        <Member Name="Off" Value="2" />
+      </EnumType>
+      <EnumType Name="IntraOrgFilterState" UnderlyingType="Edm.Int64">
         <Member Name="Default" Value="0" />
-        <Member Name="English" Value="1" />
-        <Member Name="French" Value="2" />
-        <Member Name="German" Value="3" />
-        <Member Name="Italian" Value="4" />
-        <Member Name="Japanese" Value="5" />
-        <Member Name="Spanish" Value="6" />
-        <Member Name="Korean" Value="7" />
-        <Member Name="Portuguese" Value="8" />
-        <Member Name="Russian" Value="9" />
-        <Member Name="ChineseSimplified" Value="10" />
-        <Member Name="ChineseTraditional" Value="11" />
-        <Member Name="Amharic" Value="12" />
-        <Member Name="Arabic" Value="13" />
-        <Member Name="Bulgarian" Value="14" />
-        <Member Name="BengaliIndia" Value="15" />
-        <Member Name="Catalan" Value="16" />
-        <Member Name="Czech" Value="17" />
-        <Member Name="Cyrillic" Value="18" />
-        <Member Name="Danish" Value="19" />
-        <Member Name="Greek" Value="20" />
-        <Member Name="Estonian" Value="21" />
-        <Member Name="Basque" Value="22" />
-        <Member Name="Persian" Value="23" />
-        <Member Name="Finnish" Value="24" />
-        <Member Name="Filipino" Value="25" />
-        <Member Name="Galician" Value="26" />
-        <Member Name="Gujarati" Value="27" />
-        <Member Name="Hebrew" Value="28" />
-        <Member Name="Hindi" Value="29" />
-        <Member Name="Croatian" Value="30" />
-        <Member Name="Hungarian" Value="31" />
-        <Member Name="Indonesian" Value="32" />
-        <Member Name="Icelandic" Value="33" />
-        <Member Name="Kazakh" Value="34" />
-        <Member Name="Kannada" Value="35" />
-        <Member Name="Lithuanian" Value="36" />
-        <Member Name="Latvian" Value="37" />
-        <Member Name="Malayalam" Value="38" />
-        <Member Name="Marathi" Value="39" />
-        <Member Name="Malay" Value="40" />
-        <Member Name="Dutch" Value="41" />
-        <Member Name="NorwegianNynorsk" Value="42" />
-        <Member Name="Norwegian" Value="43" />
-        <Member Name="Odia" Value="44" />
-        <Member Name="Polish" Value="45" />
-        <Member Name="PortuguesePortugal" Value="46" />
-        <Member Name="Romanian" Value="47" />
-        <Member Name="Slovak" Value="48" />
-        <Member Name="Slovenian" Value="49" />
-        <Member Name="SerbianCyrillic" Value="50" />
-        <Member Name="Serbian" Value="51" />
-        <Member Name="Swedish" Value="52" />
-        <Member Name="Swahili" Value="53" />
-        <Member Name="Tamil" Value="54" />
-        <Member Name="Telugu" Value="55" />
-        <Member Name="Thai" Value="56" />
-        <Member Name="Turkish" Value="57" />
-        <Member Name="Ukrainian" Value="58" />
-        <Member Name="Urdu" Value="59" />
-        <Member Name="Vietnamese" Value="60" />
+        <Member Name="Disabled" Value="1" />
+        <Member Name="HighConfidencePhish" Value="2" />
+        <Member Name="Phish" Value="3" />
+        <Member Name="HighConfidenceSpam" Value="4" />
+        <Member Name="Spam" Value="5" />
       </EnumType>
       <EnumType Name="PhishFilteringAction" UnderlyingType="Edm.Int64">
         <Member Name="Quarantine" Value="0" />
@@ -4187,8 +4112,8 @@
         <Member Name="Quarantine" Value="1" />
       </EnumType>
       <EnumType Name="SpoofDmarcRejectAction" UnderlyingType="Edm.Int64">
-        <Member Name="Quarantine" Value="0" />
-        <Member Name="Reject" Value="1" />
+        <Member Name="Reject" Value="0" />
+        <Member Name="Quarantine" Value="1" />
       </EnumType>
       <EnumType Name="SpoofDmarcQuarantineAction" UnderlyingType="Edm.Int64">
         <Member Name="Quarantine" Value="0" />
@@ -4214,6 +4139,7 @@
         <Property Name="Action" Type="Exchange.MalwareFilteringAction" />
         <Property Name="FileTypeAction" Type="Exchange.FileTypeFilteringAction" />
         <Property Name="IsDefault" Type="Edm.Boolean" />
+        <Property Name="IsPolicyOverrideApplied" Type="Edm.Boolean" />
         <Property Name="CustomNotifications" Type="Edm.Boolean" />
         <Property Name="EnableInternalSenderNotifications" Type="Edm.Boolean" />
         <Property Name="EnableExternalSenderNotifications" Type="Edm.Boolean" />
@@ -4250,6 +4176,7 @@
                 <PropertyPath>Action</PropertyPath>
                 <PropertyPath>FileTypeAction</PropertyPath>
                 <PropertyPath>IsDefault</PropertyPath>
+                <PropertyPath>IsPolicyOverrideApplied</PropertyPath>
                 <PropertyPath>CustomNotifications</PropertyPath>
                 <PropertyPath>EnableInternalSenderNotifications</PropertyPath>
                 <PropertyPath>EnableExternalSenderNotifications</PropertyPath>
@@ -4286,6 +4213,7 @@
               <Collection>
                 <PropertyPath>Identity</PropertyPath>
                 <PropertyPath>IsDefault</PropertyPath>
+                <PropertyPath>IsPolicyOverrideApplied</PropertyPath>
                 <PropertyPath>RecommendedPolicyType</PropertyPath>
                 <PropertyPath>WhenChanged</PropertyPath>
                 <PropertyPath>WhenCreated</PropertyPath>
@@ -4325,7 +4253,9 @@
         <Property Name="RecommendedPolicyType" Type="Exchange.RecommendedPolicyType" />
         <Property Name="IsDefault" Type="Edm.Boolean" />
         <Property Name="AdminDisplayName" Type="Edm.String" />
+        <Property Name="EnableBlockingEncryptedAttachments" Type="Edm.Boolean" />
         <Property Name="EnableOrganizationBranding" Type="Edm.Boolean" />
+        <Property Name="ExcludedTypesFromBlockingEncryptedAttachments" Type="Collection(Exchange.EncryptedFileTypes)" />
         <Property Name="Name" Type="Edm.String" />
         <Property Name="WhenChanged" Type="Edm.DateTimeOffset" />
         <Property Name="WhenCreated" Type="Edm.DateTimeOffset" />
@@ -4349,7 +4279,9 @@
                 <PropertyPath>RecommendedPolicyType</PropertyPath>
                 <PropertyPath>IsDefault</PropertyPath>
                 <PropertyPath>AdminDisplayName</PropertyPath>
+                <PropertyPath>EnableBlockingEncryptedAttachments</PropertyPath>
                 <PropertyPath>EnableOrganizationBranding</PropertyPath>
+                <PropertyPath>ExcludedTypesFromBlockingEncryptedAttachments</PropertyPath>
                 <PropertyPath>Name</PropertyPath>
                 <PropertyPath>WhenChanged</PropertyPath>
                 <PropertyPath>WhenCreated</PropertyPath>
@@ -4400,6 +4332,12 @@
       <EnumType Name="SafeAttachmentOperationMode" UnderlyingType="Edm.Int64">
         <Member Name="Delay" Value="0" />
         <Member Name="Deliver" Value="1" />
+      </EnumType>
+      <EnumType Name="EncryptedFileTypes" UnderlyingType="Edm.Int64">
+        <Member Name="Acrobat" Value="0" />
+        <Member Name="Archive" Value="1" />
+        <Member Name="Office" Value="2" />
+        <Member Name="Others" Value="3" />
       </EnumType>
       <EntityType Name="SafeLinksPolicyPresentation">
         <Key>
@@ -4947,6 +4885,7 @@
         <Property Name="displayName" Type="Edm.String" />
         <Property Name="externalDirectoryObjectId" Type="Edm.String" />
         <Property Name="exchangeObjectId" Type="Edm.String" />
+        <Property Name="guid" Type="Edm.String" />
         <Property Name="recipientType" Type="Edm.String" />
         <Property Name="recipientTypeDetails" Type="Edm.String" />
         <Property Name="customAttribute14" Type="Edm.String" />
@@ -4961,6 +4900,7 @@
                 <PropertyPath>displayName</PropertyPath>
                 <PropertyPath>externalDirectoryObjectId</PropertyPath>
                 <PropertyPath>exchangeObjectId</PropertyPath>
+                <PropertyPath>guid</PropertyPath>
                 <PropertyPath>recipientType</PropertyPath>
                 <PropertyPath>recipientTypeDetails</PropertyPath>
                 <PropertyPath>customAttribute14</PropertyPath>
@@ -4994,6 +4934,7 @@
                 <PropertyPath>displayName</PropertyPath>
                 <PropertyPath>externalDirectoryObjectId</PropertyPath>
                 <PropertyPath>exchangeObjectId</PropertyPath>
+                <PropertyPath>guid</PropertyPath>
                 <PropertyPath>recipientType</PropertyPath>
                 <PropertyPath>recipientTypeDetails</PropertyPath>
                 <PropertyPath>customAttribute14</PropertyPath>
@@ -5011,6 +4952,7 @@
           <PropertyRef Name="exchangeObjectId" />
         </Key>
         <Property Name="exchangeObjectId" Type="Edm.String" />
+        <Property Name="guid" Type="Edm.String" />
         <Property Name="id" Type="Edm.String" />
         <Property Name="name" Type="Edm.String" />
         <Property Name="displayName" Type="Edm.String" />
@@ -5031,6 +4973,7 @@
             <PropertyValue Property="NonFilterableProperties">
               <Collection>
                 <PropertyPath>exchangeObjectId</PropertyPath>
+                <PropertyPath>guid</PropertyPath>
                 <PropertyPath>id</PropertyPath>
                 <PropertyPath>name</PropertyPath>
                 <PropertyPath>displayName</PropertyPath>
@@ -5076,6 +5019,7 @@
             <PropertyValue Property="NonUpdatableProperties">
               <Collection>
                 <PropertyPath>exchangeObjectId</PropertyPath>
+                <PropertyPath>guid</PropertyPath>
                 <PropertyPath>id</PropertyPath>
                 <PropertyPath>distinguishedName</PropertyPath>
                 <PropertyPath>whenChanged</PropertyPath>
@@ -5176,6 +5120,11 @@
         <Property Name="ConditionalCompany" Type="Collection(Edm.String)" />
         <Property Name="ConditionalDepartment" Type="Collection(Edm.String)" />
         <Property Name="AcceptMessagesOnlyFromSendersOrMembers" Type="Collection(Edm.String)" />
+        <Property Name="BypassModerationFromSendersOrMembersWithDisplayNames" Type="Collection(Edm.String)" />
+        <Property Name="AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames" Type="Collection(Edm.String)" />
+        <Property Name="GrantSendOnBehalfToWithDisplayNames" Type="Collection(Edm.String)" />
+        <Property Name="ModeratedByWithDisplayNames" Type="Collection(Edm.String)" />
+        <Property Name="ManagedByWithDisplayName" Type="Collection(Edm.String)" />
         <Property Name="RequireSenderAuthenticationEnabled" Type="Edm.Boolean" />
         <Property Name="ModerationEnabled" Type="Edm.Boolean" />
         <Property Name="ModeratedBy" Type="Collection(Edm.String)" />
@@ -5225,6 +5174,11 @@
                 <PropertyPath>ConditionalCompany</PropertyPath>
                 <PropertyPath>ConditionalDepartment</PropertyPath>
                 <PropertyPath>AcceptMessagesOnlyFromSendersOrMembers</PropertyPath>
+                <PropertyPath>BypassModerationFromSendersOrMembersWithDisplayNames</PropertyPath>
+                <PropertyPath>AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames</PropertyPath>
+                <PropertyPath>GrantSendOnBehalfToWithDisplayNames</PropertyPath>
+                <PropertyPath>ModeratedByWithDisplayNames</PropertyPath>
+                <PropertyPath>ManagedByWithDisplayName</PropertyPath>
                 <PropertyPath>RequireSenderAuthenticationEnabled</PropertyPath>
                 <PropertyPath>ModerationEnabled</PropertyPath>
                 <PropertyPath>ModeratedBy</PropertyPath>
@@ -5347,6 +5301,9 @@
         <Property Name="MigrationToUnifiedGroupInProgress" Type="Edm.Boolean" />
         <Property Name="RejectMessagesFromSendersOrMembers" Type="Collection(Edm.String)" />
         <Property Name="AcceptMessagesOnlyFromSendersOrMembers" Type="Collection(Edm.String)" />
+        <Property Name="GrantSendOnBehalfToWithDisplayNames" Type="Collection(Edm.String)" />
+        <Property Name="AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames" Type="Collection(Edm.String)" />
+        <Property Name="RejectMessagesFromSendersOrMembersWithDisplayNames" Type="Collection(Edm.String)" />
         <Property Name="SendAsPermissionList" Type="Collection(Edm.String)" />
         <Property Name="ObjectId" Type="Edm.String" />
         <Property Name="DistinguishedName" Type="Edm.String" />
@@ -5366,6 +5323,9 @@
                 <PropertyPath>Language</PropertyPath>
                 <PropertyPath>RejectMessagesFromSendersOrMembers</PropertyPath>
                 <PropertyPath>AcceptMessagesOnlyFromSendersOrMembers</PropertyPath>
+                <PropertyPath>GrantSendOnBehalfToWithDisplayNames</PropertyPath>
+                <PropertyPath>AcceptMessagesOnlyFromSendersOrMembersWithDisplayNames</PropertyPath>
+                <PropertyPath>RejectMessagesFromSendersOrMembersWithDisplayNames</PropertyPath>
                 <PropertyPath>SendAsPermissionList</PropertyPath>
                 <PropertyPath>ObjectId</PropertyPath>
                 <PropertyPath>DistinguishedName</PropertyPath>
@@ -5753,6 +5713,299 @@
         <Property Name="Action" Type="Edm.String" />
         <Property Name="MessageTraceId" Type="Edm.Guid" />
       </ComplexType>
+      <ComplexType Name="RbacResults" BaseType="Exchange.ComplexEntry">
+        <Property Name="Results" Type="Collection(Edm.Boolean)" />
+      </ComplexType>
+      <EntityType Name="UnifiedRbacRoleDefinition">
+        <Key>
+          <PropertyRef Name="id" />
+        </Key>
+        <Property Name="id" Type="Edm.String" Nullable="false" />
+        <Property Name="description" Type="Edm.String" />
+        <Property Name="displayName" Type="Edm.String" />
+        <Property Name="rolePermissions" Type="Collection(Exchange.RolePermission)" />
+        <Property Name="isEnabled" Type="Edm.Boolean" />
+        <Property Name="version" Type="Edm.String" />
+        <Property Name="isBuiltIn" Type="Edm.Boolean" />
+        <Property Name="templateId" Type="Edm.String" />
+        <Property Name="allowedPrincipalTypes" Type="Exchange.RolePrincipalTypes" />
+        <Property Name="parent" Type="Edm.String" Nullable="false" />
+        <Property Name="roleEntries" Type="Collection(Edm.String)" />
+        <Property Name="isRootRole" Type="Edm.Boolean" />
+        <Property Name="isEndUserRole" Type="Edm.Boolean" />
+        <Property Name="isDeprecated" Type="Edm.Boolean" />
+        <Property Name="isValid" Type="Edm.Boolean" />
+        <Property Name="roleType" Type="Edm.String" />
+        <Property Name="enabledCmdlets" Type="Collection(Edm.String)" />
+        <Property Name="guid" Type="Edm.String" />
+        <Property Name="identity" Type="Edm.String" />
+        <Property Name="isServicePrincipalRole" Type="Edm.Boolean" />
+        <NavigationProperty Name="inheritsPermissionsFrom" Type="Exchange.UnifiedRbacRoleDefinition" Nullable="false" ContainsTarget="true" />
+        <Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
+          <Record>
+            <PropertyValue Property="Filterable" Bool="true" />
+            <PropertyValue Property="NonFilterableProperties">
+              <Collection>
+                <PropertyPath>id</PropertyPath>
+                <PropertyPath>rolePermissions</PropertyPath>
+                <PropertyPath>isEnabled</PropertyPath>
+                <PropertyPath>version</PropertyPath>
+                <PropertyPath>isBuiltIn</PropertyPath>
+                <PropertyPath>templateId</PropertyPath>
+                <PropertyPath>allowedPrincipalTypes</PropertyPath>
+                <PropertyPath>parent</PropertyPath>
+                <PropertyPath>roleEntries</PropertyPath>
+                <PropertyPath>isRootRole</PropertyPath>
+                <PropertyPath>isEndUserRole</PropertyPath>
+                <PropertyPath>isDeprecated</PropertyPath>
+                <PropertyPath>isValid</PropertyPath>
+                <PropertyPath>roleType</PropertyPath>
+                <PropertyPath>enabledCmdlets</PropertyPath>
+                <PropertyPath>guid</PropertyPath>
+                <PropertyPath>identity</PropertyPath>
+                <PropertyPath>isServicePrincipalRole</PropertyPath>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        <Annotation Term="Org.OData.Capabilities.V1.CustomQueryOptions">
+          <Collection>
+            <Record>
+              <PropertyValue Property="Name" String="PropertySet" />
+              <PropertyValue Property="Description" String="Represents what fields should be part of result object. E.g ?PropertySet=Minimum returns only min set, ?PropertySet=ActiveSync will return only Active sync related fields. This field is complementary to $select. E.g $select=Abc&amp;amp;PropertySet=ActiveSync service will return both Abc field and ActiveSync fields." />
+              <PropertyValue Property="DocumentationUrl" String="" />
+              <PropertyValue Property="Required" Bool="false" />
+            </Record>
+            <Record>
+              <PropertyValue Property="Name" String="isEncoded" />
+              <PropertyValue Property="Description" String="Represents whether the parameters are base64 encoded or not. Applicable for Identities of Entity types and for functions GetRecipientPermissionByFilters (only Identity and Trustee), BySMTPAddress of entity types Recipient and CasMailbox. For example, /Mailbox(Identity)?isEncoded=true, says that the Identity is base64 encoded.Similarly for /Recipient/Exchange.GetRecipientPermissionByFilters(identity=Identity,trustee=Trustee Type,accessRight=Access Right)?isEncoded=true, says Identity and Trustee are base64 encoded" />
+              <PropertyValue Property="DocumentationUrl" String="" />
+              <PropertyValue Property="Required" Bool="false" />
+            </Record>
+          </Collection>
+        </Annotation>
+        <Annotation Term="Org.OData.Capabilities.V1.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Updatable" Bool="true" />
+            <PropertyValue Property="NonUpdatableProperties">
+              <Collection>
+                <PropertyPath>description</PropertyPath>
+                <PropertyPath>displayName</PropertyPath>
+                <PropertyPath>isEnabled</PropertyPath>
+                <PropertyPath>version</PropertyPath>
+                <PropertyPath>isBuiltIn</PropertyPath>
+                <PropertyPath>allowedPrincipalTypes</PropertyPath>
+                <PropertyPath>parent</PropertyPath>
+                <PropertyPath>roleEntries</PropertyPath>
+                <PropertyPath>isRootRole</PropertyPath>
+                <PropertyPath>isEndUserRole</PropertyPath>
+                <PropertyPath>isDeprecated</PropertyPath>
+                <PropertyPath>isValid</PropertyPath>
+                <PropertyPath>roleType</PropertyPath>
+                <PropertyPath>enabledCmdlets</PropertyPath>
+                <PropertyPath>guid</PropertyPath>
+                <PropertyPath>identity</PropertyPath>
+                <PropertyPath>isServicePrincipalRole</PropertyPath>
+              </Collection>
+            </PropertyValue>
+            <PropertyValue Property="NonUpdatableNavigationProperties">
+              <Collection>
+                <PropertyPath>inheritsPermissionsFrom</PropertyPath>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </EntityType>
+      <EnumType Name="RolePrincipalTypes" UnderlyingType="Edm.Int64" IsFlags="true">
+        <Member Name="User" Value="1" />
+        <Member Name="ServicePrincipal" Value="2" />
+        <Member Name="Group" Value="4" />
+      </EnumType>
+      <EntityType Name="UnifiedRbacManagementScope">
+        <Key>
+          <PropertyRef Name="id" />
+        </Key>
+        <Property Name="id" Type="Edm.String" />
+        <Property Name="type" Type="Exchange.ScopeRestrictionType" />
+        <Property Name="displayName" Type="Edm.String" />
+        <Property Name="customAttributes" Type="Exchange.GenericHashTable" />
+        <Property Name="recipientRoot" Type="Edm.String" />
+        <Property Name="filter" Type="Edm.String" />
+        <Property Name="recipientFilter" Type="Edm.String" />
+        <Property Name="exclusive" Type="Edm.Boolean" />
+        <Property Name="name" Type="Edm.String" />
+        <Property Name="distinguishedName" Type="Edm.String" />
+        <Property Name="guid" Type="Edm.String" />
+        <Property Name="identity" Type="Edm.String" />
+        <Property Name="recipientRestrictionFilter" Type="Edm.String" />
+        <Property Name="scopeRestrictionType" Type="Exchange.ScopeRestrictionType" />
+        <Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
+          <Record>
+            <PropertyValue Property="Filterable" Bool="true" />
+            <PropertyValue Property="NonFilterableProperties">
+              <Collection>
+                <PropertyPath>id</PropertyPath>
+                <PropertyPath>type</PropertyPath>
+                <PropertyPath>displayName</PropertyPath>
+                <PropertyPath>customAttributes</PropertyPath>
+                <PropertyPath>recipientRoot</PropertyPath>
+                <PropertyPath>filter</PropertyPath>
+                <PropertyPath>recipientFilter</PropertyPath>
+                <PropertyPath>exclusive</PropertyPath>
+                <PropertyPath>name</PropertyPath>
+                <PropertyPath>distinguishedName</PropertyPath>
+                <PropertyPath>guid</PropertyPath>
+                <PropertyPath>identity</PropertyPath>
+                <PropertyPath>recipientRestrictionFilter</PropertyPath>
+                <PropertyPath>scopeRestrictionType</PropertyPath>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        <Annotation Term="Org.OData.Capabilities.V1.CustomQueryOptions">
+          <Collection>
+            <Record>
+              <PropertyValue Property="Name" String="PropertySet" />
+              <PropertyValue Property="Description" String="Represents what fields should be part of result object. E.g ?PropertySet=Minimum returns only min set, ?PropertySet=ActiveSync will return only Active sync related fields. This field is complementary to $select. E.g $select=Abc&amp;amp;PropertySet=ActiveSync service will return both Abc field and ActiveSync fields." />
+              <PropertyValue Property="DocumentationUrl" String="" />
+              <PropertyValue Property="Required" Bool="false" />
+            </Record>
+            <Record>
+              <PropertyValue Property="Name" String="isEncoded" />
+              <PropertyValue Property="Description" String="Represents whether the parameters are base64 encoded or not. Applicable for Identities of Entity types and for functions GetRecipientPermissionByFilters (only Identity and Trustee), BySMTPAddress of entity types Recipient and CasMailbox. For example, /Mailbox(Identity)?isEncoded=true, says that the Identity is base64 encoded.Similarly for /Recipient/Exchange.GetRecipientPermissionByFilters(identity=Identity,trustee=Trustee Type,accessRight=Access Right)?isEncoded=true, says Identity and Trustee are base64 encoded" />
+              <PropertyValue Property="DocumentationUrl" String="" />
+              <PropertyValue Property="Required" Bool="false" />
+            </Record>
+          </Collection>
+        </Annotation>
+        <Annotation Term="Org.OData.Capabilities.V1.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Updatable" Bool="true" />
+            <PropertyValue Property="NonUpdatableProperties">
+              <Collection>
+                <PropertyPath>type</PropertyPath>
+                <PropertyPath>customAttributes</PropertyPath>
+                <PropertyPath>filter</PropertyPath>
+                <PropertyPath>recipientFilter</PropertyPath>
+                <PropertyPath>exclusive</PropertyPath>
+                <PropertyPath>distinguishedName</PropertyPath>
+                <PropertyPath>guid</PropertyPath>
+                <PropertyPath>identity</PropertyPath>
+                <PropertyPath>scopeRestrictionType</PropertyPath>
+              </Collection>
+            </PropertyValue>
+            <PropertyValue Property="NonUpdatableNavigationProperties">
+              <Collection />
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </EntityType>
+      <EntityType Name="UnifiedRbacRoleAssignment">
+        <Key>
+          <PropertyRef Name="id" />
+        </Key>
+        <Property Name="id" Type="Edm.String" Nullable="false" />
+        <Property Name="principalId" Type="Edm.String" />
+        <Property Name="roleDefinitionId" Type="Edm.String" />
+        <Property Name="directoryScopeId" Type="Edm.String" />
+        <Property Name="appScopeId" Type="Edm.String" />
+        <Property Name="identity" Type="Edm.String" />
+        <Property Name="user" Type="Edm.String" />
+        <Property Name="assignmentMethod" Type="Edm.String" />
+        <Property Name="roleAssigneeType" Type="Edm.String" />
+        <Property Name="roleAssignmentDelegationType" Type="Edm.String" />
+        <Property Name="customRecipientWriteScope" Type="Edm.String" />
+        <Property Name="customConfigWriteScope" Type="Edm.String" />
+        <Property Name="recipientReadScope" Type="Edm.String" />
+        <Property Name="configReadScope" Type="Edm.String" />
+        <Property Name="recipientWriteScope" Type="Edm.String" />
+        <Property Name="configWriteScope" Type="Edm.String" />
+        <Property Name="enabled" Type="Edm.Boolean" />
+        <Property Name="roleAssigneeName" Type="Edm.String" />
+        <Property Name="isValid" Type="Edm.Boolean" />
+        <Property Name="displayName" Type="Edm.String" />
+        <Property Name="distinguishedName" Type="Edm.String" />
+        <Property Name="guid" Type="Edm.String" />
+        <Property Name="recipientAdministrativeUnitScope" Type="Edm.String" />
+        <NavigationProperty Name="roleDefinition" Type="Exchange.UnifiedRbacRoleDefinition" Nullable="false" ContainsTarget="true" />
+        <NavigationProperty Name="appScope" Type="Exchange.UnifiedRbacManagementScope" Nullable="false" ContainsTarget="true" />
+        <Annotation Term="Org.OData.Capabilities.V1.FilterRestrictions">
+          <Record>
+            <PropertyValue Property="Filterable" Bool="true" />
+            <PropertyValue Property="NonFilterableProperties">
+              <Collection>
+                <PropertyPath>id</PropertyPath>
+                <PropertyPath>directoryScopeId</PropertyPath>
+                <PropertyPath>appScopeId</PropertyPath>
+                <PropertyPath>identity</PropertyPath>
+                <PropertyPath>user</PropertyPath>
+                <PropertyPath>assignmentMethod</PropertyPath>
+                <PropertyPath>roleAssigneeType</PropertyPath>
+                <PropertyPath>roleAssignmentDelegationType</PropertyPath>
+                <PropertyPath>customRecipientWriteScope</PropertyPath>
+                <PropertyPath>customConfigWriteScope</PropertyPath>
+                <PropertyPath>recipientReadScope</PropertyPath>
+                <PropertyPath>configReadScope</PropertyPath>
+                <PropertyPath>recipientWriteScope</PropertyPath>
+                <PropertyPath>configWriteScope</PropertyPath>
+                <PropertyPath>enabled</PropertyPath>
+                <PropertyPath>roleAssigneeName</PropertyPath>
+                <PropertyPath>isValid</PropertyPath>
+                <PropertyPath>displayName</PropertyPath>
+                <PropertyPath>distinguishedName</PropertyPath>
+                <PropertyPath>guid</PropertyPath>
+                <PropertyPath>recipientAdministrativeUnitScope</PropertyPath>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        <Annotation Term="Org.OData.Capabilities.V1.CustomQueryOptions">
+          <Collection>
+            <Record>
+              <PropertyValue Property="Name" String="PropertySet" />
+              <PropertyValue Property="Description" String="Represents what fields should be part of result object. E.g ?PropertySet=Minimum returns only min set, ?PropertySet=ActiveSync will return only Active sync related fields. This field is complementary to $select. E.g $select=Abc&amp;amp;PropertySet=ActiveSync service will return both Abc field and ActiveSync fields." />
+              <PropertyValue Property="DocumentationUrl" String="" />
+              <PropertyValue Property="Required" Bool="false" />
+            </Record>
+            <Record>
+              <PropertyValue Property="Name" String="isEncoded" />
+              <PropertyValue Property="Description" String="Represents whether the parameters are base64 encoded or not. Applicable for Identities of Entity types and for functions GetRecipientPermissionByFilters (only Identity and Trustee), BySMTPAddress of entity types Recipient and CasMailbox. For example, /Mailbox(Identity)?isEncoded=true, says that the Identity is base64 encoded.Similarly for /Recipient/Exchange.GetRecipientPermissionByFilters(identity=Identity,trustee=Trustee Type,accessRight=Access Right)?isEncoded=true, says Identity and Trustee are base64 encoded" />
+              <PropertyValue Property="DocumentationUrl" String="" />
+              <PropertyValue Property="Required" Bool="false" />
+            </Record>
+          </Collection>
+        </Annotation>
+        <Annotation Term="Org.OData.Capabilities.V1.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Updatable" Bool="true" />
+            <PropertyValue Property="NonUpdatableProperties">
+              <Collection>
+                <PropertyPath>roleDefinitionId</PropertyPath>
+                <PropertyPath>identity</PropertyPath>
+                <PropertyPath>assignmentMethod</PropertyPath>
+                <PropertyPath>roleAssigneeType</PropertyPath>
+                <PropertyPath>roleAssignmentDelegationType</PropertyPath>
+                <PropertyPath>customConfigWriteScope</PropertyPath>
+                <PropertyPath>recipientReadScope</PropertyPath>
+                <PropertyPath>configReadScope</PropertyPath>
+                <PropertyPath>recipientWriteScope</PropertyPath>
+                <PropertyPath>configWriteScope</PropertyPath>
+                <PropertyPath>roleAssigneeName</PropertyPath>
+                <PropertyPath>isValid</PropertyPath>
+                <PropertyPath>displayName</PropertyPath>
+                <PropertyPath>distinguishedName</PropertyPath>
+                <PropertyPath>guid</PropertyPath>
+              </Collection>
+            </PropertyValue>
+            <PropertyValue Property="NonUpdatableNavigationProperties">
+              <Collection>
+                <PropertyPath>roleDefinition</PropertyPath>
+                <PropertyPath>appScope</PropertyPath>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </EntityType>
       <ComplexType Name="CmdletInvokeInputType" BaseType="Exchange.ComplexEntry">
         <Property Name="CmdletName" Type="Edm.String" Nullable="false" />
         <Property Name="Parameters" Type="Exchange.GenericHashTable" />
@@ -5879,7 +6132,14 @@
         <Parameter Name="QueryTable" Type="Exchange.GenericHashTable" />
         <ReturnType Type="Collection(Exchange.MailDetailDlpPolicyReport)" />
       </Action>
+      <Action Name="RbacQuery">
+        <Parameter Name="QueryTable" Type="Exchange.GenericHashTable" />
+        <ReturnType Type="Exchange.RbacResults" />
+      </Action>
       <Action Name="Initialize">
+        <ReturnType Type="Edm.String" />
+      </Action>
+      <Action Name="InitializeLiteFRC">
         <ReturnType Type="Edm.String" />
       </Action>
       <Action Name="InvokeCommand">
@@ -5940,7 +6200,12 @@
         <ActionImport Name="GetMailDetailTransportRuleReport" Action="Exchange.GetMailDetailTransportRuleReport" />
         <ActionImport Name="GetMailTrafficPolicyReport" Action="Exchange.GetMailTrafficPolicyReport" />
         <ActionImport Name="GetMailDetailDlpPolicyReport" Action="Exchange.GetMailDetailDlpPolicyReport" />
+        <ActionImport Name="RbacQuery" Action="Exchange.RbacQuery" />
+        <EntitySet Name="UnifiedRbacRoleDefinition" EntityType="Exchange.UnifiedRbacRoleDefinition" />
+        <EntitySet Name="UnifiedRbacManagementScope" EntityType="Exchange.UnifiedRbacManagementScope" />
+        <EntitySet Name="UnifiedRbacRoleAssignment" EntityType="Exchange.UnifiedRbacRoleAssignment" />
         <ActionImport Name="Initialize" Action="Exchange.Initialize" />
+        <ActionImport Name="InitializeLiteFRC" Action="Exchange.InitializeLiteFRC" />
         <ActionImport Name="InvokeCommand" Action="Exchange.InvokeCommand" />
         <EntitySet Name="Divergence" EntityType="Exchange.Divergence" />
       </EntityContainer>

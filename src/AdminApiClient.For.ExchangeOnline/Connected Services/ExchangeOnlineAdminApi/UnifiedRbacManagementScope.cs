@@ -12,40 +12,40 @@
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
-    /// There are no comments for ExchangeManagementScopeSingle in the schema.
+    /// There are no comments for UnifiedRbacManagementScopeSingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ExchangeManagementScopeSingle")]
-    public partial class ExchangeManagementScopeSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<ExchangeManagementScope>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("UnifiedRbacManagementScopeSingle")]
+    public partial class UnifiedRbacManagementScopeSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<UnifiedRbacManagementScope>
     {
         /// <summary>
-        /// Initialize a new ExchangeManagementScopeSingle object.
+        /// Initialize a new UnifiedRbacManagementScopeSingle object.
         /// </summary>
-        public ExchangeManagementScopeSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+        public UnifiedRbacManagementScopeSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
             : base(context, path) {}
 
         /// <summary>
-        /// Initialize a new ExchangeManagementScopeSingle object.
+        /// Initialize a new UnifiedRbacManagementScopeSingle object.
         /// </summary>
-        public ExchangeManagementScopeSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+        public UnifiedRbacManagementScopeSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
             : base(context, path, isComposable) {}
 
         /// <summary>
-        /// Initialize a new ExchangeManagementScopeSingle object.
+        /// Initialize a new UnifiedRbacManagementScopeSingle object.
         /// </summary>
-        public ExchangeManagementScopeSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<ExchangeManagementScope> query)
+        public UnifiedRbacManagementScopeSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<UnifiedRbacManagementScope> query)
             : base(query) {}
 
     }
     /// <summary>
-    /// There are no comments for ExchangeManagementScope in the schema.
+    /// There are no comments for UnifiedRbacManagementScope in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("id")]
-    [global::Microsoft.OData.Client.EntitySet("ExchangeManagementScope")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ExchangeManagementScope")]
-    public partial class ExchangeManagementScope : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.EntitySet("UnifiedRbacManagementScope")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("UnifiedRbacManagementScope")]
+    public partial class UnifiedRbacManagementScope : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
         /// There are no comments for Property Id in the schema.
@@ -70,6 +70,75 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         private string _Id;
         partial void OnIdChanging(string value);
         partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("type")]
+        public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.ScopeRestrictionType> Type
+        {
+            get
+            {
+                return this._Type;
+            }
+            set
+            {
+                this.OnTypeChanging(value);
+                this._Type = value;
+                this.OnTypeChanged();
+                this.OnPropertyChanged("type");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.ScopeRestrictionType> _Type;
+        partial void OnTypeChanging(global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.ScopeRestrictionType> value);
+        partial void OnTypeChanged();
+        /// <summary>
+        /// There are no comments for Property DisplayName in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("displayName")]
+        public virtual string DisplayName
+        {
+            get
+            {
+                return this._DisplayName;
+            }
+            set
+            {
+                this.OnDisplayNameChanging(value);
+                this._DisplayName = value;
+                this.OnDisplayNameChanged();
+                this.OnPropertyChanged("displayName");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private string _DisplayName;
+        partial void OnDisplayNameChanging(string value);
+        partial void OnDisplayNameChanged();
+        /// <summary>
+        /// There are no comments for Property CustomAttributes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("customAttributes")]
+        public virtual global::AdminApiClient.For.ExchangeOnline.OData.GenericHashTable CustomAttributes
+        {
+            get
+            {
+                return this._CustomAttributes;
+            }
+            set
+            {
+                this.OnCustomAttributesChanging(value);
+                this._CustomAttributes = value;
+                this.OnCustomAttributesChanged();
+                this.OnPropertyChanged("customAttributes");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::AdminApiClient.For.ExchangeOnline.OData.GenericHashTable _CustomAttributes;
+        partial void OnCustomAttributesChanging(global::AdminApiClient.For.ExchangeOnline.OData.GenericHashTable value);
+        partial void OnCustomAttributesChanged();
         /// <summary>
         /// There are no comments for Property RecipientRoot in the schema.
         /// </summary>
@@ -140,98 +209,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnRecipientFilterChanging(string value);
         partial void OnRecipientFilterChanged();
         /// <summary>
-        /// There are no comments for Property ServerFilter in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("serverFilter")]
-        public virtual string ServerFilter
-        {
-            get
-            {
-                return this._ServerFilter;
-            }
-            set
-            {
-                this.OnServerFilterChanging(value);
-                this._ServerFilter = value;
-                this.OnServerFilterChanged();
-                this.OnPropertyChanged("serverFilter");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _ServerFilter;
-        partial void OnServerFilterChanging(string value);
-        partial void OnServerFilterChanged();
-        /// <summary>
-        /// There are no comments for Property DatabaseFilter in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("databaseFilter")]
-        public virtual string DatabaseFilter
-        {
-            get
-            {
-                return this._DatabaseFilter;
-            }
-            set
-            {
-                this.OnDatabaseFilterChanging(value);
-                this._DatabaseFilter = value;
-                this.OnDatabaseFilterChanged();
-                this.OnPropertyChanged("databaseFilter");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _DatabaseFilter;
-        partial void OnDatabaseFilterChanging(string value);
-        partial void OnDatabaseFilterChanged();
-        /// <summary>
-        /// There are no comments for Property TenantOrganizationFilter in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("tenantOrganizationFilter")]
-        public virtual string TenantOrganizationFilter
-        {
-            get
-            {
-                return this._TenantOrganizationFilter;
-            }
-            set
-            {
-                this.OnTenantOrganizationFilterChanging(value);
-                this._TenantOrganizationFilter = value;
-                this.OnTenantOrganizationFilterChanged();
-                this.OnPropertyChanged("tenantOrganizationFilter");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _TenantOrganizationFilter;
-        partial void OnTenantOrganizationFilterChanging(string value);
-        partial void OnTenantOrganizationFilterChanged();
-        /// <summary>
-        /// There are no comments for Property ScopeRestrictionType in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("scopeRestrictionType")]
-        public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.ScopeRestrictionType> ScopeRestrictionType
-        {
-            get
-            {
-                return this._ScopeRestrictionType;
-            }
-            set
-            {
-                this.OnScopeRestrictionTypeChanging(value);
-                this._ScopeRestrictionType = value;
-                this.OnScopeRestrictionTypeChanged();
-                this.OnPropertyChanged("scopeRestrictionType");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.ScopeRestrictionType> _ScopeRestrictionType;
-        partial void OnScopeRestrictionTypeChanging(global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.ScopeRestrictionType> value);
-        partial void OnScopeRestrictionTypeChanged();
-        /// <summary>
         /// There are no comments for Property Exclusive in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
@@ -277,52 +254,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property AdminDisplayName in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("adminDisplayName")]
-        public virtual string AdminDisplayName
-        {
-            get
-            {
-                return this._AdminDisplayName;
-            }
-            set
-            {
-                this.OnAdminDisplayNameChanging(value);
-                this._AdminDisplayName = value;
-                this.OnAdminDisplayNameChanged();
-                this.OnPropertyChanged("adminDisplayName");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _AdminDisplayName;
-        partial void OnAdminDisplayNameChanging(string value);
-        partial void OnAdminDisplayNameChanged();
-        /// <summary>
-        /// There are no comments for Property Version in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("version")]
-        public virtual string Version
-        {
-            get
-            {
-                return this._Version;
-            }
-            set
-            {
-                this.OnVersionChanging(value);
-                this._Version = value;
-                this.OnVersionChanged();
-                this.OnPropertyChanged("version");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _Version;
-        partial void OnVersionChanging(string value);
-        partial void OnVersionChanged();
         /// <summary>
         /// There are no comments for Property DistinguishedName in the schema.
         /// </summary>
@@ -415,6 +346,29 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         private string _RecipientRestrictionFilter;
         partial void OnRecipientRestrictionFilterChanging(string value);
         partial void OnRecipientRestrictionFilterChanged();
+        /// <summary>
+        /// There are no comments for Property ScopeRestrictionType in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("scopeRestrictionType")]
+        public virtual global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.ScopeRestrictionType> ScopeRestrictionType
+        {
+            get
+            {
+                return this._ScopeRestrictionType;
+            }
+            set
+            {
+                this.OnScopeRestrictionTypeChanging(value);
+                this._ScopeRestrictionType = value;
+                this.OnScopeRestrictionTypeChanged();
+                this.OnPropertyChanged("scopeRestrictionType");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.ScopeRestrictionType> _ScopeRestrictionType;
+        partial void OnScopeRestrictionTypeChanging(global::System.Nullable<global::AdminApiClient.For.ExchangeOnline.OData.ScopeRestrictionType> value);
+        partial void OnScopeRestrictionTypeChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>

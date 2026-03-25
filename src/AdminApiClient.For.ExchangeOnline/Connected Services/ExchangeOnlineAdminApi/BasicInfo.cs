@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -62,7 +62,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property PropertyName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("PropertyName")]
         [global::System.ComponentModel.DataAnnotations.RequiredAttribute(ErrorMessage = "PropertyName is required.")]
         public virtual string PropertyName
@@ -87,7 +86,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property PropertyValue in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("PropertyValue")]
         public virtual string PropertyValue
         {

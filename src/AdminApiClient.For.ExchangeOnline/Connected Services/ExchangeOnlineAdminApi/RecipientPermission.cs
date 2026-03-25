@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -50,7 +50,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Identity")]
         public virtual string Identity
         {
@@ -74,7 +73,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Trustee in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Trustee")]
         public virtual string Trustee
         {
@@ -98,7 +96,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AccessControlType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessControlType")]
         public virtual string AccessControlType
         {
@@ -122,7 +119,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AccessRights in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessRights")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.RecipientAccessRight> AccessRights
         {
@@ -146,7 +142,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IsInherited in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IsInherited")]
         public virtual global::System.Nullable<bool> IsInherited
         {
@@ -170,7 +165,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property InheritanceType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("InheritanceType")]
         public virtual string InheritanceType
         {

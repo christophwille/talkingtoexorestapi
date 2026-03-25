@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -21,7 +21,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AccessRights in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessRights")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> AccessRights
         {
@@ -45,7 +44,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IsInherited in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IsInherited")]
         public virtual global::System.Nullable<bool> IsInherited
         {
@@ -69,7 +67,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Deny in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Deny")]
         public virtual global::System.Nullable<bool> Deny
         {
@@ -93,7 +90,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property InheritanceType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("InheritanceType")]
         public virtual string InheritanceType
         {

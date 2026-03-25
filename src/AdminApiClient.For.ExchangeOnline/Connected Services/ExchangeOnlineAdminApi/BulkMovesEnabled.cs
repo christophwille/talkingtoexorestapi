@@ -12,14 +12,16 @@
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
-    /// There are no comments for SpoofDmarcRejectAction in the schema.
+    /// There are no comments for BulkMovesEnabled in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("SpoofDmarcRejectAction")]
-    public enum SpoofDmarcRejectAction : long
+    [global::Microsoft.OData.Client.OriginalNameAttribute("BulkMovesEnabled")]
+    public enum BulkMovesEnabled : long
     {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Reject")]
-        Reject = 0,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Quarantine")]
-        Quarantine = 1
+        [global::Microsoft.OData.Client.OriginalNameAttribute("NotSet")]
+        NotSet = 0,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("On")]
+        On = 1,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Off")]
+        Off = 2
     }
 }

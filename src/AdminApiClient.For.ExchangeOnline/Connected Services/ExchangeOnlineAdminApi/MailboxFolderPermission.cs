@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -50,7 +50,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Identity")]
         public virtual string Identity
         {
@@ -74,7 +73,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MailboxFolderIdentity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MailboxFolderIdentity")]
         public virtual string MailboxFolderIdentity
         {
@@ -98,7 +96,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FolderName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FolderName")]
         public virtual string FolderName
         {
@@ -122,7 +119,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property User in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("User")]
         public virtual string User
         {
@@ -146,7 +142,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MailboxFolderUser in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MailboxFolderUser")]
         public virtual global::AdminApiClient.For.ExchangeOnline.OData.MailboxFolderUserID MailboxFolderUser
         {
@@ -170,7 +165,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AccessRights in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessRights")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<string> AccessRights
         {
@@ -194,7 +188,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property SharingPermissionFlags in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("SharingPermissionFlags")]
         public virtual string SharingPermissionFlags
         {

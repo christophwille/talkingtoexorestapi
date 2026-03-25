@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -50,7 +50,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property PermissionId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("PermissionId")]
         public virtual string PermissionId
         {
@@ -74,7 +73,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MailboxIdentity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MailboxIdentity")]
         public virtual string MailboxIdentity
         {
@@ -98,7 +96,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property User in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("User")]
         public virtual string User
         {
@@ -122,7 +119,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IsOwner in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IsOwner")]
         public virtual global::System.Nullable<bool> IsOwner
         {
@@ -146,7 +142,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property PermissionList in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("PermissionList")]
         public virtual global::System.Collections.ObjectModel.ObservableCollection<global::AdminApiClient.For.ExchangeOnline.OData.MailboxPermissionInfo> PermissionList
         {

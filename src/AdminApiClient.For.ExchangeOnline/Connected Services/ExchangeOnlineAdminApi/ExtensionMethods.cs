@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -1234,6 +1234,75 @@ namespace AdminApiClient.For.ExchangeOnline.OData
                 { "Guid", guid }
             };
             return new global::AdminApiClient.For.ExchangeOnline.OData.DirectMobileDeviceSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition as global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="_source">source entity set</param>
+        /// <param name="_keys">dictionary with the names and values of keys</param>
+        public static global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition> _source, global::System.Collections.Generic.IDictionary<string, object> _keys)
+        {
+            return new global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition as global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="_source">source entity set</param>
+        /// <param name="id">The value of id</param>
+        public static global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition> _source,
+            string id)
+        {
+            global::System.Collections.Generic.IDictionary<string, object> _keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "id", id }
+            };
+            return new global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScope as global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScopeSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="_source">source entity set</param>
+        /// <param name="_keys">dictionary with the names and values of keys</param>
+        public static global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScopeSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScope> _source, global::System.Collections.Generic.IDictionary<string, object> _keys)
+        {
+            return new global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScopeSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScope as global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScopeSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="_source">source entity set</param>
+        /// <param name="id">The value of id</param>
+        public static global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScopeSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScope> _source,
+            string id)
+        {
+            global::System.Collections.Generic.IDictionary<string, object> _keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "id", id }
+            };
+            return new global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScopeSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleAssignment as global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleAssignmentSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="_source">source entity set</param>
+        /// <param name="_keys">dictionary with the names and values of keys</param>
+        public static global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleAssignmentSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleAssignment> _source, global::System.Collections.Generic.IDictionary<string, object> _keys)
+        {
+            return new global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleAssignmentSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleAssignment as global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleAssignmentSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="_source">source entity set</param>
+        /// <param name="id">The value of id</param>
+        public static global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleAssignmentSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleAssignment> _source,
+            string id)
+        {
+            global::System.Collections.Generic.IDictionary<string, object> _keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "id", id }
+            };
+            return new global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleAssignmentSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
         }
         /// <summary>
         /// Get an entity of type global::AdminApiClient.For.ExchangeOnline.OData.Divergence as global::AdminApiClient.For.ExchangeOnline.OData.DivergenceSingle specified by key from an entity set

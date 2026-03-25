@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 1/31/2023 2:36:10 PM
+// Generation date: 3/25/2026 1:02:19 PM
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
@@ -21,7 +21,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AccountOnlyDeviceWipeAckTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccountOnlyDeviceWipeAckTime")]
         public virtual string AccountOnlyDeviceWipeAckTime
         {
@@ -45,7 +44,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AccountOnlyDeviceWipeRequestTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccountOnlyDeviceWipeRequestTime")]
         public virtual string AccountOnlyDeviceWipeRequestTime
         {
@@ -69,7 +67,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property AccountOnlyDeviceWipeSentTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccountOnlyDeviceWipeSentTime")]
         public virtual string AccountOnlyDeviceWipeSentTime
         {
@@ -93,7 +90,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ClientType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ClientType")]
         public virtual string ClientType
         {
@@ -117,7 +113,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property ClientVersion in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("ClientVersion")]
         public virtual string ClientVersion
         {
@@ -141,7 +136,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceAccessControlRule in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceAccessControlRule")]
         public virtual string DeviceAccessControlRule
         {
@@ -165,7 +159,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceAccessState in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceAccessState")]
         public virtual string DeviceAccessState
         {
@@ -189,7 +182,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceAccessStateReason in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceAccessStateReason")]
         public virtual string DeviceAccessStateReason
         {
@@ -213,7 +205,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceEnableOutboundSMS in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceEnableOutboundSMS")]
         public virtual global::System.Nullable<bool> DeviceEnableOutboundSMS
         {
@@ -237,7 +228,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceFriendlyName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceFriendlyName")]
         public virtual string DeviceFriendlyName
         {
@@ -261,7 +251,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceID in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceID")]
         public virtual string DeviceID
         {
@@ -285,7 +274,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceImei in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceImei")]
         public virtual string DeviceImei
         {
@@ -309,7 +297,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceMobileOperator in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceMobileOperator")]
         public virtual string DeviceMobileOperator
         {
@@ -333,7 +320,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceModel in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceModel")]
         public virtual string DeviceModel
         {
@@ -357,7 +343,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceOS in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceOS")]
         public virtual string DeviceOS
         {
@@ -381,7 +366,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceOSLanguage in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceOSLanguage")]
         public virtual string DeviceOSLanguage
         {
@@ -405,7 +389,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DevicePhoneNumber in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DevicePhoneNumber")]
         public virtual string DevicePhoneNumber
         {
@@ -429,7 +412,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DevicePolicyApplicationStatus in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DevicePolicyApplicationStatus")]
         public virtual string DevicePolicyApplicationStatus
         {
@@ -453,7 +435,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DevicePolicyApplied in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DevicePolicyApplied")]
         public virtual string DevicePolicyApplied
         {
@@ -477,7 +458,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceType")]
         public virtual string DeviceType
         {
@@ -501,7 +481,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceUserAgent in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceUserAgent")]
         public virtual string DeviceUserAgent
         {
@@ -525,7 +504,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceWipeAckTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceWipeAckTime")]
         public virtual string DeviceWipeAckTime
         {
@@ -549,7 +527,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceWipeRequestTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceWipeRequestTime")]
         public virtual string DeviceWipeRequestTime
         {
@@ -573,7 +550,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property DeviceWipeSentTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeviceWipeSentTime")]
         public virtual string DeviceWipeSentTime
         {
@@ -597,7 +573,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property FirstSyncTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("FirstSyncTime")]
         public virtual string FirstSyncTime
         {
@@ -621,7 +596,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Guid in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Guid")]
         public virtual global::System.Nullable<global::System.Guid> Guid
         {
@@ -645,7 +619,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Identity")]
         public virtual string Identity
         {
@@ -669,7 +642,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property IsRemoteWipeSupported in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("IsRemoteWipeSupported")]
         public virtual global::System.Nullable<bool> IsRemoteWipeSupported
         {
@@ -693,7 +665,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LastAccountOnlyDeviceWipeRequestor in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LastAccountOnlyDeviceWipeRequestor")]
         public virtual string LastAccountOnlyDeviceWipeRequestor
         {
@@ -717,7 +688,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LastDeviceWipeRequestor in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LastDeviceWipeRequestor")]
         public virtual string LastDeviceWipeRequestor
         {
@@ -741,7 +711,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LastPingHeartbeat in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LastPingHeartbeat")]
         public virtual global::System.Nullable<long> LastPingHeartbeat
         {
@@ -765,7 +734,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LastPolicyUpdateTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LastPolicyUpdateTime")]
         public virtual string LastPolicyUpdateTime
         {
@@ -789,7 +757,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LastSuccessSync in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LastSuccessSync")]
         public virtual string LastSuccessSync
         {
@@ -813,7 +780,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property LastSyncAttemptTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("LastSyncAttemptTime")]
         public virtual string LastSyncAttemptTime
         {
@@ -837,7 +803,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property MailboxLogReport in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("MailboxLogReport")]
         public virtual string MailboxLogReport
         {
@@ -861,7 +826,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property NumberOfFoldersSynced in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("NumberOfFoldersSynced")]
         public virtual global::System.Nullable<int> NumberOfFoldersSynced
         {
@@ -885,7 +849,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property Status in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("Status")]
         public virtual string Status
         {
@@ -909,7 +872,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property StatusNote in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("StatusNote")]
         public virtual string StatusNote
         {
@@ -933,7 +895,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// There are no comments for Property SyncStateUpgradeTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-
         [global::Microsoft.OData.Client.OriginalNameAttribute("SyncStateUpgradeTime")]
         public virtual string SyncStateUpgradeTime
         {

@@ -12,27 +12,27 @@
 namespace AdminApiClient.For.ExchangeOnline.OData
 {
     /// <summary>
-    /// There are no comments for RoleAssignmentsSingle in the schema.
+    /// There are no comments for UnifiedRbacRoleAssignmentSingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("RoleAssignmentsSingle")]
-    public partial class RoleAssignmentsSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<RoleAssignments>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("UnifiedRbacRoleAssignmentSingle")]
+    public partial class UnifiedRbacRoleAssignmentSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<UnifiedRbacRoleAssignment>
     {
         /// <summary>
-        /// Initialize a new RoleAssignmentsSingle object.
+        /// Initialize a new UnifiedRbacRoleAssignmentSingle object.
         /// </summary>
-        public RoleAssignmentsSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+        public UnifiedRbacRoleAssignmentSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
             : base(context, path) {}
 
         /// <summary>
-        /// Initialize a new RoleAssignmentsSingle object.
+        /// Initialize a new UnifiedRbacRoleAssignmentSingle object.
         /// </summary>
-        public RoleAssignmentsSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+        public UnifiedRbacRoleAssignmentSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
             : base(context, path, isComposable) {}
 
         /// <summary>
-        /// Initialize a new RoleAssignmentsSingle object.
+        /// Initialize a new UnifiedRbacRoleAssignmentSingle object.
         /// </summary>
-        public RoleAssignmentsSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<RoleAssignments> query)
+        public UnifiedRbacRoleAssignmentSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<UnifiedRbacRoleAssignment> query)
             : base(query) {}
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("roleDefinition")]
-        public virtual global::AdminApiClient.For.ExchangeOnline.OData.RoleDefinitionsSingle RoleDefinition
+        public virtual global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle RoleDefinition
         {
             get
             {
@@ -50,19 +50,19 @@ namespace AdminApiClient.For.ExchangeOnline.OData
                 }
                 if ((this._RoleDefinition == null))
                 {
-                    this._RoleDefinition = new global::AdminApiClient.For.ExchangeOnline.OData.RoleDefinitionsSingle(this.Context, GetPath("roleDefinition"));
+                    this._RoleDefinition = new global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle(this.Context, GetPath("roleDefinition"));
                 }
                 return this._RoleDefinition;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::AdminApiClient.For.ExchangeOnline.OData.RoleDefinitionsSingle _RoleDefinition;
+        private global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinitionSingle _RoleDefinition;
         /// <summary>
         /// There are no comments for AppScope in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("appScope")]
-        public virtual global::AdminApiClient.For.ExchangeOnline.OData.ExchangeManagementScopeSingle AppScope
+        public virtual global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScopeSingle AppScope
         {
             get
             {
@@ -72,47 +72,47 @@ namespace AdminApiClient.For.ExchangeOnline.OData
                 }
                 if ((this._AppScope == null))
                 {
-                    this._AppScope = new global::AdminApiClient.For.ExchangeOnline.OData.ExchangeManagementScopeSingle(this.Context, GetPath("appScope"));
+                    this._AppScope = new global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScopeSingle(this.Context, GetPath("appScope"));
                 }
                 return this._AppScope;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::AdminApiClient.For.ExchangeOnline.OData.ExchangeManagementScopeSingle _AppScope;
+        private global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScopeSingle _AppScope;
     }
     /// <summary>
-    /// There are no comments for RoleAssignments in the schema.
+    /// There are no comments for UnifiedRbacRoleAssignment in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("id")]
-    [global::Microsoft.OData.Client.EntitySet("RoleAssignments")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("RoleAssignments")]
-    public partial class RoleAssignments : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.EntitySet("UnifiedRbacRoleAssignment")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("UnifiedRbacRoleAssignment")]
+    public partial class UnifiedRbacRoleAssignment : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a new RoleAssignments object.
+        /// Create a new UnifiedRbacRoleAssignment object.
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="roleDefinition">Initial value of RoleDefinition.</param>
         /// <param name="appScope">Initial value of AppScope.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        public static RoleAssignments CreateRoleAssignments(string ID, global::AdminApiClient.For.ExchangeOnline.OData.RoleDefinitions roleDefinition, global::AdminApiClient.For.ExchangeOnline.OData.ExchangeManagementScope appScope)
+        public static UnifiedRbacRoleAssignment CreateUnifiedRbacRoleAssignment(string ID, global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition roleDefinition, global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScope appScope)
         {
-            RoleAssignments roleAssignments = new RoleAssignments();
-            roleAssignments.Id = ID;
+            UnifiedRbacRoleAssignment unifiedRbacRoleAssignment = new UnifiedRbacRoleAssignment();
+            unifiedRbacRoleAssignment.Id = ID;
             if ((roleDefinition == null))
             {
                 throw new global::System.ArgumentNullException("roleDefinition");
             }
-            roleAssignments.RoleDefinition = roleDefinition;
+            unifiedRbacRoleAssignment.RoleDefinition = roleDefinition;
             if ((appScope == null))
             {
                 throw new global::System.ArgumentNullException("appScope");
             }
-            roleAssignments.AppScope = appScope;
-            return roleAssignments;
+            unifiedRbacRoleAssignment.AppScope = appScope;
+            return unifiedRbacRoleAssignment;
         }
         /// <summary>
         /// There are no comments for Property Id in the schema.
@@ -139,6 +139,98 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnIdChanging(string value);
         partial void OnIdChanged();
         /// <summary>
+        /// There are no comments for Property PrincipalId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("principalId")]
+        public virtual string PrincipalId
+        {
+            get
+            {
+                return this._PrincipalId;
+            }
+            set
+            {
+                this.OnPrincipalIdChanging(value);
+                this._PrincipalId = value;
+                this.OnPrincipalIdChanged();
+                this.OnPropertyChanged("principalId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private string _PrincipalId;
+        partial void OnPrincipalIdChanging(string value);
+        partial void OnPrincipalIdChanged();
+        /// <summary>
+        /// There are no comments for Property RoleDefinitionId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("roleDefinitionId")]
+        public virtual string RoleDefinitionId
+        {
+            get
+            {
+                return this._RoleDefinitionId;
+            }
+            set
+            {
+                this.OnRoleDefinitionIdChanging(value);
+                this._RoleDefinitionId = value;
+                this.OnRoleDefinitionIdChanged();
+                this.OnPropertyChanged("roleDefinitionId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private string _RoleDefinitionId;
+        partial void OnRoleDefinitionIdChanging(string value);
+        partial void OnRoleDefinitionIdChanged();
+        /// <summary>
+        /// There are no comments for Property DirectoryScopeId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("directoryScopeId")]
+        public virtual string DirectoryScopeId
+        {
+            get
+            {
+                return this._DirectoryScopeId;
+            }
+            set
+            {
+                this.OnDirectoryScopeIdChanging(value);
+                this._DirectoryScopeId = value;
+                this.OnDirectoryScopeIdChanged();
+                this.OnPropertyChanged("directoryScopeId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private string _DirectoryScopeId;
+        partial void OnDirectoryScopeIdChanging(string value);
+        partial void OnDirectoryScopeIdChanged();
+        /// <summary>
+        /// There are no comments for Property AppScopeId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("appScopeId")]
+        public virtual string AppScopeId
+        {
+            get
+            {
+                return this._AppScopeId;
+            }
+            set
+            {
+                this.OnAppScopeIdChanging(value);
+                this._AppScopeId = value;
+                this.OnAppScopeIdChanged();
+                this.OnPropertyChanged("appScopeId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private string _AppScopeId;
+        partial void OnAppScopeIdChanging(string value);
+        partial void OnAppScopeIdChanged();
+        /// <summary>
         /// There are no comments for Property Identity in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
@@ -161,52 +253,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         private string _Identity;
         partial void OnIdentityChanging(string value);
         partial void OnIdentityChanged();
-        /// <summary>
-        /// There are no comments for Property RunspaceId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("runspaceId")]
-        public virtual string RunspaceId
-        {
-            get
-            {
-                return this._RunspaceId;
-            }
-            set
-            {
-                this.OnRunspaceIdChanging(value);
-                this._RunspaceId = value;
-                this.OnRunspaceIdChanged();
-                this.OnPropertyChanged("runspaceId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _RunspaceId;
-        partial void OnRunspaceIdChanging(string value);
-        partial void OnRunspaceIdChanged();
-        /// <summary>
-        /// There are no comments for Property DataObject in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("dataObject")]
-        public virtual string DataObject
-        {
-            get
-            {
-                return this._DataObject;
-            }
-            set
-            {
-                this.OnDataObjectChanging(value);
-                this._DataObject = value;
-                this.OnDataObjectChanged();
-                this.OnPropertyChanged("dataObject");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _DataObject;
-        partial void OnDataObjectChanging(string value);
-        partial void OnDataObjectChanged();
         /// <summary>
         /// There are no comments for Property User in the schema.
         /// </summary>
@@ -276,121 +322,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         private string _RoleAssigneeType;
         partial void OnRoleAssigneeTypeChanging(string value);
         partial void OnRoleAssigneeTypeChanged();
-        /// <summary>
-        /// There are no comments for Property PrincipalId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("principalId")]
-        public virtual string PrincipalId
-        {
-            get
-            {
-                return this._PrincipalId;
-            }
-            set
-            {
-                this.OnPrincipalIdChanging(value);
-                this._PrincipalId = value;
-                this.OnPrincipalIdChanged();
-                this.OnPropertyChanged("principalId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _PrincipalId;
-        partial void OnPrincipalIdChanging(string value);
-        partial void OnPrincipalIdChanged();
-        /// <summary>
-        /// There are no comments for Property RoleDefinitionId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("roleDefinitionId")]
-        public virtual string RoleDefinitionId
-        {
-            get
-            {
-                return this._RoleDefinitionId;
-            }
-            set
-            {
-                this.OnRoleDefinitionIdChanging(value);
-                this._RoleDefinitionId = value;
-                this.OnRoleDefinitionIdChanged();
-                this.OnPropertyChanged("roleDefinitionId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _RoleDefinitionId;
-        partial void OnRoleDefinitionIdChanging(string value);
-        partial void OnRoleDefinitionIdChanged();
-        /// <summary>
-        /// There are no comments for Property Condition in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("condition")]
-        public virtual string Condition
-        {
-            get
-            {
-                return this._Condition;
-            }
-            set
-            {
-                this.OnConditionChanging(value);
-                this._Condition = value;
-                this.OnConditionChanged();
-                this.OnPropertyChanged("condition");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _Condition;
-        partial void OnConditionChanging(string value);
-        partial void OnConditionChanged();
-        /// <summary>
-        /// There are no comments for Property DirectoryScopeId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("directoryScopeId")]
-        public virtual string DirectoryScopeId
-        {
-            get
-            {
-                return this._DirectoryScopeId;
-            }
-            set
-            {
-                this.OnDirectoryScopeIdChanging(value);
-                this._DirectoryScopeId = value;
-                this.OnDirectoryScopeIdChanged();
-                this.OnPropertyChanged("directoryScopeId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _DirectoryScopeId;
-        partial void OnDirectoryScopeIdChanging(string value);
-        partial void OnDirectoryScopeIdChanged();
-        /// <summary>
-        /// There are no comments for Property ResourceScope in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("resourceScope")]
-        public virtual string ResourceScope
-        {
-            get
-            {
-                return this._ResourceScope;
-            }
-            set
-            {
-                this.OnResourceScopeChanging(value);
-                this._ResourceScope = value;
-                this.OnResourceScopeChanged();
-                this.OnPropertyChanged("resourceScope");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _ResourceScope;
-        partial void OnResourceScopeChanging(string value);
-        partial void OnResourceScopeChanged();
         /// <summary>
         /// There are no comments for Property RoleAssignmentDelegationType in the schema.
         /// </summary>
@@ -622,29 +553,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnIsValidChanging(global::System.Nullable<bool> value);
         partial void OnIsValidChanged();
         /// <summary>
-        /// There are no comments for Property Version in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("version")]
-        public virtual string Version
-        {
-            get
-            {
-                return this._Version;
-            }
-            set
-            {
-                this.OnVersionChanging(value);
-                this._Version = value;
-                this.OnVersionChanged();
-                this.OnPropertyChanged("version");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _Version;
-        partial void OnVersionChanging(string value);
-        partial void OnVersionChanged();
-        /// <summary>
         /// There are no comments for Property DisplayName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
@@ -691,190 +599,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         partial void OnDistinguishedNameChanging(string value);
         partial void OnDistinguishedNameChanged();
         /// <summary>
-        /// There are no comments for Property ObjectCategory in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("objectCategory")]
-        public virtual string ObjectCategory
-        {
-            get
-            {
-                return this._ObjectCategory;
-            }
-            set
-            {
-                this.OnObjectCategoryChanging(value);
-                this._ObjectCategory = value;
-                this.OnObjectCategoryChanged();
-                this.OnPropertyChanged("objectCategory");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _ObjectCategory;
-        partial void OnObjectCategoryChanging(string value);
-        partial void OnObjectCategoryChanged();
-        /// <summary>
-        /// There are no comments for Property ObjectClass in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("objectClass")]
-        public virtual global::System.Collections.ObjectModel.ObservableCollection<string> ObjectClass
-        {
-            get
-            {
-                return this._ObjectClass;
-            }
-            set
-            {
-                this.OnObjectClassChanging(value);
-                this._ObjectClass = value;
-                this.OnObjectClassChanged();
-                this.OnPropertyChanged("objectClass");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Collections.ObjectModel.ObservableCollection<string> _ObjectClass = new global::System.Collections.ObjectModel.ObservableCollection<string>();
-        partial void OnObjectClassChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
-        partial void OnObjectClassChanged();
-        /// <summary>
-        /// There are no comments for Property WhenChangedDateTime in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("whenChangedDateTime")]
-        public virtual global::System.Nullable<global::System.DateTimeOffset> WhenChangedDateTime
-        {
-            get
-            {
-                return this._WhenChangedDateTime;
-            }
-            set
-            {
-                this.OnWhenChangedDateTimeChanging(value);
-                this._WhenChangedDateTime = value;
-                this.OnWhenChangedDateTimeChanged();
-                this.OnPropertyChanged("whenChangedDateTime");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<global::System.DateTimeOffset> _WhenChangedDateTime;
-        partial void OnWhenChangedDateTimeChanging(global::System.Nullable<global::System.DateTimeOffset> value);
-        partial void OnWhenChangedDateTimeChanged();
-        /// <summary>
-        /// There are no comments for Property WhenCreatedDateTime in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("whenCreatedDateTime")]
-        public virtual global::System.Nullable<global::System.DateTimeOffset> WhenCreatedDateTime
-        {
-            get
-            {
-                return this._WhenCreatedDateTime;
-            }
-            set
-            {
-                this.OnWhenCreatedDateTimeChanging(value);
-                this._WhenCreatedDateTime = value;
-                this.OnWhenCreatedDateTimeChanged();
-                this.OnPropertyChanged("whenCreatedDateTime");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<global::System.DateTimeOffset> _WhenCreatedDateTime;
-        partial void OnWhenCreatedDateTimeChanging(global::System.Nullable<global::System.DateTimeOffset> value);
-        partial void OnWhenCreatedDateTimeChanged();
-        /// <summary>
-        /// There are no comments for Property WhenChangedUTCDateTime in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("whenChangedUTCDateTime")]
-        public virtual global::System.Nullable<global::System.DateTimeOffset> WhenChangedUTCDateTime
-        {
-            get
-            {
-                return this._WhenChangedUTCDateTime;
-            }
-            set
-            {
-                this.OnWhenChangedUTCDateTimeChanging(value);
-                this._WhenChangedUTCDateTime = value;
-                this.OnWhenChangedUTCDateTimeChanged();
-                this.OnPropertyChanged("whenChangedUTCDateTime");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<global::System.DateTimeOffset> _WhenChangedUTCDateTime;
-        partial void OnWhenChangedUTCDateTimeChanging(global::System.Nullable<global::System.DateTimeOffset> value);
-        partial void OnWhenChangedUTCDateTimeChanged();
-        /// <summary>
-        /// There are no comments for Property WhenCreatedUTCDateTime in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("whenCreatedUTCDateTime")]
-        public virtual global::System.Nullable<global::System.DateTimeOffset> WhenCreatedUTCDateTime
-        {
-            get
-            {
-                return this._WhenCreatedUTCDateTime;
-            }
-            set
-            {
-                this.OnWhenCreatedUTCDateTimeChanging(value);
-                this._WhenCreatedUTCDateTime = value;
-                this.OnWhenCreatedUTCDateTimeChanged();
-                this.OnPropertyChanged("whenCreatedUTCDateTime");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::System.Nullable<global::System.DateTimeOffset> _WhenCreatedUTCDateTime;
-        partial void OnWhenCreatedUTCDateTimeChanging(global::System.Nullable<global::System.DateTimeOffset> value);
-        partial void OnWhenCreatedUTCDateTimeChanged();
-        /// <summary>
-        /// There are no comments for Property ExchangeObjectId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("exchangeObjectId")]
-        public virtual string ExchangeObjectId
-        {
-            get
-            {
-                return this._ExchangeObjectId;
-            }
-            set
-            {
-                this.OnExchangeObjectIdChanging(value);
-                this._ExchangeObjectId = value;
-                this.OnExchangeObjectIdChanged();
-                this.OnPropertyChanged("exchangeObjectId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _ExchangeObjectId;
-        partial void OnExchangeObjectIdChanging(string value);
-        partial void OnExchangeObjectIdChanged();
-        /// <summary>
-        /// There are no comments for Property OrganizationId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("organizationId")]
-        public virtual string OrganizationId
-        {
-            get
-            {
-                return this._OrganizationId;
-            }
-            set
-            {
-                this.OnOrganizationIdChanging(value);
-                this._OrganizationId = value;
-                this.OnOrganizationIdChanged();
-                this.OnPropertyChanged("organizationId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _OrganizationId;
-        partial void OnOrganizationIdChanging(string value);
-        partial void OnOrganizationIdChanged();
-        /// <summary>
         /// There are no comments for Property Guid in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
@@ -897,52 +621,6 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         private string _Guid;
         partial void OnGuidChanging(string value);
         partial void OnGuidChanged();
-        /// <summary>
-        /// There are no comments for Property OriginatingServer in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("originatingServer")]
-        public virtual string OriginatingServer
-        {
-            get
-            {
-                return this._OriginatingServer;
-            }
-            set
-            {
-                this.OnOriginatingServerChanging(value);
-                this._OriginatingServer = value;
-                this.OnOriginatingServerChanged();
-                this.OnPropertyChanged("originatingServer");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _OriginatingServer;
-        partial void OnOriginatingServerChanging(string value);
-        partial void OnOriginatingServerChanged();
-        /// <summary>
-        /// There are no comments for Property AppScopeId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("appScopeId")]
-        public virtual string AppScopeId
-        {
-            get
-            {
-                return this._AppScopeId;
-            }
-            set
-            {
-                this.OnAppScopeIdChanging(value);
-                this._AppScopeId = value;
-                this.OnAppScopeIdChanged();
-                this.OnPropertyChanged("appScopeId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private string _AppScopeId;
-        partial void OnAppScopeIdChanging(string value);
-        partial void OnAppScopeIdChanged();
         /// <summary>
         /// There are no comments for Property RecipientAdministrativeUnitScope in the schema.
         /// </summary>
@@ -972,7 +650,7 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("roleDefinition")]
         [global::System.ComponentModel.DataAnnotations.RequiredAttribute(ErrorMessage = "RoleDefinition is required.")]
-        public virtual global::AdminApiClient.For.ExchangeOnline.OData.RoleDefinitions RoleDefinition
+        public virtual global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition RoleDefinition
         {
             get
             {
@@ -987,8 +665,8 @@ namespace AdminApiClient.For.ExchangeOnline.OData
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::AdminApiClient.For.ExchangeOnline.OData.RoleDefinitions _RoleDefinition;
-        partial void OnRoleDefinitionChanging(global::AdminApiClient.For.ExchangeOnline.OData.RoleDefinitions value);
+        private global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition _RoleDefinition;
+        partial void OnRoleDefinitionChanging(global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacRoleDefinition value);
         partial void OnRoleDefinitionChanged();
         /// <summary>
         /// There are no comments for Property AppScope in the schema.
@@ -996,7 +674,7 @@ namespace AdminApiClient.For.ExchangeOnline.OData
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("appScope")]
         [global::System.ComponentModel.DataAnnotations.RequiredAttribute(ErrorMessage = "AppScope is required.")]
-        public virtual global::AdminApiClient.For.ExchangeOnline.OData.ExchangeManagementScope AppScope
+        public virtual global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScope AppScope
         {
             get
             {
@@ -1011,8 +689,8 @@ namespace AdminApiClient.For.ExchangeOnline.OData
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::AdminApiClient.For.ExchangeOnline.OData.ExchangeManagementScope _AppScope;
-        partial void OnAppScopeChanging(global::AdminApiClient.For.ExchangeOnline.OData.ExchangeManagementScope value);
+        private global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScope _AppScope;
+        partial void OnAppScopeChanging(global::AdminApiClient.For.ExchangeOnline.OData.UnifiedRbacManagementScope value);
         partial void OnAppScopeChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
