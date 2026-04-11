@@ -1,6 +1,6 @@
 ﻿## About
 
-Built and tested against Exchange Online PowerShell 3.1.0
+Built and tested against Exchange Online PowerShell 3.9.2
 
 
 ## Features

@@ -7,6 +7,7 @@ namespace AdminApiClient.For.ExchangeOnline
     {
         private static readonly string ResourceName = "AdminApiClient.For.ExchangeOnline.Resource.metadata.xml";
 
+        [Obsolete]
         public static async Task<string> LoadFromResourceAsync()
         {
             var assembly = typeof(ExOMetadata).GetTypeInfo().Assembly;
@@ -24,6 +25,7 @@ namespace AdminApiClient.For.ExchangeOnline
         /// This saves one (initial) roundtrip to the endpoint for fetching $metadata document
         /// </summary>
         /// <returns></returns>
+        [Obsolete]
         public static string LoadFromResourceCached()
         {
             if (null != metadataDocument) return metadataDocument;

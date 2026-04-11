@@ -5,6 +5,8 @@ namespace AdminApiClient.For.ExchangeOnline
 {
     public abstract class ExOAuthorizationBase
     {
+        // Warning! https://devblogs.microsoft.com/devops/authentication-tokens-are-not-a-data-contract/
+        [Obsolete]
         protected string GetTenantId(string accessToken)
         {
             var token = new JwtSecurityToken(accessToken);
