@@ -98,7 +98,7 @@ async Task<List<ExO.Mailbox>> Scenario_SimpleODataClient_GeneratedDto(bool follo
         .For<ExO.Mailbox>()
         .WithHeader("Prefer", $"odata.maxpagesize=1000;") // Default page size without this is 100
         .Select(m => new { m.UserPrincipalName, m.Alias })
-        .QueryOptions(propertySets)
+        .QueryOptions($"PropertySet={propertySets}")
         .Filter(m => m.RecipientTypeDetails == "SharedMailbox")
         .GetAllAsync())
         .Value;
@@ -177,47 +177,44 @@ async Task Scenario_SimpleODataClient_VariousQueries()
     }
 }
 
-//async Task Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc()
-//{
-//    string localMetadata = ExOMetadata.LoadFromResourceCached();
+async Task Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc()
+{
+    var client = new ODataClient(new ODataClientOptions
+    {
+        BaseUrl = $"https://outlook.office.com/adminApi/beta/{tenantId}",
+        ConfigureRequest = request =>
+        {
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+            request.Headers.Add("Prefer", $"odata.maxpagesize=1000;");
+        },
+        Logger = logger,
+        IgnoreResourceNotFoundException = true, // null instead of 404 on retrieval
+    });
 
-//    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
-//    {
-//        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
-//        BeforeRequest = (message) =>
-//        {
-//            message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
-//            message.Headers.Add("Prefer", $"odata.maxpagesize=1000;");
-//        },
-//        IgnoreResourceNotFoundException = true, // null instead of 404 on retrieval
-//        MetadataDocument = localMetadata        // save one recurring roundtrip to the server for $metadata endpoint
+    // Set up scenario by picking out first mailbox (yes, potentially slow because of maxpagesize=1000)
+    var firstMailboxFound = (await client
+        .For<ExO.Mailbox>()
+        .GetFirstOrDefaultAsync());
 
-//    });
+    string identity = firstMailboxFound.Identity;
 
-//    // Set up scenario by picking out first mailbox (yes, potentially slow because of maxpagesize=1000)
-//    var firstMailboxFound = (await client
-//        .For<ExO.Mailbox>()
-//        .FindEntriesAsync())
-//        .FirstOrDefault();
-//    string identity = firstMailboxFound.Identity;
+    // Find exactly one Mailbox by Key (repetitive, but shows simple top-level collection usage of Key)
+    var propertySets = string.Join(",", new[] { "Delivery" });
+    var theMailbox = await client
+        .For<ExO.Mailbox>()
+        .Key(identity)
+        .QueryOptions($"PropertySet={propertySets}")
+        .GetFirstOrDefaultAsync();
 
-//    // Find exactly one Mailbox by Key (repetitive, but shows simple top-level collection usage of Key)
-//    var propertySets = string.Join(",", new[] { "Delivery" });
-//    var theMailbox = await client
-//        .For<ExO.Mailbox>()
-//        .Key(identity)
-//        .QueryOptions($"PropertySet={propertySets}")
-//        .FindEntryAsync();
-
-//    // Find permissions for Mailbox (drill into dependent collection)
-//    var permissionsForMailbox = (await client
-//        .For<ExO.Mailbox>()
-//        .Key(identity)
-//        .NavigateTo(x => x.MailboxPermission)
-//        .As<ExO.MailboxPermission>()
-//        .FindEntriesAsync())
-//        .ToList();
-//}
+    // Find permissions for Mailbox (drill into dependent collection)
+    var permissionsForMailbox = (await client
+        .For<ExO.Mailbox>()
+        .Key(identity)
+        .NavigateTo(x => x.MailboxPermission)
+        .As<ExO.MailboxPermission>()
+        .FindEntriesAsync())
+        .ToList();
+}
 
 async Task Scenario_SimpleODataClient_MailboxStatistics()
 {
@@ -230,7 +227,7 @@ async Task Scenario_SimpleODataClient_MailboxStatistics()
        .For<ExO.Mailbox>()
        .Key(identity)
        .QueryOptions($"PropertySet={propertySets}")
-       .FindEntryAsync());
+       .GetFirstOrDefaultAsync());
 
     string receiveQuota = result.ProhibitSendReceiveQuota;
     string sendQuota = result.ProhibitSendQuota;
