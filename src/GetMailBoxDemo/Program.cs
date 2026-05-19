@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.OData.Client;
 using PanoramicData.OData.Client;
+using System.Diagnostics;
 using System.Net.Http.Headers;
 using ExO = AdminApiClient.For.ExchangeOnline.OData;
 
@@ -15,6 +16,9 @@ IConfigurationRoot configuration = builder.Build();
 var loggerFactory = LoggerFactory.Create(configure =>
 {
     configure.AddConfiguration(configuration.GetSection("Logging"));
+
+    // github.com/panoramicdata/PanoramicData.OData.Client#logging-levels
+    configure.SetMinimumLevel(LogLevel.Debug);
     configure.AddConsole();
 });
 var logger = loggerFactory.CreateLogger<Program>();
@@ -43,7 +47,7 @@ Console.WriteLine(allMailboxes.Count);
 
 var firstHundred = await Scenario_PDODataClient_OptimizeWithCustomDto();
 
-// await Scenario_PDODataClient_VariousQueries();
+await Scenario_PDODataClient_VariousQueries();
 await Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc();
 await Scenario_PDODataClient_MailboxStatistics();
 
@@ -164,8 +168,10 @@ async Task Scenario_PDODataClient_VariousQueries()
     var resultsDGroup = await GetCollection<ExO.EligibleDistributionGroup>();
     foreach (var d in resultsDGroup) Console.WriteLine(d.Identity);
 
-    var resultsUnifiedGroup = await GetCollection<ExO.UnifiedGroup>(); // TODO: doesn't return
-    foreach (var d in resultsUnifiedGroup) Console.WriteLine(d.Identity);
+    var sw = Stopwatch.StartNew();
+    var resultsUnifiedGroup = await GetCollection<ExO.UnifiedGroup>();
+    sw.Stop();
+    Console.WriteLine("Fetching unified groups took " + sw.ElapsedMilliseconds + " ms");
 
     Console.WriteLine($"dyndg {resultsDynDGroup.Count} dg {resultsDGroup.Count} unifiedg {resultsUnifiedGroup.Count}");
 
