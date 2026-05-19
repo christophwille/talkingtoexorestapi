@@ -155,16 +155,16 @@ async Task Scenario_PDODataClient_VariousQueries()
 
     var resultsDynDGroup = await GetCollection<ExO.DynamicDistributionGroup>();
     foreach (var r in resultsDynDGroup) Console.WriteLine(r.Identity);
+    Console.WriteLine($"count of dyndg: {resultsDynDGroup.Count}");
 
     var resultsDGroup = await GetCollection<ExO.EligibleDistributionGroup>();
     foreach (var d in resultsDGroup) Console.WriteLine(d.Identity);
+    Console.WriteLine($"count of dg: {resultsDGroup.Count}");
 
-    var sw = Stopwatch.StartNew();
-    var resultsUnifiedGroup = await GetCollection<ExO.UnifiedGroup>();
-    sw.Stop();
-    Console.WriteLine("Fetching unified groups took " + sw.ElapsedMilliseconds + " ms");
-
-    Console.WriteLine($"dyndg {resultsDynDGroup.Count} dg {resultsDGroup.Count} unifiedg {resultsUnifiedGroup.Count}");
+    //var sw = Stopwatch.StartNew();
+    //var resultsUnifiedGroup = await GetCollection<ExO.UnifiedGroup>();
+    //sw.Stop();
+    //Console.WriteLine($"Fetching {resultsUnifiedGroup.Count} unified groups took {sw.ElapsedMilliseconds} ms");
 
     async Task<List<T>> GetCollection<T>() where T : class
     {
@@ -181,7 +181,7 @@ async Task Scenario_PDODataClient_MaxPageSize()
 {
     var client = new ODataClient(new ODataClientOptions
     {
-        AutoPluralization = false,
+        AutoPluralization = true, // Works here because EntitySet attribute is used
         BaseUrl = $"https://outlook.office.com/adminApi/beta/{tenantId}",
         ConfigureRequest = request =>
         {
