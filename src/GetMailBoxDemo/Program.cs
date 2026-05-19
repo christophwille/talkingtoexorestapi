@@ -213,8 +213,7 @@ async Task Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc()
         .Key(identity)
         .NavigateTo(x => x.MailboxPermission)
         .As<ExO.MailboxPermission>()
-        .GetAllAsync())
-        .Value
+        .FindEntriesAsync())
         .ToList();
 }
 
