@@ -43,7 +43,7 @@ Console.WriteLine(allMailboxes.Count);
 
 var firstHundred = await Scenario_PDODataClient_OptimizeWithCustomDto();
 
-await Scenario_PDODataClient_VariousQueries();
+// await Scenario_PDODataClient_VariousQueries();
 await Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc();
 await Scenario_PDODataClient_MailboxStatistics();
 
@@ -163,7 +163,7 @@ async Task Scenario_PDODataClient_VariousQueries()
     var resultsDGroup = await GetCollection<ExO.EligibleDistributionGroup>();
     foreach (var d in resultsDGroup) Console.WriteLine(d.Identity);
 
-    var resultsUnifiedGroup = await GetCollection<ExO.UnifiedGroup>();
+    var resultsUnifiedGroup = await GetCollection<ExO.UnifiedGroup>(); // TODO: doesn't return
     foreach (var d in resultsUnifiedGroup) Console.WriteLine(d.Identity);
 
     Console.WriteLine($"dyndg {resultsDynDGroup.Count} dg {resultsDGroup.Count} unifiedg {resultsUnifiedGroup.Count}");
@@ -183,6 +183,7 @@ async Task Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc()
 {
     var client = new ODataClient(new ODataClientOptions
     {
+        AutoPluralization = false,
         BaseUrl = $"https://outlook.office.com/adminApi/beta/{tenantId}",
         ConfigureRequest = request =>
         {
