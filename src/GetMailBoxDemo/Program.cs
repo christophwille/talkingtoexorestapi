@@ -1,8 +1,9 @@
 ﻿using AdminApiClient.For.ExchangeOnline;
-using AdminApiClient.For.ExchangeOnline.OData;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.OData.Client;
-using Simple.OData.Client;
+using PanoramicData.OData.Client;
+using System.Diagnostics;
 using System.Net.Http.Headers;
 using ExO = AdminApiClient.For.ExchangeOnline.OData;
 
@@ -11,6 +12,16 @@ var builder = new ConfigurationBuilder()
     .AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true);
 
 IConfigurationRoot configuration = builder.Build();
+
+var loggerFactory = LoggerFactory.Create(configure =>
+{
+    configure.AddConfiguration(configuration.GetSection("Logging"));
+
+    // github.com/panoramicdata/PanoramicData.OData.Client#logging-levels
+    configure.SetMinimumLevel(LogLevel.Debug);
+    configure.AddConsole();
+});
+var logger = loggerFactory.CreateLogger<Program>();
 
 var tenantIdViaOpenId = await ExOAuthorizationBase.GetTenantIdFromOpenIdConfiguration(configuration["Organization"]);
 
@@ -25,22 +36,22 @@ await GetCurrentMetadata();
 string mailboxesAsString = await Scenario_PlainHttpAndJson();
 Console.WriteLine(mailboxesAsString);
 
-var mailboxesAsEnumberable = await Scenario_SimpleODataClient_CustomDto();
-var mailboxes = mailboxesAsEnumberable.ToList();
-mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
+var mailboxes = await Scenario_PDODataClient_CustomDto();
+mailboxes.ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 Console.WriteLine(mailboxes.Count);
 
-//await Scenario_MsODataClientRaw();
+await Scenario_MsODataClientRaw();
 
-//var allMailboxes = await Scenario_SimpleODataClient_GeneratedDto(followNextPageLinks: false);
-//Console.WriteLine(allMailboxes.Count);
+var allMailboxes = await Scenario_PDODataClient_GeneratedDto();
+Console.WriteLine(allMailboxes.Count);
 
-// var firstHundred = await Scenario_SimpleODataClient_OptimizeWithCustomDto();
+var optimizedDtoResult = await Scenario_PDODataClient_OptimizeWithCustomDto();
 
-// await Scenario_SimpleODataClient_VariousQueries();
-// await Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc();
-// await Scenario_SimpleODataClient_MailboxStatistics();
+await Scenario_PDODataClient_VariousQueries();
+await Scenario_PDODataClient_MaxPageSize();
+await Scenario_PDODataClient_MailboxStatistics();
 
+Console.WriteLine("All test methods completed, press any key...");
 Console.ReadKey();
 
 async Task GetCurrentMetadata()
@@ -60,68 +71,62 @@ async Task<string> Scenario_PlainHttpAndJson()
     return await client.GetStringAsync($"https://outlook.office.com/adminApi/beta/{tenantId}/Mailbox");
 }
 
-async Task<IEnumerable<Mailbox>> Scenario_SimpleODataClient_CustomDto()
+ODataClient ConfigureStandardClient()
 {
-    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
+    return new ODataClient(new ODataClientOptions
     {
-        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
-        BeforeRequest = (message) => message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken)
+        AutoPluralization = false,
+        BaseUrl = $"https://outlook.office.com/adminApi/beta/{tenantId}",
+        ConfigureRequest = request =>
+        {
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+        },
+        Logger = logger,
+        // https://github.com/panoramicdata/PanoramicData.OData.Client/blob/main/Documentation/metadata.md#metadata-caching
+        MetadataCacheDuration = TimeSpan.FromHours(1)
     });
-
-    return await client.For<Mailbox>().FindEntriesAsync();
 }
 
-async Task<List<ExO.Mailbox>> Scenario_SimpleODataClient_GeneratedDto(bool followNextPageLinks)
+async Task<List<Mailbox>> Scenario_PDODataClient_CustomDto()
 {
-    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
-    {
-        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
-        BeforeRequestAsync = async (message) =>
-        {
-            var ar = await authTokenService.AcquireToken();
-            message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", ar.AccessToken);
-            message.Headers.Add("Prefer", $"odata.maxpagesize=1000;"); // Default page size without this is 100
-        }
-    });
+    var client = ConfigureStandardClient();
+
+    // With default AutoPluralization = true, you'd need to provide "Mailbox" in For()
+    return (await client.For<Mailbox>().GetAllAsync()).Value;
+}
+
+async Task<List<ExO.Mailbox>> Scenario_PDODataClient_GeneratedDto()
+{
+    var client = ConfigureStandardClient();
 
     var propertySets = string.Join(",", new[] { "Minimum", "AddressList" });
 
-    var annotations = new ODataFeedAnnotations();
     var mailboxes = (await client
-        .For<ExO.Mailbox>()
+        .For<ExO.Mailbox>() // Picks up EntitySet attribute on generated dto class
+        .WithHeader("Prefer", $"odata.maxpagesize=1000;") // Default page size without this is 100
         .Select(m => new { m.UserPrincipalName, m.Alias })
-        .QueryOptions($"PropertySet={propertySets}") // does NOT work with Dictionary overload because enclosed in ''
+        .QueryOptions($"PropertySet={propertySets}")
         .Filter(m => m.RecipientTypeDetails == "SharedMailbox")
-        .FindEntriesAsync(annotations))
-        .ToList();
+        .GetAllAsync())
+        .Value;
 
-    if (!followNextPageLinks) return mailboxes;
 
-    while (annotations.NextPageLink != null)
-    {
-        mailboxes.AddRange(await client.For<ExO.Mailbox>().FindEntriesAsync(annotations.NextPageLink, annotations));
-    }
     return mailboxes;
 }
 
 // Exchange.Mailbox is a huge object. Cut it down to a custom result object, need to specify collection name in For<>
-async Task<List<Mailbox>> Scenario_SimpleODataClient_OptimizeWithCustomDto()
+async Task<List<Mailbox>> Scenario_PDODataClient_OptimizeWithCustomDto()
 {
-    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
-    {
-        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
-        BeforeRequest = (message) => message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken)
-    });
+    var client = ConfigureStandardClient();
 
     var propertySets = string.Join(",", new[] { "Minimum", "AddressList" });
 
-    var annotations = new ODataFeedAnnotations();
     return (await client
         .For<Mailbox>("Mailbox")
         .Select(m => new { m.UserPrincipalName, m.RecipientType, m.RecipientTypeDetails, m.Alias })
         .QueryOptions($"PropertySet={propertySets}")
-        .FindEntriesAsync(annotations))
-        .ToList();
+        .GetAllAsync())
+        .Value;
 }
 
 async Task Scenario_MsODataClientRaw()
@@ -132,7 +137,6 @@ async Task Scenario_MsODataClientRaw()
 
     DataServiceQuery<ExO.Mailbox> mailboxQuery = context.Mailbox;
     await AsyncGetEntitySet();
-    // SyncGetMailboxes();
 
     // https://learn.microsoft.com/en-us/odata/client/async-operations
     async Task AsyncGetEntitySet()
@@ -143,73 +147,56 @@ async Task Scenario_MsODataClientRaw()
             Console.WriteLine(m.UserPrincipalName);
         }
     }
-
-    void SyncGetMailboxes()
-    {
-        foreach (var m in mailboxQuery)
-        {
-            Console.WriteLine(m.UserPrincipalName);
-        }
-    }
 }
 
-async Task Scenario_SimpleODataClient_VariousQueries()
+async Task Scenario_PDODataClient_VariousQueries()
 {
-    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
-    {
-        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
-        BeforeRequest = (message) => message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken)
-    });
+    var client = ConfigureStandardClient();
 
     var resultsDynDGroup = await GetCollection<ExO.DynamicDistributionGroup>();
     foreach (var r in resultsDynDGroup) Console.WriteLine(r.Identity);
+    Console.WriteLine($"count of dyndg: {resultsDynDGroup.Count}");
 
     var resultsDGroup = await GetCollection<ExO.EligibleDistributionGroup>();
     foreach (var d in resultsDGroup) Console.WriteLine(d.Identity);
+    Console.WriteLine($"count of dg: {resultsDGroup.Count}");
 
-    var resultsUnifiedGroup = await GetCollection<ExO.UnifiedGroup>();
-    foreach (var d in resultsUnifiedGroup) Console.WriteLine(d.Identity);
-
-    Console.WriteLine($"dyndg {resultsDynDGroup.Count} dg {resultsDGroup.Count} unifiedg {resultsUnifiedGroup.Count}");
+    //var sw = Stopwatch.StartNew();
+    //var resultsUnifiedGroup = await GetCollection<ExO.UnifiedGroup>();
+    //sw.Stop();
+    //Console.WriteLine($"Fetching {resultsUnifiedGroup.Count} unified groups took {sw.ElapsedMilliseconds} ms");
 
     async Task<List<T>> GetCollection<T>() where T : class
     {
-        var annotations = new ODataFeedAnnotations();
         var coll = (await client
             .For<T>()
-            .FindEntriesAsync(annotations))
-            .ToList();
+            .GetAllAsync())
+            .Value;
 
-        while (annotations.NextPageLink != null)
-        {
-            coll.AddRange(await client.For<T>().FindEntriesAsync(annotations.NextPageLink, annotations));
-        }
         return coll;
     }
 }
 
-async Task Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc()
+async Task Scenario_PDODataClient_MaxPageSize()
 {
-    string localMetadata = ExOMetadata.LoadFromResourceCached();
-
-    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
+    var client = new ODataClient(new ODataClientOptions
     {
-        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
-        BeforeRequest = (message) =>
+        AutoPluralization = true, // Works here because EntitySet attribute is used
+        BaseUrl = $"https://outlook.office.com/adminApi/beta/{tenantId}",
+        ConfigureRequest = request =>
         {
-            message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
-            message.Headers.Add("Prefer", $"odata.maxpagesize=1000;");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+            request.Headers.Add("Prefer", $"odata.maxpagesize=1000;");
         },
+        Logger = logger,
         IgnoreResourceNotFoundException = true, // null instead of 404 on retrieval
-        MetadataDocument = localMetadata        // save one recurring roundtrip to the server for $metadata endpoint
-
     });
 
     // Set up scenario by picking out first mailbox (yes, potentially slow because of maxpagesize=1000)
     var firstMailboxFound = (await client
         .For<ExO.Mailbox>()
-        .FindEntriesAsync())
-        .FirstOrDefault();
+        .GetFirstOrDefaultAsync());
+
     string identity = firstMailboxFound.Identity;
 
     // Find exactly one Mailbox by Key (repetitive, but shows simple top-level collection usage of Key)
@@ -218,9 +205,10 @@ async Task Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc()
         .For<ExO.Mailbox>()
         .Key(identity)
         .QueryOptions($"PropertySet={propertySets}")
-        .FindEntryAsync();
+        .GetFirstOrDefaultAsync();
 
     // Find permissions for Mailbox (drill into dependent collection)
+    // https://github.com/panoramicdata/PanoramicData.OData.Client/issues/12#issuecomment-4484593181
     var permissionsForMailbox = (await client
         .For<ExO.Mailbox>()
         .Key(identity)
@@ -230,35 +218,29 @@ async Task Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc()
         .ToList();
 }
 
-async Task Scenario_SimpleODataClient_MailboxStatistics()
+async Task Scenario_PDODataClient_MailboxStatistics()
 {
-    var client = new ODataClient(new ODataClientSettings(new Uri($"https://outlook.office.com/adminApi/beta/{tenantId}"))
-    {
-        OnTrace = (x, y) => Console.WriteLine(string.Format(x, y)),
-        BeforeRequest = (message) =>
-        {
-            message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
-        }
-    });
+    var client = ConfigureStandardClient();
 
-    string identity = "SharedMBX8727602@lillich.onmicrosoft.com";
+    string identity = "test-mailbox-22@lillich.onmicrosoft.com";
     var propertySets = string.Join(",", new[] { "Quota", "StatisticsSeed", "Minimum" });
 
     var result = (await client
        .For<ExO.Mailbox>()
        .Key(identity)
        .QueryOptions($"PropertySet={propertySets}")
-       .FindEntryAsync());
+       .GetFirstOrDefaultAsync());
 
     string receiveQuota = result.ProhibitSendReceiveQuota;
     string sendQuota = result.ProhibitSendQuota;
     string warningQuota = result.IssueWarningQuota;
 
-    var stats = await client
+    var function = client
        .For<ExO.Mailbox>()
        .Key(identity)
-       .Function<MailboxStatistics>("Exchange.GetMailboxStatistics")
-       .ExecuteAsSingleAsync();
+       .Function("Exchange.GetMailboxStatistics");
+
+    var stats = await client.CallFunctionAsync<ExO.Mailbox, ExO.MailboxStatistics>(function);
 
     var tis = stats.TotalItemSize;
 }
