@@ -32,21 +32,21 @@ await GetCurrentMetadata();
 string mailboxesAsString = await Scenario_PlainHttpAndJson();
 Console.WriteLine(mailboxesAsString);
 
-var mailboxesAsEnumberable = await Scenario_SimpleODataClient_CustomDto();
+var mailboxesAsEnumberable = await Scenario_PDODataClient_CustomDto();
 var mailboxes = mailboxesAsEnumberable.ToList();
 mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 Console.WriteLine(mailboxes.Count);
 
 await Scenario_MsODataClientRaw();
 
-var allMailboxes = await Scenario_SimpleODataClient_GeneratedDto(followNextPageLinks: false);
+var allMailboxes = await Scenario_PDODataClient_GeneratedDto(followNextPageLinks: false);
 Console.WriteLine(allMailboxes.Count);
 
-var firstHundred = await Scenario_SimpleODataClient_OptimizeWithCustomDto();
+var firstHundred = await Scenario_PDODataClient_OptimizeWithCustomDto();
 
-await Scenario_SimpleODataClient_VariousQueries();
-// await Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc();
-await Scenario_SimpleODataClient_MailboxStatistics();
+await Scenario_PDODataClient_VariousQueries();
+// await Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc();
+await Scenario_PDODataClient_MailboxStatistics();
 
 Console.ReadKey();
 
@@ -82,13 +82,13 @@ ODataClient ConfigureStandardClient()
     });
 }
 
-async Task<List<Mailbox>> Scenario_SimpleODataClient_CustomDto()
+async Task<List<Mailbox>> Scenario_PDODataClient_CustomDto()
 {
     var client = ConfigureStandardClient();
     return (await client.For<Mailbox>().GetAllAsync()).Value;
 }
 
-async Task<List<ExO.Mailbox>> Scenario_SimpleODataClient_GeneratedDto(bool followNextPageLinks)
+async Task<List<ExO.Mailbox>> Scenario_PDODataClient_GeneratedDto(bool followNextPageLinks)
 {
     var client = ConfigureStandardClient();
 
@@ -108,7 +108,7 @@ async Task<List<ExO.Mailbox>> Scenario_SimpleODataClient_GeneratedDto(bool follo
 }
 
 // Exchange.Mailbox is a huge object. Cut it down to a custom result object, need to specify collection name in For<>
-async Task<List<Mailbox>> Scenario_SimpleODataClient_OptimizeWithCustomDto()
+async Task<List<Mailbox>> Scenario_PDODataClient_OptimizeWithCustomDto()
 {
     var client = ConfigureStandardClient();
 
@@ -151,7 +151,7 @@ async Task Scenario_MsODataClientRaw()
     }
 }
 
-async Task Scenario_SimpleODataClient_VariousQueries()
+async Task Scenario_PDODataClient_VariousQueries()
 {
     var client = ConfigureStandardClient();
 
@@ -177,7 +177,7 @@ async Task Scenario_SimpleODataClient_VariousQueries()
     }
 }
 
-async Task Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc()
+async Task Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc()
 {
     var client = new ODataClient(new ODataClientOptions
     {
@@ -207,16 +207,18 @@ async Task Scenario_SimpleODataClient_MaxPageSize_LocalMetadataDoc()
         .GetFirstOrDefaultAsync();
 
     // Find permissions for Mailbox (drill into dependent collection)
+    // https://github.com/panoramicdata/PanoramicData.OData.Client/issues/12#issuecomment-4484593181
     var permissionsForMailbox = (await client
         .For<ExO.Mailbox>()
         .Key(identity)
         .NavigateTo(x => x.MailboxPermission)
         .As<ExO.MailboxPermission>()
-        .FindEntriesAsync())
+        .GetAllAsync())
+        .Value
         .ToList();
 }
 
-async Task Scenario_SimpleODataClient_MailboxStatistics()
+async Task Scenario_PDODataClient_MailboxStatistics()
 {
     var client = ConfigureStandardClient();
 
