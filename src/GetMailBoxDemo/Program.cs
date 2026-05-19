@@ -202,7 +202,7 @@ async Task Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc()
     string identity = firstMailboxFound.Identity;
 
     // Find exactly one Mailbox by Key (repetitive, but shows simple top-level collection usage of Key)
-    var propertySets = string.Join(",", new[] { "Delivery" });
+    var propertySets = string.Join(",", new[] { "Minimum", "Delivery" });
     var theMailbox = await client
         .For<ExO.Mailbox>()
         .Key(identity)
