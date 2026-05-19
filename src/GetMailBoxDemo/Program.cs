@@ -32,9 +32,8 @@ await GetCurrentMetadata();
 string mailboxesAsString = await Scenario_PlainHttpAndJson();
 Console.WriteLine(mailboxesAsString);
 
-var mailboxesAsEnumberable = await Scenario_PDODataClient_CustomDto();
-var mailboxes = mailboxesAsEnumberable.ToList();
-mailboxesAsEnumberable.ToList().ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
+var mailboxes = await Scenario_PDODataClient_CustomDto();
+mailboxes.ForEach(x => Console.WriteLine(x.UserPrincipalName + ", " + x.RecipientType));
 Console.WriteLine(mailboxes.Count);
 
 await Scenario_MsODataClientRaw();
@@ -45,7 +44,7 @@ Console.WriteLine(allMailboxes.Count);
 var firstHundred = await Scenario_PDODataClient_OptimizeWithCustomDto();
 
 await Scenario_PDODataClient_VariousQueries();
-// await Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc();
+await Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc();
 await Scenario_PDODataClient_MailboxStatistics();
 
 Console.ReadKey();
@@ -71,6 +70,7 @@ ODataClient ConfigureStandardClient()
 {
     return new ODataClient(new ODataClientOptions
     {
+        AutoPluralization = false,
         BaseUrl = $"https://outlook.office.com/adminApi/beta/{tenantId}",
         ConfigureRequest = request =>
         {
@@ -85,6 +85,8 @@ ODataClient ConfigureStandardClient()
 async Task<List<Mailbox>> Scenario_PDODataClient_CustomDto()
 {
     var client = ConfigureStandardClient();
+
+    // With default AutoPluralization = true, you'd need to provide "Mailbox" in For()
     return (await client.For<Mailbox>().GetAllAsync()).Value;
 }
 
@@ -95,7 +97,7 @@ async Task<List<ExO.Mailbox>> Scenario_PDODataClient_GeneratedDto(bool followNex
     var propertySets = string.Join(",", new[] { "Minimum", "AddressList" });
 
     var mailboxes = (await client
-        .For<ExO.Mailbox>()
+        .For<ExO.Mailbox>() // Picks up EntitySet attribute on generated dto class
         .WithHeader("Prefer", $"odata.maxpagesize=1000;") // Default page size without this is 100
         .Select(m => new { m.UserPrincipalName, m.Alias })
         .QueryOptions($"PropertySet={propertySets}")
