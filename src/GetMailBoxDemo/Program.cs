@@ -42,13 +42,13 @@ Console.WriteLine(mailboxes.Count);
 
 await Scenario_MsODataClientRaw();
 
-var allMailboxes = await Scenario_PDODataClient_GeneratedDto(followNextPageLinks: false);
+var allMailboxes = await Scenario_PDODataClient_GeneratedDto();
 Console.WriteLine(allMailboxes.Count);
 
-var firstHundred = await Scenario_PDODataClient_OptimizeWithCustomDto();
+var optimizedDtoResult = await Scenario_PDODataClient_OptimizeWithCustomDto();
 
 await Scenario_PDODataClient_VariousQueries();
-await Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc();
+await Scenario_PDODataClient_MaxPageSize();
 await Scenario_PDODataClient_MailboxStatistics();
 
 Console.WriteLine("All test methods completed, press any key...");
@@ -95,7 +95,7 @@ async Task<List<Mailbox>> Scenario_PDODataClient_CustomDto()
     return (await client.For<Mailbox>().GetAllAsync()).Value;
 }
 
-async Task<List<ExO.Mailbox>> Scenario_PDODataClient_GeneratedDto(bool followNextPageLinks)
+async Task<List<ExO.Mailbox>> Scenario_PDODataClient_GeneratedDto()
 {
     var client = ConfigureStandardClient();
 
@@ -137,21 +137,12 @@ async Task Scenario_MsODataClientRaw()
 
     DataServiceQuery<ExO.Mailbox> mailboxQuery = context.Mailbox;
     await AsyncGetEntitySet();
-    // SyncGetMailboxes();
 
     // https://learn.microsoft.com/en-us/odata/client/async-operations
     async Task AsyncGetEntitySet()
     {
         var response = await mailboxQuery.ExecuteAsync();
         foreach (var m in (response as QueryOperationResponse<ExO.Mailbox>))
-        {
-            Console.WriteLine(m.UserPrincipalName);
-        }
-    }
-
-    void SyncGetMailboxes()
-    {
-        foreach (var m in mailboxQuery)
         {
             Console.WriteLine(m.UserPrincipalName);
         }
@@ -186,7 +177,7 @@ async Task Scenario_PDODataClient_VariousQueries()
     }
 }
 
-async Task Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc()
+async Task Scenario_PDODataClient_MaxPageSize()
 {
     var client = new ODataClient(new ODataClientOptions
     {
