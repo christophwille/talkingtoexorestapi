@@ -47,6 +47,7 @@ var firstHundred = await Scenario_PDODataClient_OptimizeWithCustomDto();
 await Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc();
 await Scenario_PDODataClient_MailboxStatistics();
 
+Console.WriteLine("All test methods completed, press any key...");
 Console.ReadKey();
 
 async Task GetCurrentMetadata()
@@ -202,7 +203,7 @@ async Task Scenario_PDODataClient_MaxPageSize_LocalMetadataDoc()
     string identity = firstMailboxFound.Identity;
 
     // Find exactly one Mailbox by Key (repetitive, but shows simple top-level collection usage of Key)
-    var propertySets = string.Join(",", new[] { "Minimum", "Delivery" });
+    var propertySets = string.Join(",", new[] { "Delivery" });
     var theMailbox = await client
         .For<ExO.Mailbox>()
         .Key(identity)
@@ -224,7 +225,7 @@ async Task Scenario_PDODataClient_MailboxStatistics()
 {
     var client = ConfigureStandardClient();
 
-    string identity = "SharedMBX8727602@lillich.onmicrosoft.com";
+    string identity = "test-mailbox-22@lillich.onmicrosoft.com";
     var propertySets = string.Join(",", new[] { "Quota", "StatisticsSeed", "Minimum" });
 
     var result = (await client
